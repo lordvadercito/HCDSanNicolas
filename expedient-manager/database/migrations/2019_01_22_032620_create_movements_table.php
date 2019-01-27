@@ -15,19 +15,20 @@ class CreateMovementsTable extends Migration
     {
         Schema::create('movements', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('expedients_id')->unsigned();
-            $table->foreign('expedients_id')->references('id')->on('expedients');
-            $table->integer('origins_id')->unsigned();
-            $table->foreign('origins_id')->references('id')->on('departments');
-            $table->integer('destinations_id')->unsigned();
-            $table->foreign('destinations_id')->references('id')->on('departments');
+            $table->integer('expedient_id')->unsigned();
+            $table->foreign('expedient_id')->references('id')->on('expedients');
+            $table->integer('origin_id')->unsigned();
+            $table->foreign('origin_id')->references('id')->on('departments');
+            $table->integer('destination_id')->unsigned();
+            $table->foreign('destination_id')->references('id')->on('departments');
             $table->string('movementType');
-            $table->integer('origin_users')->unsigned();
-            $table->foreign('origin_users')->references('id')->on('users');
-            $table->integer('destination_users')->unsigned();
-            $table->foreign('destination_users')->references('id')->on('users');
+            $table->integer('origin_user')->unsigned();
+            $table->foreign('origin_user')->references('id')->on('users');
+            $table->integer('destination_user')->unsigned();
+            $table->foreign('destination_user')->references('id')->on('users');
             $table->boolean('received');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -19,12 +19,13 @@ class CreateExpedientsTable extends Migration
             $table->string('projectType');
             $table->string('subject');
             $table->string('cover');
-            $table->integer('states_id')->unsigned();
-            $table->foreign('states_id')->references('id')->on('states');
+            $table->integer('state_id')->unsigned();
+            $table->foreign('state_id')->references('id')->on('states');
             $table->boolean('archived');
             $table->string('incomeRecord');
             $table->string('treatmentRecord');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

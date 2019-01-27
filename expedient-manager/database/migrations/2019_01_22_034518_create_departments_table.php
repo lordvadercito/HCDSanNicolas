@@ -17,8 +17,9 @@ class CreateDepartmentsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->boolean('external');
-            $table->string('departmentTypes');
+            $table->string('departmentType');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
