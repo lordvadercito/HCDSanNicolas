@@ -1,0 +1,8 @@
+1)Alta de los expedientes
+	Recibe el expediente numerado
+		-Son numericos
+		-Los numeros de expediente son unique
+	Carga Nombre y Tema(autocomplete) de expediente
+	Expedientes anexos(Listado de Id's de )
+	Transcripcion del expediente
+	Estado: pendiente
