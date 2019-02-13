@@ -11,6 +11,8 @@ class Expedient extends Model
     //
     protected $dates = ['deleted_at'];
 
+    protected $fillable = ['expedientNro','projectType','subject','cover','state_id','archived','incomeRecord','treatmentRecord'];
+
     public function state(){
         return $this->belongsTo(State::class);
     }

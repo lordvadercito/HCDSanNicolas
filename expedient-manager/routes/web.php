@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/expedientes/nuevo', 'ExpedientController@create')->name('expedients.create');
+
+
+Route::post('expedientes/creado', 'ExpedientController@store');
