@@ -15,7 +15,7 @@ class CreateExpedientsTable extends Migration
     {
         Schema::create('expedients', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('expedientNro');
+            $table->integer('expedientNro')->unique();
             $table->string('projectType');
             $table->string('subject');
             $table->string('cover');

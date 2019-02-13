@@ -10,4 +10,8 @@ class State extends Model
     use SoftDeletes;
     //
     protected $dates = ['deleted_at'];
+
+    public function expedient(){
+        return $this->hasMany(Expedient::class);
+    }
 }

@@ -10,4 +10,8 @@ class Expedient extends Model
    use SoftDeletes;
     //
     protected $dates = ['deleted_at'];
+
+    public function state(){
+        return $this->belongsTo(State::class);
+    }
 }

@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0b95dde-d3b9-4738-bc9e-98564a63c82a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/HDCSanNicolas.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expedient-manager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/expedient-manager/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/expedient-manager/app/Models/Annex.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/expedient-manager/database/migrations/2019_02_05_035123_create_annexes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expedient-manager/app/Models/Expedient.php" beforeDir="false" afterPath="$PROJECT_DIR$/expedient-manager/app/Models/Expedient.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expedient-manager/app/Models/State.php" beforeDir="false" afterPath="$PROJECT_DIR$/expedient-manager/app/Models/State.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expedient-manager/database/migrations/2019_01_22_021320_create_expedients_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/expedient-manager/database/migrations/2019_01_22_021320_create_expedients_table.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,22 +19,24 @@
     <pharConfigPath>$PROJECT_DIR$/expedient-manager/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/expedient-manager/app/Models/Expedient.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#30#69#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/expedient-manager/app/Models/Expedient.php" />
+        <option value="$PROJECT_DIR$/expedient-manager/app/Models/State.php" />
+        <option value="$PROJECT_DIR$/expedient-manager/database/migrations/2019_01_22_021320_create_expedients_table.php" />
+        <option value="$PROJECT_DIR$/expedient-manager/app/Models/Annex.php" />
+        <option value="$PROJECT_DIR$/expedient-manager/database/migrations/2019_02_05_035123_create_annexes_table.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpServers">
+    <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -168,7 +168,14 @@
               <item name="HDCSanNicolas" type="b2602c69:ProjectViewProjectNode" />
               <item name="HDCSanNicolas" type="462c0819:PsiDirectoryNode" />
               <item name="expedient-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HDCSanNicolas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HDCSanNicolas" type="462c0819:PsiDirectoryNode" />
+              <item name="expedient-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -205,19 +212,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1549322594791</updated>
-      <workItem from="1549322596601" duration="280000" />
+      <workItem from="1549322596601" duration="3891000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="280000" />
+    <option name="totallyTimeSpent" value="3891000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1482602" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3260212" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
@@ -241,9 +247,49 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/expedient-manager/database/migrations/2019_01_22_021320_create_expedients_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/expedient-manager/database/migrations/2019_02_05_035935_create_expedint__annexes_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-32" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/expedient-manager/database/migrations/2019_02_06_005811_create_anexxs_expedients.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/expedient-manager/database/migrations/2019_02_05_035123_create_annexes_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/expedient-manager/app/Models/Annex.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+          <folding>
+            <element signature="e#30#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/expedient-manager/app/Models/State.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/expedient-manager/app/Models/Expedient.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="238">
+          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
           <folding>
             <element signature="e#30#69#0#PHP" expanded="true" />
           </folding>
