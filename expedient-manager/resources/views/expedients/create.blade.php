@@ -16,12 +16,12 @@
             <p class="alert alert-danger">{{ $errors->first('projectType') }}</p>
         @endif
         <br>
-        <input type="text" name="subject" placeholder="Asunto">
+        <input type="text" name="subject" placeholder="Asunto" value="{{ old('subject') }}">
         @if ($errors->has('subject'))
             <p class="alert alert-danger">{{ $errors->first('subject') }}</p>
         @endif
         <br>
-        <input type="text" name="cover" placeholder="Caratula">
+        <input type="text" name="cover" placeholder="Caratula" value="{{ old('cover') }}">
         @if ($errors->has('cover'))
             <p class="alert alert-danger">{{ $errors->first('cover') }}</p>
         @endif
@@ -31,15 +31,27 @@
                 <option value="{{$state}}">{{$state}}</option>
             @endforeach
         </select>
+        @if ($errors->has('state'))
+            <p class="alert alert-danger">{{ $errors->first('state') }}</p>
+        @endif
         <br>
         <select name="archived" placeholder="Archivado">
             <option value=0>No</option>
             <option value=1>Si</option>
         </select>
+        @if ($errors->has('archived'))
+            <p class="alert alert-danger">{{ $errors->first('archived') }}</p>
+        @endif
         <br>
-        <input type="text" name="incomeRecord" placeholder="Registro de entrada">
+        <input type="text" name="incomeRecord" placeholder="Registro de entrada" value="{{ old('incomeRecord') }}">
+        @if ($errors->has('incomeRecord'))
+            <p class="alert alert-danger">{{ $errors->first('incomeRecord') }}</p>
+        @endif
         <br>
-        <input type="text" name="treatmentRecord" placeholder="Registro de tratamiento">
+        <input type="text" name="treatmentRecord" placeholder="Registro de tratamiento" value="{{ old('treatmentRecord') }}">
+        @if ($errors->has('treatmentRecord'))
+            <p class="alert alert-danger">{{ $errors->first('treatmentRecord') }}</p>
+        @endif
         <br>
         <button type="submit">Crear expediente</button>
     </form>

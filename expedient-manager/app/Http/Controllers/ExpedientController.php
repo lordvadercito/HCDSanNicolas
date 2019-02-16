@@ -13,22 +13,38 @@ class ExpedientController extends Controller
         return view('expedients.create');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
+        /**
+         *Validacion de datos obtenidos desde el formulario de creacion de expedientes
+         * @return boolean
+         **/
         $data = request()->validate([
-            'expedientNro' => 'required'
+            'expedientNro' => ['required', 'numeric', 'unique:expedients,expedientNro'],
+            'projectType' => 'required',
+            'subject' => 'required',
+            'cover' => 'required',
+            'state' => 'required',
+            'archived' => 'required',
+            'incomeRecord' => 'required',
+            'treatmentRecord' => 'required'
         ]);
-        $expedient = new Expedient();
-        //$result = true;
-        if ($data){
-            try{
-                $expedient->create($request->all());
 
-            }
-            catch(Exception $e){
-                echo $e->getMessage();
-            }
-        }else{
-            return false;
+
+        try {
+            Expedient::create([
+                'expedientNro' => $data['expedientNro'],
+                'projectType' => $data['projectType'],
+                'subject' => $data['subject'],
+                'cover' => $data['cover'],
+                'state' => $data['state'],
+                'archived' => $data['archived'],
+                'incomeRecord' => $data['incomeRecord'],
+                'treatmentRecord' => $data['treatmentRecord'],
+            ]);
+
+        } catch (Exception $e) {
+            echo $e->getMessage();
         }
 
         return "Hecho";
