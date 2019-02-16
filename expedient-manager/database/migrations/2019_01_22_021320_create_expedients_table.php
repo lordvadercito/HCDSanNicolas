@@ -15,12 +15,12 @@ class CreateExpedientsTable extends Migration
     {
         Schema::create('expedients', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('expedientNro')->unique();
+            $table->integer('expedientNro');
+            $table->unique('expedientNro');
             $table->string('projectType');
             $table->string('subject');
             $table->string('cover');
-            $table->integer('state_id')->unsigned();
-            $table->foreign('state_id')->references('id')->on('states');
+            $table->string('state');
             $table->boolean('archived');
             $table->string('incomeRecord');
             $table->string('treatmentRecord');

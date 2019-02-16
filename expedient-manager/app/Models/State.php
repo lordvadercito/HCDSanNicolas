@@ -1,17 +1,45 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: ADucca
+ * Date: 16/02/2019
+ * Time: 12:20
+ */
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class State extends Model
+use App\Exceptions\JsonHandler;
+
+class State
 {
-    use SoftDeletes;
-    //
-    protected $dates = ['deleted_at'];
+    /**
+     * Esta clase contiene los estados que puede tener un expediente
+     *
+     * @return JSON object
+     * */
+    public static $states = [
+        "Pendiente",
+        "En comisión",
+        "Aprobado por mayoría",
+        "Aprobado por unanimidad",
+        "Rechazado por mayoría",
+        "Rechazado por unanimidad",
+        "Dos despachos",
+        "Pase a comisión u oficina",
+        "Genera pedido (Citación)",
+        "Sin tratamiento"
+    ];
 
-    public function expedient(){
-        return $this->hasMany(Expedient::class);
+    public static function encode()
+    {
+        $result = json_encode(static::$states);
+        if ($result) {
+            return $result;
+        } else {
+            throw new JsonHandler($result);
+        }
     }
+
+
 }
