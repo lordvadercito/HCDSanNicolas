@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Expedient Manager</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -68,12 +68,12 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}">Panel de control</a>
                     @else
-                        <a href="{{ route('login') }}">Iniciar sesión</a>
+                        <a href="{{ route('login') }}">Acceder</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Registrarse</a>
+                            <a href="{{ route('register') }}">Registro</a>
                         @endif
                     @endauth
                 </div>
