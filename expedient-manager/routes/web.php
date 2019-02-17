@@ -14,8 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Auth::routes();
 
 Route::get('/expedientes/nuevo', 'ExpedientController@create')->name('expedients.create');
 
 
 Route::post('expedientes/creado', 'ExpedientController@store');
+
+
+Route::get('/home', 'HomeController@index')->name('home');

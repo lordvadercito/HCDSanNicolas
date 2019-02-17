@@ -7,8 +7,14 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use mysql_xdevapi\Exception;
 
+
 class ExpedientController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(){
         $expedients = Expedient::all();
 
