@@ -5,4 +5,13 @@
 	Carga Nombre y Tema(autocomplete) de expediente
 	Expedientes anexos(Listado de Id's de )
 	Transcripcion del expediente
-	Estado: pendiente
+	Estado: pendiente (default)
+
+Estados:
+	1-Pendiente
+	2-Aprobado
+	3-Rechazado
+	4-En comision
+	5-Con despacho
+		(Aprobado por mayoria)
+	6-Resuelto

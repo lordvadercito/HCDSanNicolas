@@ -18,6 +18,8 @@ Auth::routes();
 
 Route::get('/expedientes/nuevo', 'ExpedientController@create')->name('expedients.create');
 
+Route::get('/expedientes', 'ExpedientController@index')->name('expedients.index');
+
 
 Route::post('expedientes/creado', 'ExpedientController@store');
 

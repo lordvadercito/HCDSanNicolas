@@ -15,7 +15,7 @@
                                 <div class="form-group row">
                                     <label for="expedientNro" class="col-md-4 col-form-label text-md-right">Nro. Expediente</label>
                                     <div class="col-md-6">
-                                        <input type="number" name="expedientNro" class="form-control {{ $errors->has('expedientNro') ? ' is-invalid' : '' }}" required autofocus>
+                                        <input type="number" name="expedientNro" value="{{old('expedientNro')}}" class="form-control {{ $errors->has('expedientNro') ? ' is-invalid' : '' }}" required autofocus>
                                         <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('expedientNro'))
                                                 <strong>{{ $errors->first('expedientNro') }}</strong>

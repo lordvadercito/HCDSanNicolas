@@ -15,8 +15,10 @@ class ExpedientController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(){
+    public function index()
+    {
         $expedients = Expedient::all();
+        return view('expedients.index', compact('expedients'));
 
     }
 
@@ -40,7 +42,7 @@ class ExpedientController extends Controller
             'archived' => 'required',
             'incomeRecord' => 'required',
             'treatmentRecord' => 'required'
-        ],[
+        ], [
             'expedientNro.required' => 'Debe ingresar un número de expediente',
             'expedientNro.numeric' => 'El número de expediente debe ser un valor numérico',
             'expedientNro.unique' => 'Ya existe un expediente con ese número',
@@ -68,6 +70,6 @@ class ExpedientController extends Controller
             echo $e->getMessage();
         }
 
-        return "Hecho";
+        return redirect('/expedientes');
     }
 }

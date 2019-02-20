@@ -86,7 +86,7 @@
 
                 <div class="links">
                     <a href="{{url('/expedientes/nuevo')}}">Nuevo expediente</a>
-                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="{{url('/expedientes/')}}">Expedientes</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://blog.laravel.com">Blog</a>
                     <a href="https://nova.laravel.com">Nova</a>
