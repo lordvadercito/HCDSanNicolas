@@ -72,4 +72,35 @@ class ExpedientController extends Controller
 
         return redirect('/expedientes');
     }
+
+    public function edit(Expedient $expedient)
+    {
+
+        return view('expedients.edit', ['expedient' => $expedient]);
+    }
+
+    public function update(Expedient $expedient)
+    {
+        $data = request()->validate([
+            'expedientNro' => ['required', 'numeric'],
+            'projectType' => 'required',
+            'subject' => 'required',
+            'cover' => 'required',
+            'state' => 'required',
+            'archived' => 'required',
+            'incomeRecord' => 'required',
+            'treatmentRecord' => 'required'
+        ], [
+            'expedientNro.required' => 'Debe ingresar un número de expediente',
+            'expedientNro.numeric' => 'El número de expediente debe ser un valor numérico',
+            'projectType.required' => 'Debe ingresar el tipo de proyecto del expediente',
+            'subject.required' => 'Debe ingresar un asunto para el expediente',
+            'cover.required' => 'Debe ingresar una carátula para el expediente',
+            'incomeRecord.required' => 'Debe ingresar el acta ingreso',
+            'treatmentRecord.required' => 'Debe ingresar el acta de tratamiento'
+        ]);
+
+        $expedient->update($data);
+        return redirect('/expedientes');
+    }
 }

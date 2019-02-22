@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0b95dde-d3b9-4738-bc9e-98564a63c82a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/expedient-manager/resources/views/expedients/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/expedient-manager/resources/views/expedients/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/expedient-manager/resources/views/expedients/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expedient-manager/app/Http/Controllers/ExpedientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/expedient-manager/app/Http/Controllers/ExpedientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expedient-manager/resources/views/expedients/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/expedient-manager/resources/views/expedients/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expedient-manager/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/expedient-manager/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,14 +33,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/expedients/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+            <state relative-caret-position="459">
+              <caret line="27" column="42" lean-forward="true" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
               <folding>
                 <element signature="e#3587#3608#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/expedients/edit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="92" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="92" />
             </state>
           </provider>
         </entry>
@@ -58,17 +71,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/expedient-manager/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="289">
+              <caret line="26" column="59" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="59" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/expedients/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="23" column="40" lean-forward="true" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+            <state relative-caret-position="495">
+              <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -76,8 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/expedient-manager/app/Http/Controllers/ExpedientController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="59" column="54" lean-forward="true" selection-start-line="59" selection-start-column="54" selection-end-line="59" selection-end-column="54" />
+            <state relative-caret-position="274">
+              <caret line="94" column="91" selection-start-line="94" selection-start-column="91" selection-end-line="94" selection-end-column="91" />
               <folding>
                 <element signature="e#40#65#0#PHP" expanded="true" />
               </folding>
@@ -142,11 +155,12 @@
         <option value="$PROJECT_DIR$/expedient-manager/config/auth.php" />
         <option value="$PROJECT_DIR$/expedient-manager/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/expedient-manager/config/app.php" />
-        <option value="$PROJECT_DIR$/expedient-manager/routes/web.php" />
-        <option value="$PROJECT_DIR$/expedient-manager/resources/views/expedients/index.blade.php" />
-        <option value="$PROJECT_DIR$/expedient-manager/app/Http/Controllers/ExpedientController.php" />
         <option value="$PROJECT_DIR$/expedient-manager/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/expedient-manager/resources/views/expedients/create.blade.php" />
+        <option value="$PROJECT_DIR$/expedient-manager/routes/web.php" />
+        <option value="$PROJECT_DIR$/expedient-manager/resources/views/expedients/edit.blade.php" />
+        <option value="$PROJECT_DIR$/expedient-manager/app/Http/Controllers/ExpedientController.php" />
+        <option value="$PROJECT_DIR$/expedient-manager/resources/views/expedients/index.blade.php" />
       </list>
     </option>
   </component>
@@ -359,12 +373,12 @@
       <workItem from="1549322596601" duration="3891000" />
       <workItem from="1550016520121" duration="8358000" />
       <workItem from="1550109471733" duration="596000" />
-      <workItem from="1550183670646" duration="42440000" />
+      <workItem from="1550183670646" duration="51659000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55285000" />
+    <option name="totallyTimeSpent" value="64504000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -631,13 +645,6 @@
     <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/expedients/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="23" column="40" lean-forward="true" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/welcome.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
@@ -645,30 +652,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/expedient-manager/app/Http/Controllers/ExpedientController.php">
+    <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/expedients/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="59" column="54" lean-forward="true" selection-start-line="59" selection-start-column="54" selection-end-line="59" selection-end-column="54" />
+        <state relative-caret-position="459">
+          <caret line="27" column="42" lean-forward="true" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
           <folding>
-            <element signature="e#40#65#0#PHP" expanded="true" />
+            <element signature="e#3587#3608#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/expedient-manager/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="289">
+          <caret line="26" column="59" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/expedients/create.blade.php">
+    <entry file="file://$PROJECT_DIR$/expedient-manager/app/Http/Controllers/ExpedientController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+        <state relative-caret-position="274">
+          <caret line="94" column="91" selection-start-line="94" selection-start-column="91" selection-end-line="94" selection-end-column="91" />
           <folding>
-            <element signature="e#3587#3608#0#HTML" expanded="true" />
+            <element signature="e#40#65#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/expedients/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="92" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/expedients/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
         </state>
       </provider>
     </entry>

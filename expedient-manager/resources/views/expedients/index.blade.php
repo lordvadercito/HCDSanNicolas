@@ -17,6 +17,7 @@
                                     <th scope="col">Tipo</th>
                                     <th scope="col">Asunto</th>
                                     <th scope="col">Estado</th>
+                                    <th scope="col"></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -26,6 +27,9 @@
                                         <td>{{$expedient->projectType}}</td>
                                         <td>{{$expedient->subject}}</td>
                                         <td>{{$expedient->state}}</td>
+                                        <td><a role="button" class="btn btn-primary"
+                                               href="{{ action('ExpedientController@edit', ['id' => $expedient->id]) }}">Editar</a>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>

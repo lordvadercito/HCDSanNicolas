@@ -20,8 +20,10 @@ Route::get('/expedientes/nuevo', 'ExpedientController@create')->name('expedients
 
 Route::get('/expedientes', 'ExpedientController@index')->name('expedients.index');
 
+Route::post('/expedientes/creado', 'ExpedientController@store');
 
-Route::post('expedientes/creado', 'ExpedientController@store');
+Route::get('/expedientes/{expedient}/editar', 'ExpedientController@edit')->name('expedients.edit');
 
+Route::put('/expedientes/{expedient}', 'ExpedientController@update');
 
 Route::get('/home', 'HomeController@index')->name('home');
