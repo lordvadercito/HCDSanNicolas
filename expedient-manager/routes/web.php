@@ -20,6 +20,8 @@ Route::get('/expedientes/nuevo', 'ExpedientController@create')->name('expedients
 
 Route::get('/expedientes', 'ExpedientController@index')->name('expedients.index');
 
+Route::get('/expedientes/{expedient}', 'ExpedientController@show')->name('expedients.show');
+
 Route::post('/expedientes/creado', 'ExpedientController@store');
 
 Route::get('/expedientes/{expedient}/editar', 'ExpedientController@edit')->name('expedients.edit');

@@ -22,6 +22,11 @@ class ExpedientController extends Controller
 
     }
 
+    public function show(Expedient $expedient)
+    {
+        return view('expedients.show', compact('expedient'));
+    }
+
     public function create()
     {
         return view('expedients.create');

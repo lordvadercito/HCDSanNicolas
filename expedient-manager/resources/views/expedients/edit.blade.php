@@ -82,6 +82,7 @@
                                         <select name="state" id="state"
                                                 class="form-control {{ $errors->has('state') ? ' is-invalid' : '' }}"
                                                 required>
+                                            <option value="{{old('state', $expedient->state)}}">{{old('state', $expedient->state)}}</option>
                                             @foreach(\App\Models\State::$states as $state)
                                                 <option value="{{$state}}">{{$state}}</option>
                                             @endforeach
