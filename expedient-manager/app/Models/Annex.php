@@ -10,4 +10,6 @@ class Annex extends Model
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
+
+    protected $fillable = ['nroAnnex', 'title', 'type', 'content'];
 }

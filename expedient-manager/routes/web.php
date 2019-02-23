@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 Auth::routes();
 
+//Expedints routes
+
 Route::get('/expedientes/nuevo', 'ExpedientController@create')->name('expedients.create');
 
 Route::get('/expedientes', 'ExpedientController@index')->name('expedients.index');
@@ -27,5 +29,21 @@ Route::post('/expedientes/creado', 'ExpedientController@store');
 Route::get('/expedientes/{expedient}/editar', 'ExpedientController@edit')->name('expedients.edit');
 
 Route::put('/expedientes/{expedient}', 'ExpedientController@update');
+
+//Annexes routes
+
+Route::get('/anexos', 'AnnexController@index')->name('annexes.index');
+
+Route::get('/anexos/nuevo', 'AnnexController@create')->name('annexes.create');
+
+Route::get('/anexos/{annex}', 'AnnexController@show')->name('annexes.show');
+
+Route::post('/anexos/creado', 'AnnexController@store');
+
+Route::get('/anexos/{annex}/editar', 'AnnexController@edit')->name('annexes.edit');
+
+Route::put('/anexos/{annex}', 'AnnexController@update');
+
+//Home routes
 
 Route::get('/home', 'HomeController@index')->name('home');

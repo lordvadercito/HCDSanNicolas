@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Annex;
 use App\Models\Expedient;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -107,5 +108,22 @@ class ExpedientController extends Controller
 
         $expedient->update($data);
         return redirect('/expedientes');
+    }
+
+    public function attachAnnex(Annex $annex, Expedient $expedient)
+    {
+        /**
+         * Este metodo asigna un anexo a un expediente
+         * @param Annex $annex : El anexo que se quiere asignar
+         * @param Expedient $expedient : El expediente al que se le quiere asignar el anexo
+         * @return boolean
+         */
+
+        try {
+            $expedient->annexes()->attach($annex->id);
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+
     }
 }

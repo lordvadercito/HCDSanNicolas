@@ -13,4 +13,8 @@ class Expedient extends Model
 
     protected $fillable = ['expedientNro', 'projectType', 'subject', 'cover', 'state', 'archived', 'incomeRecord', 'treatmentRecord'];
 
+    public function annexes()
+    {
+        return $this->belongsToMany(Annex::class);
+    }
 }
