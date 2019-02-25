@@ -110,6 +110,16 @@ class ExpedientController extends Controller
         return redirect('/expedientes');
     }
 
+    public function loadAttachAnnexForm(Expedient $expedient)
+    {
+        /**
+         * Este metodo carga el formulario para asignar anexos
+         * a los expedientes
+         */
+        $annexes = Annex::all();
+        return view('expedients.annexes', array('annexes'=>$annexes, 'expedient' => $expedient));
+    }
+
     public function attachAnnex(Annex $annex, Expedient $expedient)
     {
         /**
@@ -124,6 +134,8 @@ class ExpedientController extends Controller
         } catch (Exception $e) {
             echo $e->getMessage();
         }
+
+        return "<script>window.close();</script>";
 
     }
 }

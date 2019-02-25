@@ -147,7 +147,7 @@
                                     </div>
                                 </div>
                                 <br>
-
+                                <a href="javascript:window.open('anexar','{{$expedient}}','toolbar=no');void 0" role="button" class="btn btn-link">Agregar anexo</a>
                                 <button type="submit" class="btn btn-primary float-right">Actualizar</button>
                             </form>
                         </div>
@@ -156,8 +156,4 @@
             </div>
         </div>
     </main>
-
-
-
-
 @endsection

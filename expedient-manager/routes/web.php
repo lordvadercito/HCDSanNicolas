@@ -30,6 +30,10 @@ Route::get('/expedientes/{expedient}/editar', 'ExpedientController@edit')->name(
 
 Route::put('/expedientes/{expedient}', 'ExpedientController@update');
 
+Route::get('/expedientes/{expedient}/anexar', 'ExpedientController@loadAttachAnnexForm')->name('expedients.annexes');
+
+Route::get('expedientes/anexado/{annex}/{expedient}', 'ExpedientController@attachAnnex');
+
 //Annexes routes
 
 Route::get('/anexos', 'AnnexController@index')->name('annexes.index');

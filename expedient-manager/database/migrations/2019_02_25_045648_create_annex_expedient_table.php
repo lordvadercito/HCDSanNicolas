@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAnnexesExpedientsTable extends Migration
+class CreateAnnexExpedientTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateAnnexesExpedientsTable extends Migration
      */
     public function up()
     {
-        Schema::create('annexes_expedients', function (Blueprint $table) {
+        Schema::create('annex_expedient', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('expedient_id')->unsigned();
             $table->integer('annex_id')->unsigned();
             $table->timestamps();
             $table->softDeletes();
-
             $table->foreign('expedient_id')->references('id')->on('expedients');
             $table->foreign('annex_id')->references('id')->on('annexes');
         });
@@ -32,6 +31,6 @@ class CreateAnnexesExpedientsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('annexes_expedients');
+        Schema::dropIfExists('annex_expedient');
     }
 }
