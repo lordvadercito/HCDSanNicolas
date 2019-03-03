@@ -34,6 +34,7 @@ Route::get('/expedientes/{expedient}/anexar', 'ExpedientController@loadAttachAnn
 
 Route::get('expedientes/anexado/{annex}/{expedient}', 'ExpedientController@attachAnnex');
 
+
 //Annexes routes
 
 Route::get('/anexos', 'AnnexController@index')->name('annexes.index');
@@ -47,6 +48,16 @@ Route::post('/anexos/creado', 'AnnexController@store');
 Route::get('/anexos/{annex}/editar', 'AnnexController@edit')->name('annexes.edit');
 
 Route::put('/anexos/{annex}', 'AnnexController@update');
+
+
+//Departments routes
+
+Route::get('/departamentos', 'DepartmentController@index')->name('departments.index');
+
+Route::get('/departamentos/{department}', 'DepartmentController@show')->name('departments.show');
+
+Route::post('/departamentos/creado', 'DepartmentController@store');
+
 
 //Home routes
 
