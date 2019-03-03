@@ -58,6 +58,10 @@ Route::get('/departamentos/{department}', 'DepartmentController@show')->name('de
 
 Route::post('/departamentos/creado', 'DepartmentController@store');
 
+Route::get('/departamentos/{department}/editar', 'DepartmentController@edit')->name('departments.edit');
+
+Route::put('/departamentos/{department}', 'DepartmentController@update');
+
 
 //Home routes
 

@@ -1,6 +1,6 @@
 @extends('.layouts.app')
 
-@section('title', 'Expedientes')
+@section('title', 'Departamentos')
 
 @section('content')
     <main class="py-4">
@@ -8,31 +8,28 @@
             <div class="row justify-content-center">
                 <div class="col-md-10 col-xs-12">
                     <div class="card">
-                        <div class="card-header">Expedientes cargados</div>
+                        <div class="card-header">Departamentos</div>
                         <div class="card-body">
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
-                                    <th scope="col">Nro Expediente</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Externo</th>
                                     <th scope="col">Tipo</th>
-                                    <th scope="col">Asunto</th>
-                                    <th scope="col">Estado</th>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
+                                    <th></th>
+                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($expedients as $expedient)
+                                @foreach($departments as $department)
                                     <tr>
-                                        <td>{{$expedient->expedientNro}}</td>
-                                        <td>{{$expedient->projectType}}</td>
-                                        <td>{{$expedient->subject}}</td>
-                                        <td>{{$expedient->state}}</td>
+                                        <td>{{$department->name}}</td>
+                                        <td>{{$department->external}}</td>
+                                        <td>{{$department->departmentType}}</td>
                                         <td><a role="button" class="btn btn-primary"
-                                               href="{{ action('ExpedientController@edit', ['id' => $expedient->id]) }}">Editar</a>
-                                        </td>
+                                               href="{{ action('DepartmentController@edit', ['id' => $department->id]) }}">Editar</a></td>
                                         <td><a role="button" class="btn btn-secondary"
-                                               href="{{ action('ExpedientController@show', ['id' => $expedient->id]) }}">Ver detalle</a>
+                                               href="{{ action('DepartmentController@show', ['id' => $department->id]) }}">Ver detalle</a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -44,8 +41,4 @@
             </div>
         </div>
     </main>
-
-
-
-
 @endsection
