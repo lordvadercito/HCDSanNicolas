@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Department;
-use Illuminate\Http\Request;
 
 class DepartmentController extends Controller
 {
@@ -28,10 +27,14 @@ class DepartmentController extends Controller
         return view('departments.create');
     }
 
-    public function store(Request $request)
+    public function store()
     {
+        /**
+         *Validacion de datos obtenidos desde el formulario de creacion de departamentos
+         * @return boolean
+         **/
         $data = request()->validate([
-            'name' => ['required', 'string', 'unique'],
+            'name' => ['required', 'string', 'unique:departments,name'],
             'external' => ['required', 'boolean'],
             'departmentType' => ['required', 'string']
         ], [

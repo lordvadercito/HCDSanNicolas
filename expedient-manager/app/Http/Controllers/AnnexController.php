@@ -29,7 +29,7 @@ class AnnexController extends Controller
         return view('annexes.create');
     }
 
-    public function store(Request $request)
+    public function store()
     {
         /**
          *Validacion de datos obtenidos desde el formulario de creacion de expedientes

@@ -54,6 +54,8 @@ Route::put('/anexos/{annex}', 'AnnexController@update');
 
 Route::get('/departamentos', 'DepartmentController@index')->name('departments.index');
 
+Route::get('/departamentos/nuevo', 'DepartmentController@create')->name('departments.create');
+
 Route::get('/departamentos/{department}', 'DepartmentController@show')->name('departments.show');
 
 Route::post('/departamentos/creado', 'DepartmentController@store');

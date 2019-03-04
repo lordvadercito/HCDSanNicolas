@@ -33,7 +33,7 @@ class ExpedientController extends Controller
         return view('expedients.create');
     }
 
-    public function store(Request $request)
+    public function store()
     {
         /**
          *Validacion de datos obtenidos desde el formulario de creacion de expedientes

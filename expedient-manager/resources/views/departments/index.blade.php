@@ -24,12 +24,18 @@
                                 @foreach($departments as $department)
                                     <tr>
                                         <td>{{$department->name}}</td>
-                                        <td>{{$department->external}}</td>
+                                        <td>@if($department->external == 1)
+                                                Si
+                                            @else
+                                                No
+                                            @endif</td>
                                         <td>{{$department->departmentType}}</td>
                                         <td><a role="button" class="btn btn-primary"
-                                               href="{{ action('DepartmentController@edit', ['id' => $department->id]) }}">Editar</a></td>
+                                               href="{{ action('DepartmentController@edit', ['id' => $department->id]) }}">Editar</a>
+                                        </td>
                                         <td><a role="button" class="btn btn-secondary"
-                                               href="{{ action('DepartmentController@show', ['id' => $department->id]) }}">Ver detalle</a>
+                                               href="{{ action('DepartmentController@show', ['id' => $department->id]) }}">Ver
+                                                detalle</a>
                                         </td>
                                     </tr>
                                 @endforeach
