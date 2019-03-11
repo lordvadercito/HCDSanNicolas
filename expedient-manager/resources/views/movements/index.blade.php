@@ -27,6 +27,14 @@
                                 @foreach($movements as $movement)
                                     <tr>
                                         <td>{{$movement->expedients}}</td>
+                                        <td>{{$movement->}}</td>
+                                        <td>{{$movement->}}</td>
+                                        <td>{{$movement->}}</td>
+                                        <td>{{$movement->}}</td>
+                                        <td>{{$movement->}}</td>
+                                        <td>{{$movement->}}</td>
+                                        <td>{{$movement->}}</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

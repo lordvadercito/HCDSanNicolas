@@ -93,7 +93,7 @@
       <path value="$PROJECT_DIR$/expedient-manager/" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
   <component name="PhpUnit">
     <phpunit_settings>
       <PhpUnitSettings load_method="CUSTOM_LOADER" custom_loader_path="$PROJECT_DIR$/expedient-manager/vendor/autoload.php" />

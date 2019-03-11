@@ -22,6 +22,7 @@ class DepartmentType
         "Bloque de concecales",
         "Secretaría externa",
         "Secretaría interna",
+        "Comision",
         "Otro"
     ];
 
