@@ -1,6 +1,6 @@
 @extends('.layouts.app')
 
-@section('title', 'Departamentos')
+@section('title', 'Movimientos')
 
 @section('content')
     <main class="py-4">
@@ -8,7 +8,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-10 col-xs-12">
                     <div class="card">
-                        <div class="card-header">Departamentos</div>
+                        <div class="card-header">Movimientos de expedientes</div>
                         <div class="card-body">
                             <table class="table table-hover">
                                 <thead>
@@ -19,7 +19,6 @@
                                     <th scope="col">Tipo de movimiento</th>
                                     <th scope="col">Usuario de origen</th>
                                     <th scope="col">Usuario receptor</th>
-                                    <th scope="col">Recibido</th>
                                     <th scope="col">Fecha</th>
                                 </tr>
                                 </thead>
@@ -27,14 +26,13 @@
                                 @foreach($movements as $movement)
                                     <tr>
                                         <td>{{$movement->expedients}}</td>
-                                        <td>{{$movement->}}</td>
-                                        <td>{{$movement->}}</td>
-                                        <td>{{$movement->}}</td>
-                                        <td>{{$movement->}}</td>
-                                        <td>{{$movement->}}</td>
-                                        <td>{{$movement->}}</td>
-                                        <td>{{$movement->}}</td>
+                                        <td>{{$movement->origin}}</td>
+                                        <td>{{$movement->destination}}</td>
+                                        <td>{{$movement->movementType}}</td>
+                                        <td>{{$movement->user}}</td>
+                                        <td>{{$movement->created_at}}</td>
                                     </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

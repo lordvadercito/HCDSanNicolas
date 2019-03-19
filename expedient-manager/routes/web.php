@@ -50,20 +50,19 @@ Route::get('/anexos/{annex}/editar', 'AnnexController@edit')->name('annexes.edit
 Route::put('/anexos/{annex}', 'AnnexController@update');
 
 
-//Departments routes
+//Movements routes
 
-Route::get('/departamentos', 'DepartmentController@index')->name('departments.index');
+Route::get('/movimientos', 'MovementController@index')->name('movements.index');
 
-Route::get('/departamentos/nuevo', 'DepartmentController@create')->name('departments.create');
+Route::get('/movimientos/nuevo', 'MovementController@create')->name('movements.create');
 
-Route::get('/departamentos/{department}', 'DepartmentController@show')->name('departments.show');
+Route::get('/movimientos/{movement}', 'MovementController@show')->name('movements.show');
 
-Route::post('/departamentos/creado', 'DepartmentController@store');
+Route::post('/movimientos/creado', 'MovementController@store');
 
-Route::get('/departamentos/{department}/editar', 'DepartmentController@edit')->name('departments.edit');
+Route::get('/movimientos/{movement}/editar', 'MovementController@edit')->name('movements.edit');
 
-Route::put('/departamentos/{department}', 'DepartmentController@update');
-
+Route::put('/movimientos/{movement}', 'MovementController@update');
 
 //Home routes
 
