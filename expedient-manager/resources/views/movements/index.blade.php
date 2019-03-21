@@ -18,18 +18,18 @@
                                     <th scope="col">Destino</th>
                                     <th scope="col">Tipo de movimiento</th>
                                     <th scope="col">Usuario de origen</th>
-                                    <th scope="col">Usuario receptor</th>
                                     <th scope="col">Fecha</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($movements as $movement)
                                     <tr>
-                                        <td>{{$movement->expedients}}</td>
+
+                                        <td>{{$movement->expedients->expedientNro}}</td>
                                         <td>{{$movement->origin}}</td>
                                         <td>{{$movement->destination}}</td>
                                         <td>{{$movement->movementType}}</td>
-                                        <td>{{$movement->user}}</td>
+                                        <td>{{$movement->users->name}}</td>
                                         <td>{{$movement->created_at}}</td>
                                     </tr>
                                 @endforeach

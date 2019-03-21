@@ -11,10 +11,15 @@ class Expedient extends Model
     //
     protected $dates = ['deleted_at'];
 
-    protected $fillable = ['id','expedientNro', 'projectType', 'subject', 'cover', 'state', 'archived', 'incomeRecord', 'treatmentRecord'];
+    protected $fillable = ['id', 'expedientNro', 'projectType', 'subject', 'cover', 'state', 'archived', 'incomeRecord', 'treatmentRecord'];
 
     public function annexes()
     {
         return $this->belongsToMany(Annex::class);
+    }
+
+    public function movements()
+    {
+        return $this->hasOne(Movement::class, 'expedient_id', 'id');
     }
 }

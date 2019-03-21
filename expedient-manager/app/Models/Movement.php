@@ -11,15 +11,16 @@ class Movement extends Model
     //
     protected $dates = ['deleted_at'];
 
-    protected $fillable = ['expedient_id', 'origin', 'destination', 'movementType', 'origin_user'];
+    protected $fillable = ['expedient_id', 'origin', 'destination', 'movementType', 'origin_user', 'created_at'];
 
     public function expedients()
     {
-        return $this->hasOne(Expedient::class);
+        return $this->belongsTo(Expedient::class, 'expedient_id');
+
     }
 
     public function users()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class, 'origin_user');
     }
 }

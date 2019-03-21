@@ -60,9 +60,6 @@ Route::get('/movimientos/{movement}', 'MovementController@show')->name('movement
 
 Route::post('/movimientos/creado', 'MovementController@store');
 
-Route::get('/movimientos/{movement}/editar', 'MovementController@edit')->name('movements.edit');
-
-Route::put('/movimientos/{movement}', 'MovementController@update');
 
 //Home routes
 

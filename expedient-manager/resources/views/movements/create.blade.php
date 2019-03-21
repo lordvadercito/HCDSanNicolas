@@ -10,13 +10,13 @@
                     <div class="card">
                         <div class="card-header">Mover expediente</div>
                         <div class="card-body">
-                            <form method="POST" action="{{ url('movimientos/creado') }}">
+                            <form method="POST" action="{{ url('/movimientos/creado') }}">
                                 @csrf
                                 <div class="form-group row">
                                     <label for="expedient" class="col-md-4 col-form-label text-md-right">Expediente</label>
                                     <div class="col-md-6">
-                                        <select name="expedient" id="expedient"
-                                                class="form-control {{ $errors->has('expedient') ? ' is-invalid' : '' }}"
+                                        <select name="expedient_id" id="expedient_id"
+                                                class="form-control {{ $errors->has('expedient_id') ? ' is-invalid' : '' }}"
                                                 required>
                                             @foreach(\App\Models\Expedient::all() as $expedient)
                                                 <option value="{{$expedient->id}}">{{$expedient->expedientNro .' - ' .$expedient->subject}}</option>
@@ -73,7 +73,7 @@
                                 <div class="form-group row">
                                     <label for="subject" class="col-md-4 col-form-label text-md-right">Usuario de origen</label>
                                     <div class="col-md-6">
-                                        <input type="hidden" name="origin_user" value="{{ auth()->user()->id }}">
+                                        <input type="hidden" name="origin_user" value={{ auth()->user()->id }}>
                                         <input disabled type="text" readonly value="{{auth()->user()->name}}"
                                                class="form-control {{ $errors->has('origin_user') ? ' is-invalid' : '' }}"
                                                required>
@@ -85,7 +85,8 @@
 
                                     </div>
                                 </div>
-
+                                <br>
+                                <button type="submit" class="btn btn-primary float-right">Guardar</button>
                             </form>
                         </div>
                     </div>

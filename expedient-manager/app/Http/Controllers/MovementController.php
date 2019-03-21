@@ -18,6 +18,11 @@ class MovementController extends Controller
         return view('movements.index', compact('movements'));
     }
 
+    public function show(Movement $movement)
+    {
+        return view('movements.show', compact('movement'));
+    }
+
     public function create()
     {
         return view('movements.create');
@@ -51,7 +56,7 @@ class MovementController extends Controller
                 'origin' => $data['origin'],
                 'destination' => $data['destination'],
                 'movementType' => $data['movementType'],
-                'origin_user' => $data['origin_user']
+                'origin_user' => $data['origin_user'],
             ]);
         } catch (Exception $e) {
             echo $e->getMessage();
