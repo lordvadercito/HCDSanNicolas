@@ -1,6 +1,6 @@
 @extends('.layouts.app')
 
-@section('title', 'Expedientes')
+@section('title', 'Bloques de concejales')
 
 @section('content')
     <main class="py-4">
@@ -8,31 +8,28 @@
             <div class="row justify-content-center">
                 <div class="col-md-10 col-xs-12">
                     <div class="card">
-                        <div class="card-header">Expedientes cargados</div>
+                        <div class="card-header">Bloques de concejales cargados</div>
                         <div class="card-body">
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
-                                    <th scope="col">Nro Expediente</th>
-                                    <th scope="col">Tipo</th>
-                                    <th scope="col">Asunto</th>
-                                    <th scope="col">Estado</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Descripcion</th>
                                     <th scope="col"></th>
                                     <th scope="col"></th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($expedients as $expedient)
+                                @foreach($blocks as $block)
                                     <tr>
-                                        <td>{{$expedient->expedientNro}}</td>
-                                        <td>{{$expedient->projectType}}</td>
-                                        <td>{{$expedient->subject}}</td>
-                                        <td>{{$expedient->state}}</td>
+                                        <td>{{$block->name}}</td>
+                                        <td>{{$block->description}}</td>
+
                                         <td><a role="button" class="btn btn-primary"
-                                               href="{{ action('ExpedientController@edit', ['id' => $expedient->id]) }}">Editar</a>
+                                               href="{{ action('BlockController@edit', ['id' => $block->id]) }}">Editar</a>
                                         </td>
                                         <td><a role="button" class="btn btn-secondary"
-                                               href="{{ action('ExpedientController@show', ['id' => $expedient->id]) }}">Ver
+                                               href="{{ action('BlockController@show', ['id' => $block->id]) }}">Ver
                                                 detalle</a>
                                         </td>
                                     </tr>
@@ -45,8 +42,4 @@
             </div>
         </div>
     </main>
-
-
-
-
 @endsection

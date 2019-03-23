@@ -15,11 +15,11 @@ class Councillor extends Model
 
     public function block()
     {
-        return $this->hasOne(Block::class);
+        return $this->belongsTo(Block::class, 'blocks_id');
     }
 
     public function commission()
     {
-        return $this->hasOne(Commission::class);
+        return $this->belongsTo(Commission::class, 'commissions_id');
     }
 }

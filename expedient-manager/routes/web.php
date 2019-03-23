@@ -61,6 +61,52 @@ Route::get('/movimientos/{movement}', 'MovementController@show')->name('movement
 Route::post('/movimientos/creado', 'MovementController@store');
 
 
+//Councillor routes
+
+Route::get('/concejales', 'CouncillorController@index')->name('councillors.index');
+
+Route::get('/concejales/nuevo', 'CouncillorController@create')->name('councillors.create');
+
+Route::get('/concejales/{councillor}', 'CouncillorController@show')->name('councillors.show');
+
+Route::post('/concejales/creado', 'CouncillorController@store');
+
+Route::get('/concejales/{councillor}/editar', 'CouncillorController@edit')->name('councillors.edit');
+
+Route::put('/concejales/{councillor}', 'CouncillorController@update');
+
+
+//Blocks routes
+
+Route::get('/bloques', 'BlockController@index')->name('blocks.index');
+
+Route::get('/bloques/nuevo', 'BlockController@create')->name('blocks.create');
+
+Route::get('/bloques/{block}', 'BlockController@show')->name('blocks.show');
+
+Route::post('/bloques/creado', 'BlockController@store');
+
+Route::get('/bloques/{block}/editar', 'BlockController@edit')->name('blocks.edit');
+
+Route::put('/bloques/{block}', 'BlockController@update');
+
+
+//Commissions routes
+
+Route::get('/comisiones', 'CommissionController@index')->name('commissions.index');
+
+Route::get('/comisiones/nuevo', 'CommissionController@create')->name('commissions.create');
+
+Route::get('/comisiones/{commission}', 'CommissionController@show')->name('commissions.show');
+
+Route::post('/comisiones/creado', 'CommissionController@store');
+
+Route::get('/comisiones/{commission}/editar', 'CommissionController@edit')->name('commissions.edit');
+
+Route::put('/comisiones/{commission}', 'CommissionController@update');
+
+//TODO: Continuar con la creacion de rutas
+
 //Home routes
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -11,5 +11,10 @@ class Block extends Model
     //
     protected $dates = ['deleted_at'];
 
-    protected $fillable = ['name', 'description'];
+    protected $fillable = ['name', 'description', 'created_at'];
+
+    public function councillor()
+    {
+        return $this->hasMany(Councillor::class, 'blocks_id', 'id');
+    }
 }

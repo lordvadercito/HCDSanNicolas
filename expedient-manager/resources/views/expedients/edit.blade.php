@@ -103,6 +103,7 @@
                                         <select name="archived" id="archived"
                                                 class="form-control {{ $errors->has('archived') ? ' is-invalid' : '' }}"
                                                 required>
+                                            {{--TODO: Mostrar primero la opcion activa--}}
                                             <option value=0>No</option>
                                             <option value=1>Si</option>
                                         </select>
