@@ -81,7 +81,6 @@ class ExpedientController extends Controller
 
     public function edit(Expedient $expedient)
     {
-
         return view('expedients.edit', ['expedient' => $expedient]);
     }
 
@@ -117,7 +116,7 @@ class ExpedientController extends Controller
          * a los expedientes
          */
         $annexes = Annex::all();
-        return view('expedients.annexes', array('annexes'=>$annexes, 'expedient' => $expedient));
+        return view('expedients.annexes', array('annexes' => $annexes, 'expedient' => $expedient));
     }
 
     public function attachAnnex(Annex $annex, Expedient $expedient)

@@ -1,0 +1,11 @@
+.navbar-laravel {
+    background-image: url("../img/headexp.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.card-header{
+    background-image: url("../img/headexp.png");
+    background-position: center;
+    background-size: cover;
+}
