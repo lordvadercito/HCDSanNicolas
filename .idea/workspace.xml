@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0b95dde-d3b9-4738-bc9e-98564a63c82a" name="Default Changelist" comment="Movements module done">
-      <change afterPath="$PROJECT_DIR$/expedient-manager/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expedient-manager/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/expedient-manager/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expedient-manager/app/Http/Controllers/ExpedientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/expedient-manager/app/Http/Controllers/ExpedientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expedient-manager/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/expedient-manager/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expedient-manager/app/Models/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/expedient-manager/app/Models/Role.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expedient-manager/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/expedient-manager/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expedient-manager/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/expedient-manager/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expedient-manager/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/expedient-manager/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expedient-manager/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/expedient-manager/resources/views/auth/register.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/expedient-manager/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/expedient-manager/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/expedient-manager/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/expedient-manager/resources/views/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expedient-manager/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/expedient-manager/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expedient-manager/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/expedient-manager/resources/views/layouts/app.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,46 +33,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/welcome.blade.php">
+        <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/layouts/app.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="100" column="28" selection-start-line="100" selection-start-column="28" selection-end-line="100" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/layout.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="15" column="55" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
+            <state relative-caret-position="34">
+              <caret line="110" column="104" selection-start-line="110" selection-start-column="104" selection-end-line="110" selection-end-column="104" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/expedient-manager/public/css/app.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="7" column="67547" selection-start-line="7" selection-start-column="67547" selection-end-line="7" selection-end-column="67547" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/auth/login.blade.php">
+        <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/expedient-manager/public/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="27" />
+              <caret line="7" column="61" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -111,7 +75,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/expedient-manager/resources/views/departments/edit.blade.php" />
         <option value="$PROJECT_DIR$/expedient-manager/resources/views/departments/show.blade.php" />
         <option value="$PROJECT_DIR$/expedient-manager/database/migrations/2019_03_10_215917_create_commissions_table.php" />
         <option value="$PROJECT_DIR$/expedient-manager/database/migrations/2019_03_10_215821_create_blocks_table.php" />
@@ -157,11 +120,12 @@
         <option value="$PROJECT_DIR$/expedient-manager/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/expedient-manager/app/Models/User.php" />
         <option value="$PROJECT_DIR$/expedient-manager/app/Http/Controllers/ExpedientController.php" />
-        <option value="$PROJECT_DIR$/expedient-manager/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/expedient-manager/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/expedient-manager/public/css/style.css" />
-        <option value="$PROJECT_DIR$/expedient-manager/resources/views/layout.blade.php" />
         <option value="$PROJECT_DIR$/expedient-manager/public/css/app.css" />
+        <option value="$PROJECT_DIR$/expedient-manager/resources/views/layout.blade.php" />
+        <option value="$PROJECT_DIR$/expedient-manager/resources/views/layouts/app.blade.php" />
+        <option value="$PROJECT_DIR$/expedient-manager/resources/views/home.blade.php" />
       </list>
     </option>
   </component>
@@ -291,14 +255,22 @@
               <item name="HDCSanNicolas" type="b2602c69:ProjectViewProjectNode" />
               <item name="HDCSanNicolas" type="462c0819:PsiDirectoryNode" />
               <item name="expedient-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HDCSanNicolas" type="b2602c69:ProjectViewProjectNode" />
               <item name="HDCSanNicolas" type="462c0819:PsiDirectoryNode" />
               <item name="expedient-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HDCSanNicolas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HDCSanNicolas" type="462c0819:PsiDirectoryNode" />
+              <item name="expedient-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HDCSanNicolas" type="b2602c69:ProjectViewProjectNode" />
@@ -314,13 +286,6 @@
               <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
               <item name="PHP" type="5114b859:PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
               <item name="expedient-manager" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HDCSanNicolas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-              <item name="PHP" type="5114b859:PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
-              <item name="expedient-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HDCSanNicolas" type="b2602c69:ProjectViewProjectNode" />
@@ -336,70 +301,6 @@
               <item name="expedient-manager" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HDCSanNicolas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-              <item name="PHP" type="5114b859:PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
-              <item name="expedient-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HDCSanNicolas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-              <item name="PHP" type="5114b859:PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
-              <item name="expedient-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HDCSanNicolas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-              <item name="PHP" type="5114b859:PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
-              <item name="expedient-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HDCSanNicolas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-              <item name="PHP" type="5114b859:PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
-              <item name="expedient-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HDCSanNicolas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-              <item name="PHP" type="5114b859:PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
-              <item name="expedient-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HDCSanNicolas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-              <item name="PHP" type="5114b859:PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
-              <item name="expedient-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HDCSanNicolas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-              <item name="PHP" type="5114b859:PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
-              <item name="expedient-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HDCSanNicolas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-              <item name="PHP" type="5114b859:PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HDCSanNicolas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-              <item name="PHP Runtime" type="20ee2d1f:SyntheticLibraryElementNode" />
             </path>
           </expand>
           <select />
@@ -455,12 +356,12 @@
       <workItem from="1552343331975" duration="10884000" />
       <workItem from="1552478313415" duration="737000" />
       <workItem from="1552914141809" duration="11718000" />
-      <workItem from="1553137762159" duration="43648000" />
+      <workItem from="1553137762159" duration="51486000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209956000" />
+    <option name="totallyTimeSpent" value="217794000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -475,12 +376,12 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17246597" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17170954" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" weight="0.3289689" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.101472996" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -506,20 +407,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Movements module done" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/movements/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-318">
-          <caret line="21" column="77" selection-start-line="21" selection-start-column="77" selection-end-line="21" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/expedient-manager/database/migrations/2019_03_10_214024_create_councillors_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/expedient-manager/app/Http/Controllers/MovementController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -527,13 +414,6 @@
           <folding>
             <element signature="e#40#64#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/annexes/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="4" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -840,23 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/expedient-manager/public/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-40435" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/expedient-manager/resources/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-152" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/welcome.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
@@ -871,13 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="15" column="55" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/expedient-manager/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -889,6 +745,43 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
           <caret line="7" column="67547" selection-start-line="7" selection-start-column="67547" selection-end-line="7" selection-end-column="67547" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/annexes/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-80">
+          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/expedient-manager/resources/js/app.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/expedient-manager/resources/js/components/ExampleComponent.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/expedient-manager/public/js/app.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="110" column="104" selection-start-line="110" selection-start-column="104" selection-end-line="110" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/expedient-manager/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="61" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
         </state>
       </provider>
     </entry>

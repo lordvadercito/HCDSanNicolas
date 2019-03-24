@@ -51,11 +51,65 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Expedientes</a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('expedients.index') }}">
+                                        {{ __('Expedientes') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('expedients.create') }}">
+                                        {{ __('Nuevo expediente') }}
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{ route('annexes.index') }}">
+                                        {{ __('Anexos') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('annexes.create') }}">
+                                        {{ __('Nuevo anexo') }}
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{ route('movements.index') }}">
+                                        {{ __('Movimientos de expedientes') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('movements.create') }}">
+                                        {{ __('Nuevo movimiento') }}
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Concejo</a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('blocks.index') }}">
+                                        {{ __('Bloques') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('blocks.create') }}">
+                                        {{ __('Nuevo bloque') }}
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{ route('councillors.index') }}">
+                                        {{ __('Concejales') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('councillors.create') }}">
+                                        {{ __('Nuevo concejal') }}
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{ route('commissions.index') }}">
+                                        {{ __('Comisiones parlamentarias') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('commissions.create') }}">
+                                        {{ __('Nuevo comisión') }}
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('home') }}">Panel de control</a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
