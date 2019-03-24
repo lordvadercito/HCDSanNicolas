@@ -62,6 +62,21 @@
                                 </div>
 
                                 <div class="form-group row">
+                                    <label for="creation_date" class="col-md-4 col-form-label text-md-right">Creación</label>
+                                    <div class="col-md-6">
+                                        <input type="date" name="creation_date" value="{{ old('creation_date', $expedient->creation_date) }}"
+                                               class="form-control {{ $errors->has('creation_date') ? ' is-invalid' : '' }}"
+                                               required>
+                                        <span role="alert" class="invalid-feedback">
+                                            @if ($errors->has('creation_date'))
+                                                <strong>{{ $errors->first('creation_date') }}</strong>
+                                            @endif
+                                        </span>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
                                     <label for="cover" class="col-md-4 col-form-label text-md-right">Carátula</label>
                                     <div class="col-md-6">
                                         <textarea rows="6" name="cover" id="cover"

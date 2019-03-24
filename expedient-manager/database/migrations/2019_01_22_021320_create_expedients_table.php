@@ -24,6 +24,7 @@ class CreateExpedientsTable extends Migration
             $table->boolean('archived');
             $table->string('incomeRecord');
             $table->string('treatmentRecord');
+            $table->date('creation_date');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -16,9 +16,12 @@ class ExpedientController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $expedients = Expedient::all();
+        $expedients = Expedient::expedientNro($request->get('expedientNro'))
+            ->creationDate($request->get('creation_date'))
+            ->orderBy('creation_date', 'DESC')
+            ->paginate(20);
         return view('expedients.index', compact('expedients'));
 
     }
@@ -47,7 +50,8 @@ class ExpedientController extends Controller
             'state' => 'required',
             'archived' => 'required',
             'incomeRecord' => 'required',
-            'treatmentRecord' => 'required'
+            'treatmentRecord' => 'required',
+            'creation_date' => ['required', 'date']
         ], [
             'expedientNro.required' => 'Debe ingresar un número de expediente',
             'expedientNro.numeric' => 'El número de expediente debe ser un valor numérico',
@@ -56,7 +60,9 @@ class ExpedientController extends Controller
             'subject.required' => 'Debe ingresar un asunto para el expediente',
             'cover.required' => 'Debe ingresar una carátula para el expediente',
             'incomeRecord.required' => 'Debe ingresar el acta ingreso',
-            'treatmentRecord.required' => 'Debe ingresar el acta de tratamiento'
+            'treatmentRecord.required' => 'Debe ingresar el acta de tratamiento',
+            'creation_date.required' => 'Debe ingresar la fecha de creación del expediente',
+            'creation_date.date' => 'El valor ingresado no es una fecha válida'
         ]);
 
 
@@ -70,6 +76,7 @@ class ExpedientController extends Controller
                 'archived' => $data['archived'],
                 'incomeRecord' => $data['incomeRecord'],
                 'treatmentRecord' => $data['treatmentRecord'],
+                'creation_date' =>$data['creation_date'],
             ]);
 
         } catch (Exception $e) {
@@ -94,7 +101,8 @@ class ExpedientController extends Controller
             'state' => 'required',
             'archived' => 'required',
             'incomeRecord' => 'required',
-            'treatmentRecord' => 'required'
+            'treatmentRecord' => 'required',
+            'creation_date' => ['required', 'date']
         ], [
             'expedientNro.required' => 'Debe ingresar un número de expediente',
             'expedientNro.numeric' => 'El número de expediente debe ser un valor numérico',
@@ -102,7 +110,9 @@ class ExpedientController extends Controller
             'subject.required' => 'Debe ingresar un asunto para el expediente',
             'cover.required' => 'Debe ingresar una carátula para el expediente',
             'incomeRecord.required' => 'Debe ingresar el acta ingreso',
-            'treatmentRecord.required' => 'Debe ingresar el acta de tratamiento'
+            'treatmentRecord.required' => 'Debe ingresar el acta de tratamiento',
+            'creation_date.required' => 'Debe ingresar la fecha de creación del expediente',
+            'creation_date.date' => 'El valor ingresado no es una fecha válida'
         ]);
 
         $expedient->update($data);
