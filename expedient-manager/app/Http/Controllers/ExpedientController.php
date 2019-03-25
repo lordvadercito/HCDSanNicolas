@@ -21,7 +21,7 @@ class ExpedientController extends Controller
         $expedients = Expedient::expedientNro($request->get('expedientNro'))
             ->creationDate($request->get('creation_date'))
             ->orderBy('creation_date', 'DESC')
-            ->paginate(20);
+            ->paginate(10);
         return view('expedients.index', compact('expedients'));
 
     }

@@ -34,11 +34,19 @@
                                 <p class="col-xs-5 float-right space-50 text-left"
                                    style="width: 50%;">{{$annex->content}}</p>
                             </div>
+                            <br>
+                            <hr>
                             <div class="row">
-                                <a role="button" class="btn btn-primary float-right"
-                                   style="position: relative;right: -90%;"
-                                   href="{{ action('AnnexController@edit', ['id' => $annex->id]) }}">Editar
-                                </a>
+                                <div class="col-sm-6">
+                                    <a href="{{ URL::previous() }}" role="button"
+                                       class="btn btn-link float-left">Volver</a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a role="button" class="btn btn-primary float-right"
+                                       href="{{ action('AnnexController@edit', ['id' => $annex->id]) }}">Editar
+                                    </a>
+                                </div>
+
                             </div>
                         </div>
                     </div>

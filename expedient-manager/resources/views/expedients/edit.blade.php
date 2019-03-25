@@ -163,8 +163,25 @@
                                     </div>
                                 </div>
                                 <br>
-                                <a href="javascript:window.open('anexar','{{$expedient}}','toolbar=no');void 0" role="button" class="btn btn-link">Agregar anexo</a>
-                                <button type="submit" class="btn btn-primary float-right">Actualizar</button>
+                                {{--<a href="javascript:window.open('anexar','{{$expedient}}','toolbar=no');void 0" role="button" class="btn btn-link">Agregar anexo</a>--}}
+                                {{--<button type="submit" class="btn btn-primary float-right">Actualizar</button>--}}
+
+
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <a href="{{ URL::previous() }}" role="button"
+                                           class="btn btn-link float-left">Volver</a>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <a href="javascript:window.open('anexar','{{$expedient}}','toolbar=no');void 0" role="button" class="btn btn-success">Agregar anexo</a>
+                                        <button type="submit" class="btn btn-primary float-right">Actualizar</button>
+                                    </div>
+
+                                </div>
+
+
+
                             </form>
                         </div>
                     </div>

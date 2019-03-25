@@ -11,64 +11,94 @@
                         <div class="card-header">Detalles de expediente</div>
                         <div class="card-body">
                             <div class="row">
-                                <p class="col-xs-5 float-left space-50 text-right font-weight-bold" style="width: 50%;">
-                                    Nro.Expediente: &nbsp;</p>
-                                <p class="col-xs-5 float-right space-50 text-left"
-                                   style="width: 50%;">{{$expedient->expedientNro}}</p>
+                                <div class="col-sm-6">
+                                    <p class="float-left space-50 text-right font-weight-bold" style="width: 50%;">
+                                        Nro.Expediente: &nbsp;</p>
+                                    <p class="float-right space-50 text-left"
+                                       style="width: 50%;">{{$expedient->expedientNro}}</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p class="float-left space-50 text-right font-weight-bold" style="width: 50%;">
+                                        Tipo de proyecto: &nbsp;</p>
+                                    <p class="float-right space-50 text-left"
+                                       style="width: 50%;">{{$expedient->projectType}}</p>
+                                </div>
                             </div>
                             <div class="row">
-                                <p class="col-xs-5 float-left space-50 text-right font-weight-bold" style="width: 50%;">
-                                    Tipo de proyecto: &nbsp;</p>
-                                <p class="col-xs-5 float-right space-50 text-left"
-                                   style="width: 50%;">{{$expedient->projectType}}</p>
+                                <div class="col-sm-6">
+                                    <p class="float-left space-50 text-right font-weight-bold" style="width: 50%;">
+                                        Asunto: &nbsp;</p>
+                                    <p class="float-right space-50 text-left"
+                                       style="width: 50%;">{{$expedient->subject}}</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p class="float-left space-50 text-right font-weight-bold" style="width: 50%;">
+                                        Estado: &nbsp;</p>
+                                    <p class="float-right space-50 text-left"
+                                       style="width: 50%;">{{$expedient->state}}</p>
+                                </div>
                             </div>
                             <div class="row">
-                                <p class="col-xs-5 float-left space-50 text-right font-weight-bold" style="width: 50%;">
-                                    Asunto: &nbsp;</p>
-                                <p class="col-xs-5 float-right space-50 text-left"
-                                   style="width: 50%;">{{$expedient->subject}}</p>
-                            </div>
-                            <div class="row">
-                                <p class="col-xs-5 float-left space-50 text-right font-weight-bold" style="width: 50%;">
+                                <p class="float-left space-50 text-right font-weight-bold" style="width: 50%;">
                                     Caratula: &nbsp;</p>
-                                <p class="col-xs-5 float-right space-50 text-left"
-                                   style="width: 50%;">{{$expedient->cover}}</p>
                             </div>
                             <div class="row">
-                                <p class="col-xs-5 float-left space-50 text-right font-weight-bold" style="width: 50%;">
-                                    Estado: &nbsp;</p>
-                                <p class="col-xs-5 float-right space-50 text-left"
-                                   style="width: 50%;">{{$expedient->state}}</p>
+                                <p class="text-justify" style="width: 90%; margin: 0 10%;"
+                                >{{$expedient->cover}}</p>
                             </div>
+                            <br>
                             <div class="row">
-                                <p class="col-xs-5 float-left space-50 text-right font-weight-bold" style="width: 50%;">
-                                    Archivado: &nbsp;</p>
-                                @if($expedient->archived == 0)
-                                    <p class="col-xs-5 float-right space-50 text-left"
-                                       style="width: 50%;">No</p>
-                                @else
-                                    <p class="col-xs-5 float-right space-50 text-left"
-                                       style="width: 50%;">Si</p>
-                                @endif
+                                <div class="col-sm-4">
+                                    <p class="float-left space-50 text-right font-weight-bold" style="width: 50%;">
+                                        Archivado: &nbsp;</p>
+                                    @if($expedient->archived == 0)
+                                        <p class="float-right space-50 text-left"
+                                           style="width: 50%;">No</p>
+                                    @else
+                                        <p class="float-right space-50 text-left"
+                                           style="width: 50%;">Si</p>
+                                    @endif
+                                </div>
+                                <div class="col-sm-4">
+                                    <p class="float-left space-50 text-right font-weight-bold" style="width: 50%;">
+                                        Reg. de ingreso: &nbsp;</p>
+                                    <p class="float-right space-50 text-left"
+                                       style="width: 50%;">{{$expedient->incomeRecord}}</p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p class="col-xs-4 float-left space-50 text-right font-weight-bold"
+                                       style="width: 50%;">
+                                        Reg. de tratamiento:&nbsp;</p>
+                                    <p class="col-xs-4 float-right space-50 text-left"
+                                       style="width: 50%;">{{$expedient->treatmentRecord}}</p>
+                                </div>
                             </div>
+                            <br>
                             <div class="row">
-                                <p class="col-xs-5 float-left space-50 text-right font-weight-bold" style="width: 50%;">
-                                    Registro de ingreso: &nbsp;</p>
-                                <p class="col-xs-5 float-right space-50 text-left"
-                                   style="width: 50%;">{{$expedient->incomeRecord}}</p>
+                                <p class="col-sm-12 text-center font-weight-bold">
+                                    Anexos vinculados: &nbsp;</p>
                             </div>
+                            <div class="list-group" style="width: 90%;margin: 0 5%">
+                                @foreach($expedient->annexes as $annexes)
+                                    <a href="{{ action('AnnexController@show', ['id' => $annexes->id]) }}" class="list-group-item list-group-item-action text-center">{{$annexes->nroAnnex . " - " . $annexes->title ." - ". $annexes->type}}</a>
+                                @endforeach
+                            </div>
+
+                            <br>
+                            <hr>
                             <div class="row">
-                                <p class="col-xs-5 float-left space-50 text-right font-weight-bold" style="width: 50%;">
-                                    Registro de tratamiento: &nbsp;</p>
-                                <p class="col-xs-5 float-right space-50 text-left"
-                                   style="width: 50%;">{{$expedient->treatmentRecord}}</p>
+                                <div class="col-sm-6">
+                                    <a href="{{route("expedients.index")}}" role="button"
+                                       class="btn btn-link float-left">Volver</a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <a role="button" class="btn btn-primary float-right"
+                                       href="{{ action('ExpedientController@edit', ['id' => $expedient->id]) }}">Editar
+                                    </a>
+                                </div>
+
                             </div>
-                            <div class="row">
-                                <a role="button" class="btn btn-primary float-right"
-                                   style="position: relative;right: -90%;"
-                                   href="{{ action('ExpedientController@edit', ['id' => $expedient->id]) }}">Editar
-                                </a>
-                            </div>
+
                         </div>
                     </div>
                 </div>

@@ -58,7 +58,8 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="creation_date" class="col-md-4 col-form-label text-md-right">Creación</label>
+                                    <label for="creation_date"
+                                           class="col-md-4 col-form-label text-md-right">Creación</label>
                                     <div class="col-md-6">
                                         <input type="date" name="creation_date" value="{{ old('creation_date') }}"
                                                class="form-control {{ $errors->has('creation_date') ? ' is-invalid' : '' }}"
@@ -157,7 +158,17 @@
                                     </div>
                                 </div>
                                 <br>
-                                <button type="submit" class="btn btn-primary float-right">Guardar</button>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <a href="{{ URL::previous() }}" role="button"
+                                           class="btn btn-link float-left">Volver</a>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <button type="submit" class="btn btn-primary float-right">Guardar</button>
+                                    </div>
+
+                                </div>
                             </form>
                         </div>
                     </div>

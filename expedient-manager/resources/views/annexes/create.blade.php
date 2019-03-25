@@ -69,10 +69,18 @@
 
                                     </div>
                                 </div>
-
                                 <br>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <a href="{{ URL::previous() }}" role="button"
+                                           class="btn btn-link float-left">Volver</a>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <button type="submit" class="btn btn-primary float-right">Guardar</button>
+                                    </div>
 
-                                <button type="submit" class="btn btn-primary float-right">Guardar</button>
+                                </div>
                             </form>
                         </div>
                     </div>

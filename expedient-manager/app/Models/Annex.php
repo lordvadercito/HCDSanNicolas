@@ -12,4 +12,9 @@ class Annex extends Model
     protected $dates = ['deleted_at'];
 
     protected $fillable = ['nroAnnex', 'title', 'type', 'content'];
+
+    public function expedients()
+    {
+        return $this->belongsToMany(Expedient::class);
+    }
 }
