@@ -29,10 +29,15 @@
                                    style="width: 50%;">{{$annex->type}}</p>
                             </div>
                             <div class="row">
-                                <p class="col-xs-5 float-left space-50 text-right font-weight-bold" style="width: 50%;">
+                                <p class="col-xs-12 space-50 text-center font-weight-bold"
+                                   style="width: 90%;margin: 0 5%;">
                                     Contenido: &nbsp;</p>
-                                <p class="col-xs-5 float-right space-50 text-left"
-                                   style="width: 50%;">{{$annex->content}}</p>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <p class="col-xs-12 space-50 text-justify"
+                                   style="width: 90%;margin: 0 5%;">
+                                    {{$annex->content}}</p>
                             </div>
                             <br>
                             <hr>

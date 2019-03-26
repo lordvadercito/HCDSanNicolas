@@ -70,9 +70,6 @@
                                     <a class="dropdown-item" href="{{ route('movements.index') }}">
                                         {{ __('Movimientos de expedientes') }}
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('movements.create') }}">
-                                        {{ __('Nuevo movimiento') }}
-                                    </a>
                                 </div>
                             </li>
 

@@ -62,9 +62,11 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="creation_date" class="col-md-4 col-form-label text-md-right">Creación</label>
+                                    <label for="creation_date"
+                                           class="col-md-4 col-form-label text-md-right">Creación</label>
                                     <div class="col-md-6">
-                                        <input type="date" name="creation_date" value="{{ old('creation_date', $expedient->creation_date) }}"
+                                        <input type="date" name="creation_date"
+                                               value="{{ old('creation_date', $expedient->creation_date) }}"
                                                class="form-control {{ $errors->has('creation_date') ? ' is-invalid' : '' }}"
                                                required>
                                         <span role="alert" class="invalid-feedback">
@@ -163,10 +165,6 @@
                                     </div>
                                 </div>
                                 <br>
-                                {{--<a href="javascript:window.open('anexar','{{$expedient}}','toolbar=no');void 0" role="button" class="btn btn-link">Agregar anexo</a>--}}
-                                {{--<button type="submit" class="btn btn-primary float-right">Actualizar</button>--}}
-
-
                                 <hr>
                                 <div class="row">
                                     <div class="col-sm-8">
@@ -174,14 +172,12 @@
                                            class="btn btn-link float-left">Volver</a>
                                     </div>
                                     <div class="col-sm-4">
-                                        <a href="javascript:window.open('anexar','{{$expedient}}','toolbar=no');void 0" role="button" class="btn btn-success">Agregar anexo</a>
+                                        <a href="javascript:window.open('anexar','{{$expedient}}','toolbar=no');void 0"
+                                           role="button" class="btn btn-success">Agregar anexo</a>
                                         <button type="submit" class="btn btn-primary float-right">Actualizar</button>
                                     </div>
 
                                 </div>
-
-
-
                             </form>
                         </div>
                     </div>

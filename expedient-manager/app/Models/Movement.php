@@ -11,7 +11,7 @@ class Movement extends Model
     //
     protected $dates = ['deleted_at'];
 
-    protected $fillable = ['expedient_id', 'origin', 'destination', 'movementType', 'origin_user', 'created_at'];
+    protected $fillable = ['expedient_id', 'origin', 'origin_detail', 'destination', 'destination_detail', 'movementType', 'origin_user', 'created_at'];
 
     public function expedients()
     {
@@ -22,5 +22,15 @@ class Movement extends Model
     public function users()
     {
         return $this->belongsTo(User::class, 'origin_user');
+    }
+
+    public function scopeExpedientId($query, $expedientId)
+    {
+        /**
+         * Este metodo realiza la busqueda por numero de expediente
+         */
+        if (trim($expedientId) != "") {
+            $query->where('expedient_id', $expedientId);
+        }
     }
 }

@@ -87,11 +87,14 @@
                             <br>
                             <hr>
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-8">
                                     <a href="{{route("expedients.index")}}" role="button"
                                        class="btn btn-link float-left">Volver</a>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
+                                    <a role="button" class="btn btn-success"
+                                       href="{{ action('MovementController@create', ['id' => $expedient->id, 'expedientNro' => $expedient->expedientNro ]) }}">Mover expediente
+                                    </a>
                                     <a role="button" class="btn btn-primary float-right"
                                        href="{{ action('ExpedientController@edit', ['id' => $expedient->id]) }}">Editar
                                     </a>

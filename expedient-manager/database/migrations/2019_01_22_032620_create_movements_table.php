@@ -18,7 +18,9 @@ class CreateMovementsTable extends Migration
             $table->integer('expedient_id')->unsigned();
             $table->foreign('expedient_id')->references('id')->on('expedients');
             $table->string('origin');
+            $table->string('origin_detail');
             $table->string('destination');
+            $table->string('destination_detail');
             $table->string('movementType');
             $table->integer('origin_user')->unsigned();
             $table->foreign('origin_user')->references('id')->on('users');
