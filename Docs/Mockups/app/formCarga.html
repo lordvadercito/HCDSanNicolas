@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Formulario de Carga</title>
+	<link rel="stylesheet" href="formCarga.css">
+</head>
+<body>
+	<div class="card">
+		<div class="bg-form-carga">
+				<div class="img-carga">
+				<img src="./app/folder.png" alt="">
+				<h4>Carga de Expedientes</h4>
+			</div>
+		</div>
+		<div class="container">
+			<form class="form-carga-exp" action="">
+					<div class="tipo-proyect">
+						<label class="lbl-tipo-proyect" for="">Tipo de Proyecto</label><br>
+						<input type="text">
+					</div>
+					<div class="exp">
+						<label class="lbl-exp" for="">N° de Expedientes</label><br>
+						<input type="text">
+					</div>
+					<div class="asunto">
+						<label class="lbl-asunto" for="">Asunto</label><br>
+						<input type="text">
+					</div>
+					<div class="caratula">
+						<label class="lbl-caratula" for="">Carátula </label><br>
+						<textarea name="textarea" rows="10" cols="50"></textarea>
+					</div>
+					<div class="archivado">
+						<label class="lbl-archivado" for="">Archivado</label><br>
+						<input type="text">
+					</div>
+					<div class="estado">
+						<label class="lbl-estado" for="">Estado </label><br>
+						<div class="caja">
+							<select name="estado" id="estado">
+								<option value="0"></option>
+								<option value="1">Enviado</option>
+								<option value="2">Pendiente</option>
+								<option value="3">Sin tratamiento</option>
+							</select>
+						</div>
+						
+					</div>
+					<div class="tratamiento">
+						<label class="lbl-tratamiento" for="">Registro tratamiento</label><br>
+						<input type="text">
+					</div>	
+					<div class="entrada">
+						<label class="lbl-entrada" for="">Registro entrada</label><br>
+						<input type="text">
+					</div>
+				<button class="btn-anexart">ANEXAR</button>
+		</form>
+	</div>
+</div>
+</body>
+</html>

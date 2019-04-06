@@ -1,0 +1,130 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: 'Open Sans', sans-serif;
+	background-color: #f2f2f2;
+}
+.card {
+   	width: 500px;
+  	height: 600px;
+  	background-color: #fff;
+  	border-radius: 5px;
+  	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  	transition: 0.3s;
+  	margin: 0 auto;
+  	
+}
+.card:hover {
+  	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.container {
+	width: 100%;
+  	padding: 2px 16px;
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+}
+.bg-form-carga{
+	height: 60px;
+	background-image: url("./app/headexp.png");
+	background-position: center;
+	background-size: 100% 60px;
+	background-repeat: no-repeat;
+	display: flex;
+}
+.img-carga img{
+	width: 35px;
+	height: 35px;
+}
+.img-carga h4{
+	color: #f2f2f2;
+	margin-left: 15px;
+}
+.img-carga{
+	display: flex;
+	align-items: center;
+	margin-left: 30px;	
+}
+.form-carga-exp{
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-top: 15px;
+}
+.form-carga-exp input{
+	border: 1px solid #C1A831;
+	width: 170px;
+	padding: 1px;
+}
+.form-carga-exp select{
+	border: 1px solid #C1A831;
+	width: 200px;
+	padding: 2px;
+	-moz-appearance: none;
+ 	-webkit-appearance: none;
+ 	appearance: none;
+
+}
+.form-carga-exp select:focus{
+ outline: none;
+}
+.form-carga-exp textarea{
+	border: 1px solid #C1A831;
+}
+.tipo-proyect{
+	float: right;
+}
+.archivado{
+	float: right;
+	margin-top: 15px;
+}
+.tratamiento{
+	float: right;
+	margin-top: 15px;
+}
+.entrada{
+	margin-top: 15px;
+	margin-right: 5px;
+}
+.asunto{
+	margin-top: 15px;
+}
+.caratula{
+	margin-top: 15px;
+}
+.caratula textarea{
+	margin-top: 5px;
+}
+.estado{
+	margin-top: 15px;
+}
+.btn-anexart{
+	margin-top: 30px;
+	padding: 3px;
+	width: 90px;
+	border: 1px solid #C1A831;
+	color: #C1A831;
+	background-color: #fff;
+	cursor: pointer;
+}
+.caja {       
+     height:30px;
+     width: 175px;
+     overflow: hidden;
+     position:relative;
+  }
+  .caja::after{
+     content:"\025be";
+     display:table-cell;
+     text-align:center;
+     margin-top: 1.5px;
+     border: 1.5px solid #C1A831;
+     width:20px;
+     height:18.7px;
+     background-color:#C1A831;
+     position:absolute;
+     top:0;
+     right:0px;
+     pointer-events: none;
+  }

@@ -1,9 +1,23 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+
 // Variables
 @import 'variables';
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+//@font-face {
+//  font-family: 'Open Sans Bold';
+//  src: url("/fonts/OpenSans-Bold.ttf");
+//  font-weight: bold;
+//}
+//
+//@font-face {
+//  font-family: 'Open Sans Regular';
+//  src: url("../fonts/OpenSans-Regular.ttf");
+//}
+
 
 .navbar-laravel {
   background-color: #fff;
@@ -20,4 +34,17 @@
 
 .space-50 {
   width: 50% !important;
+}
+
+.navbar-laravel {
+  //background-image: url("../img/headexp.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.card-header {
+  //background-image: url("../img/headexp.png");
+  background-position: center;
+  background-size: cover;
+  font-family: 'Open Sans Bold', sans-serif;
 }
