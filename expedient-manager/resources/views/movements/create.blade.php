@@ -72,7 +72,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="subject" class="col-md-4 col-form-label text-md-right">Usuario de
+                                    <label for="origin_user" class="col-md-4 col-form-label text-md-right">Usuario de
                                         origen</label>
                                     <div class="col-md-6">
                                         <input type="hidden" name="origin_user" value={{ auth()->user()->id }}>

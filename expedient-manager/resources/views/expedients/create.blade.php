@@ -204,6 +204,15 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <input type="hidden" name="user_id" value={{ auth()->user()->id }}>
+                                    <span role="alert" class="invalid-feedback">
+                                            @if ($errors->has('user_id'))
+                                            <strong>{{ $errors->first('user_id') }}</strong>
+                                        @endif
+                                        </span>
+
+                                </div>
                                 <br>
                                 <hr>
                                 <div class="row">

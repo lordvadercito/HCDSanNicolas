@@ -42,7 +42,7 @@
                                     <p class="float-left space-50 text-right font-weight-bold" style="width: 50%;">
                                         Tema secundario: &nbsp;</p>
                                     <p class="float-right space-50 text-left"
-                                       style="width: 50%;">{{$expedient->secondary_subjet}}</p>
+                                       style="width: 50%;">{{$expedient->secondary_subject}}</p>
                                 </div>
                                 <div class="col-sm-4">
                                     <p class="float-left space-50 text-right font-weight-bold" style="width: 50%;">
@@ -88,14 +88,21 @@
                             </div>
                             <br>
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <p class="float-left space-50 text-right font-weight-bold" style="width: 50%;">
                                         Origen: &nbsp;</p>
                                     <p class="float-right space-50 text-left"
                                        style="width: 50%;">{{$expedient->origin}}</p>
                                 </div>
 
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
+                                    <p class="float-left space-50 text-right font-weight-bold" style="width: 50%;">
+                                        Creado por: &nbsp;</p>
+                                    <p class="float-right space-50 text-left"
+                                       style="width: 50%;">{{$expedient->users->name}}</p>
+                                </div>
+
+                                <div class="col-sm-4">
                                     <p class="float-left space-50 text-right font-weight-bold" style="width: 50%;">
                                         Ubicación actual: &nbsp;</p>
                                     <!--TODO: Definir e implementar método para mostrar ubicación actual-->

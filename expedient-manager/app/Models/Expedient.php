@@ -11,7 +11,7 @@ class Expedient extends Model
     //
     protected $dates = ['deleted_at'];
 
-    protected $fillable = ['id', 'expedientNro', 'expedientDENro', 'projectType', 'subject', 'secondary_subject', 'cover', 'origin', 'state', 'archived', 'incomeRecord', 'treatmentRecord', 'creted_at', 'creation_date'];
+    protected $fillable = ['id', 'expedientNro', 'expedientDENro', 'projectType', 'subject', 'secondary_subject', 'cover', 'origin', 'state', 'archived', 'incomeRecord', 'treatmentRecord', 'user_id', 'creted_at', 'creation_date'];
 
     public function annexes()
     {
@@ -21,6 +21,11 @@ class Expedient extends Model
     public function movements()
     {
         return $this->hasOne(Movement::class, 'expedient_id', 'id');
+    }
+
+    public function users()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function scopeExpedientNro($query, $expedientNro)

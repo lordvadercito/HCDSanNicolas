@@ -17,7 +17,7 @@ class CreateExpedientsTable extends Migration
             $table->increments('id');
             $table->integer('expedientNro');
             $table->unique('expedientNro');
-            $table->string('expedientDENro');
+            $table->string('expedientDENro')->nullable();
             $table->string('projectType');
             $table->string('subject');
             $table->string('secondary_subject');
@@ -28,6 +28,8 @@ class CreateExpedientsTable extends Migration
             $table->string('incomeRecord');
             $table->string('treatmentRecord');
             $table->date('creation_date');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
             $table->softDeletes();
         });
