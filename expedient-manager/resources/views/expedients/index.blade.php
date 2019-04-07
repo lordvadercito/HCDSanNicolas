@@ -38,7 +38,7 @@
                                 <tbody>
                                 @foreach($expedients as $expedient)
                                     <tr>
-                                        <td>{{$expedient->expedientNro}}</td>
+                                        <td>{{$expedient->expedientNro}} / {{substr($expedient->creation_date, 0, 4)}}</td>
                                         <td>{{$expedient->projectType}}</td>
                                         <td>{{$expedient->subject}}</td>
                                         <td>{{$expedient->state}}</td>

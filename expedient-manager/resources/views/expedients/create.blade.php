@@ -12,149 +12,196 @@
                         <div class="card-body">
                             <form method="POST" action="{{ url('expedientes/creado') }}">
                                 @csrf
-                                <div class="form-group row">
-                                    <label for="expedientNro" class="col-md-4 col-form-label text-md-right">Nro.
-                                        Expediente</label>
-                                    <div class="col-md-6">
-                                        <input type="number" name="expedientNro" value="{{old('expedientNro')}}"
-                                               class="form-control {{ $errors->has('expedientNro') ? ' is-invalid' : '' }}"
-                                               required autofocus>
-                                        <span role="alert" class="invalid-feedback">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="expedientNro" class="text-md-right">Nro.
+                                                Expediente</label>
+
+                                            <input type="number" name="expedientNro" value="{{old('expedientNro')}}"
+                                                   class="form-control {{ $errors->has('expedientNro') ? ' is-invalid' : '' }}"
+                                                   required autofocus placeholder="000000">
+                                            <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('expedientNro'))
-                                                <strong>{{ $errors->first('expedientNro') }}</strong>
-                                            @endif
-                                        </span>
+                                                    <strong>{{ $errors->first('expedientNro') }}</strong>
+                                                @endif
+                                            </span>
 
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="expedientDENro" class="text-md-right">Nro.
+                                                Expediente D.E.</label>
+                                            <input type="text" name="expedientDENro"
+                                                   value="{{old('expedientDENro')}}"
+                                                   class="form-control {{ $errors->has('expedientDENro') ? ' is-invalid' : '' }}"
+                                                   required autofocus placeholder="000000/2000">
+                                            <span role="alert" class="invalid-feedback">
+                                            @if ($errors->has('expedientDENro'))
+                                                    <strong>{{ $errors->first('expedientDENro') }}</strong>
+                                                @endif
+                                            </span>
+
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label for="projectType" class="col-md-4 col-form-label text-md-right">Tipo de
-                                        proyecto</label>
-                                    <div class="col-md-6">
-                                        <input type="text" name="projectType" value="{{ old('projectType') }}"
-                                               class="form-control {{ $errors->has('projectType') ? ' is-invalid' : '' }}"
-                                               required>
-                                        <span role="alert" class="invalid-feedback">
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="projectType" class="text-md-right">Tipo de
+                                                proyecto</label>
+                                            <input type="text" name="projectType" value="{{ old('projectType') }}"
+                                                   class="form-control {{ $errors->has('projectType') ? ' is-invalid' : '' }}"
+                                                   required>
+                                            <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('projectType'))
-                                                <strong>{{ $errors->first('projectType') }}</strong>
-                                            @endif
-                                        </span>
-
+                                                    <strong>{{ $errors->first('projectType') }}</strong>
+                                                @endif
+                                            </span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="subject" class="col-md-4 col-form-label text-md-right">Asunto</label>
-                                    <div class="col-md-6">
-                                        <input type="text" name="subject" value="{{ old('subject') }}"
-                                               class="form-control {{ $errors->has('subject') ? ' is-invalid' : '' }}"
-                                               required>
-                                        <span role="alert" class="invalid-feedback">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="subject" class="text-md-right">Tema</label>
+                                            <input type="text" name="subject" value="{{ old('subject') }}"
+                                                   class="form-control {{ $errors->has('subject') ? ' is-invalid' : '' }}"
+                                                   required>
+                                            <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('subject'))
-                                                <strong>{{ $errors->first('subject') }}</strong>
-                                            @endif
-                                        </span>
-
+                                                    <strong>{{ $errors->first('subject') }}</strong>
+                                                @endif
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="secondary_subject" class="text-md-right">Tema secundario</label>
+                                            <input type="text" name="secondary_subject"
+                                                   value="{{ old('secondary_subject') }}"
+                                                   class="form-control {{ $errors->has('secondary_subject') ? ' is-invalid' : '' }}"
+                                                   required>
+                                            <span role="alert" class="invalid-feedback">
+                                            @if ($errors->has('secondary_subject'))
+                                                    <strong>{{ $errors->first('secondary_subject') }}</strong>
+                                                @endif
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="form-group row">
-                                    <label for="creation_date"
-                                           class="col-md-4 col-form-label text-md-right">Creación</label>
-                                    <div class="col-md-6">
-                                        <input type="date" name="creation_date" value="{{ old('creation_date') }}"
-                                               class="form-control {{ $errors->has('creation_date') ? ' is-invalid' : '' }}"
-                                               required>
-                                        <span role="alert" class="invalid-feedback">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="creation_date"
+                                                   class="text-md-right">Fecha de ingreso</label>
+                                            <input type="date" name="creation_date"
+                                                   value="{{ \Carbon\Carbon::now()->toDateString() }}"
+                                                   class="form-control {{ $errors->has('creation_date') ? ' is-invalid' : '' }}"
+                                                   required>
+                                            <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('creation_date'))
-                                                <strong>{{ $errors->first('creation_date') }}</strong>
-                                            @endif
+                                                    <strong>{{ $errors->first('creation_date') }}</strong>
+                                                @endif
                                         </span>
-
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="cover" class="col-md-4 col-form-label text-md-right">Carátula</label>
-                                    <div class="col-md-6">
-                                        <textarea rows="6" name="cover" id="cover"
-                                                  class="form-control {{ $errors->has('cover') ? ' is-invalid' : '' }}"
-                                                  style="resize: none;">{{ old('cover') }}</textarea>
-                                        <span role="alert" class="invalid-feedback">
-                                            @if ($errors->has('cover'))
-                                                <strong>{{ $errors->first('cover') }}</strong>
-                                            @endif
-                                        </span>
-
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="state" class="col-md-4 col-form-label text-md-right">Estado</label>
-                                    <div class="col-md-6">
-                                        <select name="state" id="state"
-                                                class="form-control {{ $errors->has('state') ? ' is-invalid' : '' }}"
-                                                required>
-                                            @foreach(\App\Models\State::$states as $state)
-                                                <option value="{{$state}}">{{$state}}</option>
-                                            @endforeach
-                                        </select>
-                                        <span role="alert" class="invalid-feedback">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="state" class="text-md-right">Estado</label>
+                                            <select name="state" id="state"
+                                                    class="form-control {{ $errors->has('state') ? ' is-invalid' : '' }}"
+                                                    required>
+                                                @foreach(\App\Models\State::$states as $state)
+                                                    <option value="{{$state}}">{{$state}}</option>
+                                                @endforeach
+                                            </select>
+                                            <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('state'))
-                                                <strong>{{ $errors->first('state') }}</strong>
-                                            @endif
-                                        </span>
-
+                                                    <strong>{{ $errors->first('state') }}</strong>
+                                                @endif
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="origin" class="text-md-right">Origen</label>
+                                            <select name="origin" id="origin"
+                                                    class="form-control {{ $errors->has('origin') ? ' is-invalid' : '' }}"
+                                                    required>
+                                                @foreach(\App\Models\Origin::$origins as $origin)
+                                                    <option value="{{$origin}}">{{$origin}}</option>
+                                                @endforeach
+                                            </select>
+                                            <span role="alert" class="invalid-feedback">
+                                            @if ($errors->has('origin'))
+                                                    <strong>{{ $errors->first('origin') }}</strong>
+                                                @endif
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="form-group row">
-                                    <label for="archived"
-                                           class="col-md-4 col-form-label text-md-right">Archivado</label>
-                                    <div class="col-md-6">
-                                        <select name="archived" id="archived"
-                                                class="form-control {{ $errors->has('archived') ? ' is-invalid' : '' }}"
-                                                required>
-                                            <option value=0>No</option>
-                                            <option value=1>Si</option>
-                                        </select>
-                                        <span role="alert" class="invalid-feedback">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="archived"
+                                                   class="text-md-right">Archivado</label>
+                                            <select name="archived" id="archived"
+                                                    class="form-control {{ $errors->has('archived') ? ' is-invalid' : '' }}"
+                                                    required>
+                                                <option value=0>No</option>
+                                                <option value=1>Si</option>
+                                            </select>
+                                            <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('archived'))
-                                                <strong>{{ $errors->first('archived') }}</strong>
-                                            @endif
-                                        </span>
-
+                                                    <strong>{{ $errors->first('archived') }}</strong>
+                                                @endif
+                                            </span>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="incomeRecord" class="col-md-4 col-form-label text-md-right">Registro de
-                                        entrada</label>
-                                    <div class="col-md-6">
-                                        <input type="text" name="incomeRecord"
-                                               class="form-control {{ $errors->has('incomeRecord') ? ' is-invalid' : '' }}"
-                                               value="{{ old('incomeRecord') }}">
-                                        <span role="alert" class="invalid-feedback">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="incomeRecord" class="text-md-right">Registro de
+                                                entrada</label>
+                                            <input type="text" name="incomeRecord"
+                                                   class="form-control {{ $errors->has('incomeRecord') ? ' is-invalid' : '' }}"
+                                                   value="{{ old('incomeRecord') }}">
+                                            <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('incomeRecord'))
-                                                <strong>{{ $errors->first('incomeRecord') }}</strong>
-                                            @endif
-                                        </span>
-
+                                                    <strong>{{ $errors->first('incomeRecord') }}</strong>
+                                                @endif
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="treatmentRecord" class="text-md-right">Registro
+                                                de tratamiento</label>
+                                            <input type="text" name="treatmentRecord"
+                                                   class="form-control {{ $errors->has('treatmentRecord') ? ' is-invalid' : '' }}"
+                                                   value="{{ old('treatmentRecord') }}">
+                                            <span role="alert" class="invalid-feedback">
+                                            @if ($errors->has('treatmentRecord'))
+                                                    <strong>{{ $errors->first('treatmentRecord') }}</strong>
+                                                @endif
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="form-group row">
-                                    <label for="treatmentRecord" class="col-md-4 col-form-label text-md-right">Registro
-                                        de tratamiento</label>
-                                    <div class="col-md-6">
-                                        <input type="text" name="treatmentRecord"
-                                               class="form-control {{ $errors->has('treatmentRecord') ? ' is-invalid' : '' }}"
-                                               value="{{ old('treatmentRecord') }}">
-                                        <span role="alert" class="invalid-feedback">
-                                            @if ($errors->has('treatmentRecord'))
-                                                <strong>{{ $errors->first('treatmentRecord') }}</strong>
-                                            @endif
-                                        </span>
-
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="cover" class="text-md-right">Carátula</label>
+                                            <textarea rows="6" name="cover" id="cover"
+                                                      class="form-control {{ $errors->has('cover') ? ' is-invalid' : '' }}"
+                                                      style="resize: none;">{{ old('cover') }}</textarea>
+                                            <span role="alert" class="invalid-feedback">
+                                            @if ($errors->has('cover'))
+                                                    <strong>{{ $errors->first('cover') }}</strong>
+                                                @endif
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                                 <br>

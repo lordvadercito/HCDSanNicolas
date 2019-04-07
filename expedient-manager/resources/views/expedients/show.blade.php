@@ -11,13 +11,20 @@
                         <div class="card-header">Detalles de expediente</div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <p class="float-left space-50 text-right font-weight-bold" style="width: 50%;">
                                         Nro.Expediente: &nbsp;</p>
                                     <p class="float-right space-50 text-left"
-                                       style="width: 50%;">{{$expedient->expedientNro}}</p>
+                                       style="width: 50%;">{{$expedient->expedientNro}}
+                                        / {{substr($expedient->creation_date, 0, 4)}}</p>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
+                                    <p class="float-left space-50 text-right font-weight-bold" style="width: 50%;">
+                                        Nro.Expediente D.E.:&nbsp;</p>
+                                    <p class="float-right space-50 text-left"
+                                       style="width: 50%;">{{$expedient->expedientDENro}}</p>
+                                </div>
+                                <div class="col-sm-4">
                                     <p class="float-left space-50 text-right font-weight-bold" style="width: 50%;">
                                         Tipo de proyecto: &nbsp;</p>
                                     <p class="float-right space-50 text-left"
@@ -25,13 +32,19 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <p class="float-left space-50 text-right font-weight-bold" style="width: 50%;">
-                                        Asunto: &nbsp;</p>
+                                        Tema: &nbsp;</p>
                                     <p class="float-right space-50 text-left"
                                        style="width: 50%;">{{$expedient->subject}}</p>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
+                                    <p class="float-left space-50 text-right font-weight-bold" style="width: 50%;">
+                                        Tema secundario: &nbsp;</p>
+                                    <p class="float-right space-50 text-left"
+                                       style="width: 50%;">{{$expedient->secondary_subjet}}</p>
+                                </div>
+                                <div class="col-sm-4">
                                     <p class="float-left space-50 text-right font-weight-bold" style="width: 50%;">
                                         Estado: &nbsp;</p>
                                     <p class="float-right space-50 text-left"
@@ -75,12 +88,29 @@
                             </div>
                             <br>
                             <div class="row">
+                                <div class="col-sm-6">
+                                    <p class="float-left space-50 text-right font-weight-bold" style="width: 50%;">
+                                        Origen: &nbsp;</p>
+                                    <p class="float-right space-50 text-left"
+                                       style="width: 50%;">{{$expedient->origin}}</p>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <p class="float-left space-50 text-right font-weight-bold" style="width: 50%;">
+                                        Ubicación actual: &nbsp;</p>
+                                    <!--TODO: Definir e implementar método para mostrar ubicación actual-->
+                                    <p class="float-right space-50 text-left"
+                                       style="width: 50%;">A definir</p>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <p class="col-sm-12 text-center font-weight-bold">
                                     Anexos vinculados: &nbsp;</p>
                             </div>
                             <div class="list-group" style="width: 90%;margin: 0 5%">
                                 @foreach($expedient->annexes as $annexes)
-                                    <a href="{{ action('AnnexController@show', ['id' => $annexes->id]) }}" class="list-group-item list-group-item-action text-center">{{$annexes->nroAnnex . " - " . $annexes->title ." - ". $annexes->type}}</a>
+                                    <a href="{{ action('AnnexController@show', ['id' => $annexes->id]) }}"
+                                       class="list-group-item list-group-item-action text-center">{{$annexes->nroAnnex . " - " . $annexes->title ." - ". $annexes->type}}</a>
                                 @endforeach
                             </div>
 
@@ -93,7 +123,8 @@
                                 </div>
                                 <div class="col-sm-4">
                                     <a role="button" class="btn btn-success"
-                                       href="{{ action('MovementController@create', ['id' => $expedient->id, 'expedientNro' => $expedient->expedientNro ]) }}">Mover expediente
+                                       href="{{ action('MovementController@create', ['id' => $expedient->id, 'expedientNro' => $expedient->expedientNro ]) }}">Mover
+                                        expediente
                                     </a>
                                     <a role="button" class="btn btn-primary float-right"
                                        href="{{ action('ExpedientController@edit', ['id' => $expedient->id]) }}">Editar

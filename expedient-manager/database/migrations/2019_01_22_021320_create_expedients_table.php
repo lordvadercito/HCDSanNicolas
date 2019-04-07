@@ -17,9 +17,12 @@ class CreateExpedientsTable extends Migration
             $table->increments('id');
             $table->integer('expedientNro');
             $table->unique('expedientNro');
+            $table->string('expedientDENro');
             $table->string('projectType');
             $table->string('subject');
+            $table->string('secondary_subject');
             $table->text('cover');
+            $table->string('origin');
             $table->string('state');
             $table->boolean('archived');
             $table->string('incomeRecord');

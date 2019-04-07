@@ -11,7 +11,7 @@ class Expedient extends Model
     //
     protected $dates = ['deleted_at'];
 
-    protected $fillable = ['id', 'expedientNro', 'projectType', 'subject', 'cover', 'state', 'archived', 'incomeRecord', 'treatmentRecord', 'creted_at', 'creation_date'];
+    protected $fillable = ['id', 'expedientNro', 'expedientDENro', 'projectType', 'subject', 'secondary_subject', 'cover', 'origin', 'state', 'archived', 'incomeRecord', 'treatmentRecord', 'creted_at', 'creation_date'];
 
     public function annexes()
     {
