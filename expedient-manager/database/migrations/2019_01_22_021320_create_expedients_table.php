@@ -20,7 +20,7 @@ class CreateExpedientsTable extends Migration
             $table->string('expedientDENro')->nullable();
             $table->string('projectType');
             $table->string('subject');
-            $table->string('secondary_subject');
+            $table->string('secondary_subject')->nullable();
             $table->text('cover');
             $table->string('origin');
             $table->string('state');

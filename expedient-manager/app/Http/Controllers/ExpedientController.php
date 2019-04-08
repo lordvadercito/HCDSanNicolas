@@ -40,14 +40,16 @@ class ExpedientController extends Controller
     {
         /**
          *Validacion de datos obtenidos desde el formulario de creacion de expedientes
+         * El campo Estado (state) guarda por defecto el valor "Pendiente". Las validaciones
+         * no fueron removidas a fin de evitar manipulaciones maliciosas desde el Front-end
          * @return boolean
          **/
         $data = request()->validate([
             'expedientNro' => ['required', 'numeric', 'unique:expedients,expedientNro'],
-            'expedientDENro' => 'string',
+            'expedientDENro' => ['nullable', 'string'],
             'projectType' => 'required',
             'subject' => 'required',
-            'secondary_subject' => 'string',
+            'secondary_subject' => ['nullable', 'string'],
             'cover' => 'required',
             'origin' => 'required',
             'state' => 'required',
@@ -84,7 +86,7 @@ class ExpedientController extends Controller
                 'secondary_subject' => $data['secondary_subject'],
                 'cover' => $data['cover'],
                 'origin' => $data['origin'],
-                'state' => $data['state'],
+                'state' => 'Pendiente',//$data['state'] A pedido del cliente, este valor se hardcodea en "Pendiente"
                 'archived' => $data['archived'],
                 'incomeRecord' => $data['incomeRecord'],
                 'treatmentRecord' => $data['treatmentRecord'],
@@ -108,10 +110,10 @@ class ExpedientController extends Controller
     {
         $data = request()->validate([
             'expedientNro' => ['required', 'numeric'],
-            'expedientDENro' => 'string',
+            'expedientDENro' => ['nullable', 'string'],
             'projectType' => 'required',
             'subject' => 'required',
-            'secondary_subject' => 'string',
+            'secondary_subject' => ['nullable', 'string'],
             'cover' => 'required',
             'origin' => 'required',
             'state' => 'required',

@@ -10,7 +10,7 @@
                     <div class="card">
                         <div class="card-header">Editar expediente</div>
                         <div class="card-body">
-                            <form method="POST" action="{{ url("expedientes/{$expedient->id}") }}">
+                            <form method="POST" action="{{ url("/expedientes/{$expedient->id}") }}">
                                 @method('PUT')
                                 @csrf
                                 <div class="form-row">
@@ -39,7 +39,7 @@
                                             <input type="text" name="expedientDENro"
                                                    value="{{old('expedientDENro', $expedient->expedientDENro)}}"
                                                    class="form-control {{ $errors->has('expedientDENro') ? ' is-invalid' : '' }}"
-                                                   required autofocus placeholder="000000/2000">
+                                                   autofocus placeholder="000000/2000">
                                             <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('expedientDENro'))
                                                     <strong>{{ $errors->first('expedientDENro') }}</strong>
@@ -84,8 +84,7 @@
                                             <label for="secondary_subject" class="text-md-right">Tema secundario</label>
                                             <input type="text" name="secondary_subject"
                                                    value="{{ old('secondary_subject', $expedient->secondary_subject) }}"
-                                                   class="form-control {{ $errors->has('secondary_subject') ? ' is-invalid' : '' }}"
-                                                   required>
+                                                   class="form-control {{ $errors->has('secondary_subject') ? ' is-invalid' : '' }}">
                                             <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('secondary_subject'))
                                                     <strong>{{ $errors->first('secondary_subject') }}</strong>
@@ -167,10 +166,10 @@
                                                 @endif
                                             </select>
                                             <span role="alert" class="invalid-feedback">
-                                                                            @if ($errors->has('archived'))
+                                                @if ($errors->has('archived'))
                                                     <strong>{{ $errors->first('archived') }}</strong>
                                                 @endif
-                                                                            </span>
+                                            </span>
                                         </div>
                                     </div>
                                     <div class="col">
@@ -210,12 +209,20 @@
                                                       class="form-control {{ $errors->has('cover') ? ' is-invalid' : '' }}"
                                                       style="resize: none;">{{ old('cover', $expedient->cover) }}</textarea>
                                             <span role="alert" class="invalid-feedback">
-                                                                            @if ($errors->has('cover'))
+                                                @if ($errors->has('cover'))
                                                     <strong>{{ $errors->first('cover') }}</strong>
                                                 @endif
-                                                                            </span>
+                                            </span>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="hidden" name="user_id" value={{ $expedient->user_id }}>
+                                    <span role="alert" class="invalid-feedback">
+                                            @if ($errors->has('user_id'))
+                                            <strong>{{ $errors->first('user_id') }}</strong>
+                                        @endif
+                                        </span>
                                 </div>
                                 <br>
                                 <hr>
@@ -229,8 +236,7 @@
                                            role="button" class="btn btn-success">Agregar anexo</a>
                                         <button type="submit" class="btn btn-primary float-right">Actualizar</button>
                                     </div>
-
-                                {{--                                </div>--}}
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -239,4 +245,3 @@
         </div>
     </main>
 @endsection
-{{--TODO:Repara estoooooooooooooo--}}

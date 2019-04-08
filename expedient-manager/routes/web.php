@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 Auth::routes();
 
-//Expedints routes
+//Expedients routes
 
 Route::get('/expedientes/nuevo', 'ExpedientController@create')->name('expedients.create');
 

@@ -1,0 +1,31 @@
+TODO LIST:
+
+Expedientes:
+ 1.- Permitir agregar anexos desde la vista de creación de expedientes
+ 2.- La ventana de anexos debe incluir otros expedientes ya cargados
+ 3.- En la vista de creación, permitir agregar la comisión a la que se destina el expediente
+
+Movimientos:
+ 1.- Al crear un expediente, por defecto debe aparecer en esta tabla con el destino por defecto: Secretaría
+ 2.- Agregar el titulo "Pases" ya que es la nomenclatura del usuario
+ 3.- Mostrar ubicación actual
+ 4.- Poder indicar si el expediente está en tabla
+ 5.- Agregar Nro. foja
+
+Anexos:
+ 1.- En la vista de creación, agregar un <select> para elegir entre "Nota" o "Informe"
+ 2.- Debe contener el campo "Solicitado en el expediente: " Donde constará el expediente en el que fue anexado
+ 3.- Agregar un <select> para indicar si es de Entrada o de Salida
+
+Actas:
+ 1.- Crear tabla de Actas
+ 2.- El numero de acta debe ser un entero autoincremental
+ 3.- Elegir los concejales presentes
+ 4.- <select> con el tipo de sesión (Ordinaria, Extraordinaria, etc.)
+ 5.- Agregar fecha de la sesión
+ 6.- Hora de inicio en fin son campos que se escriben a mano
+ 7.- Contador de concejales ausentes, presentes y total de concejales
+ 8.- Expedientes ingresados fuera del orden del día
+ 9.- Expedientes ingresados
+ 
+  

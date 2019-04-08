@@ -37,7 +37,7 @@
                                             <input type="text" name="expedientDENro"
                                                    value="{{old('expedientDENro')}}"
                                                    class="form-control {{ $errors->has('expedientDENro') ? ' is-invalid' : '' }}"
-                                                   required autofocus placeholder="000000/2000">
+                                                   autofocus placeholder="000000/2000">
                                             <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('expedientDENro'))
                                                     <strong>{{ $errors->first('expedientDENro') }}</strong>
@@ -81,8 +81,7 @@
                                             <label for="secondary_subject" class="text-md-right">Tema secundario</label>
                                             <input type="text" name="secondary_subject"
                                                    value="{{ old('secondary_subject') }}"
-                                                   class="form-control {{ $errors->has('secondary_subject') ? ' is-invalid' : '' }}"
-                                                   required>
+                                                   class="form-control {{ $errors->has('secondary_subject') ? ' is-invalid' : '' }}">
                                             <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('secondary_subject'))
                                                     <strong>{{ $errors->first('secondary_subject') }}</strong>
@@ -110,13 +109,9 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="state" class="text-md-right">Estado</label>
-                                            <select name="state" id="state"
-                                                    class="form-control {{ $errors->has('state') ? ' is-invalid' : '' }}"
-                                                    required>
-                                                @foreach(\App\Models\State::$states as $state)
-                                                    <option value="{{$state}}">{{$state}}</option>
-                                                @endforeach
-                                            </select>
+                                            <input type="text" name="state" value="Pendiente"
+                                                   class="form-control {{ $errors->has('state') ? ' is-invalid' : '' }} disabled"
+                                                   required readonly>
                                             <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('state'))
                                                     <strong>{{ $errors->first('state') }}</strong>
@@ -211,7 +206,6 @@
                                             <strong>{{ $errors->first('user_id') }}</strong>
                                         @endif
                                         </span>
-
                                 </div>
                                 <br>
                                 <hr>
