@@ -52,7 +52,7 @@ class ExpedientController extends Controller
             'secondary_subject' => ['nullable', 'string'],
             'cover' => 'required',
             'origin' => 'required',
-            'state' => 'required',
+            'commission_id' => ['required', 'numeric'],
             'archived' => 'required',
             'incomeRecord' => 'required',
             'treatmentRecord' => 'required',
@@ -68,6 +68,8 @@ class ExpedientController extends Controller
             'secondary_subject.string' => 'El tema secundario debe ser un campo de texto',
             'cover.required' => 'Debe ingresar una carátula para el expediente',
             'origin' => 'Debe especificar el origen del expediente',
+            'commission_id.required' => 'Debe ingresar la comisión de destino',
+            'commission_id.numeric' => 'El campo comisión de destino debe ser numérico',
             'incomeRecord.required' => 'Debe ingresar el acta ingreso',
             'treatmentRecord.required' => 'Debe ingresar el acta de tratamiento',
             'creation_date.required' => 'Debe ingresar la fecha de creación del expediente',
@@ -86,7 +88,8 @@ class ExpedientController extends Controller
                 'secondary_subject' => $data['secondary_subject'],
                 'cover' => $data['cover'],
                 'origin' => $data['origin'],
-                'state' => 'Pendiente',//$data['state'] A pedido del cliente, este valor se hardcodea en "Pendiente"
+                'commission_id' => $data['commission_id'],
+                'state' => 'Pendiente',
                 'archived' => $data['archived'],
                 'incomeRecord' => $data['incomeRecord'],
                 'treatmentRecord' => $data['treatmentRecord'],
@@ -116,7 +119,7 @@ class ExpedientController extends Controller
             'secondary_subject' => ['nullable', 'string'],
             'cover' => 'required',
             'origin' => 'required',
-            'state' => 'required',
+            'commission_id' => ['required', 'numeric'],
             'archived' => 'required',
             'incomeRecord' => 'required',
             'treatmentRecord' => 'required',
@@ -131,6 +134,8 @@ class ExpedientController extends Controller
             'secondary_subject.string' => 'El tema secundario debe ser un campo de texto',
             'cover.required' => 'Debe ingresar una carátula para el expediente',
             'origin' => 'Debe especificar el origen del expediente',
+            'commission_id.required' => 'Debe ingresar la comisión de destino',
+            'commission_id.numeric' => 'El campo comisión de destino debe ser numérico',
             'incomeRecord.required' => 'Debe ingresar el acta ingreso',
             'treatmentRecord.required' => 'Debe ingresar el acta de tratamiento',
             'creation_date.required' => 'Debe ingresar la fecha de creación del expediente',
@@ -159,7 +164,7 @@ class ExpedientController extends Controller
          * Este metodo asigna un anexo a un expediente
          * @param Annex $annex : El anexo que se quiere asignar
          * @param Expedient $expedient : El expediente al que se le quiere asignar el anexo
-         * @return boolean
+         * @return Cierra automáticamente la ventana emergente
          */
 
         try {

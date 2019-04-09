@@ -23,6 +23,8 @@ class CreateExpedientsTable extends Migration
             $table->string('secondary_subject')->nullable();
             $table->text('cover');
             $table->string('origin');
+            $table->integer('commission_id')->unsigned();
+            $table->foreign('commission_id')->references('id')->on('commissions');
             $table->string('state');
             $table->boolean('archived');
             $table->string('incomeRecord');

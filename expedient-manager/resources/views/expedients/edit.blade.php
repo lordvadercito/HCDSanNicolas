@@ -111,22 +111,20 @@
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="state" class="text-md-right">Estado</label>
-                                            <select name="state" id="state"
-                                                    class="form-control {{ $errors->has('state') ? ' is-invalid' : '' }}"
+                                            <label for="first_destination" class="text-md-right">Comisión de
+                                                destino</label>
+                                            <select name="first_destination" id="first_destination"
+                                                    class="form-control {{ $errors->has('first_destination') ? ' is-invalid' : '' }}"
                                                     required>
-                                                <option
-                                                    value="{{old('state', $expedient->state)}}">{{old('state', $expedient->state)}}</option>
-
-                                                @foreach(\App\Models\State::$states as $state)
-                                                    <option value="{{$state}}">{{$state}}</option>
+                                                <option value="{{$expedient->commission_id}}">{{$expedient->commissions()->name}}</option>
+                                                @foreach(\App\Models\Commission::all() as $destination)
+                                                    <option value="{{$destination->id}}">{{$destination->name}}</option>
                                                 @endforeach
                                             </select>
-                                            <span role="alert" class="invalid-feedback">
-                                            @if ($errors->has('state'))
-                                                    <strong>{{ $errors->first('state') }}</strong>
+                                            @if ($errors->has('first_destination'))
+                                                <strong>{{ $errors->first('first_destination') }}</strong>
                                                 @endif
-                                            </span>
+                                                </span>
                                         </div>
                                     </div>
                                     <div class="col">

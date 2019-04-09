@@ -32,7 +32,7 @@ Route::put('/expedientes/{expedient}', 'ExpedientController@update');
 
 Route::get('/expedientes/{expedient}/anexar', 'ExpedientController@loadAttachAnnexForm')->name('expedients.annexes');
 
-Route::get('expedientes/anexado/{annex}/{expedient}', 'ExpedientController@attachAnnex');
+Route::get('/expedientes/anexado/{annex}/{expedient}', 'ExpedientController@attachAnnex');
 
 
 //Annexes routes
@@ -105,7 +105,6 @@ Route::get('/comisiones/{commission}/editar', 'CommissionController@edit')->name
 
 Route::put('/comisiones/{commission}', 'CommissionController@update');
 
-//TODO: Continuar con la creacion de rutas
 
 //Home routes
 

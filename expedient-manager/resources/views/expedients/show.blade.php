@@ -32,6 +32,15 @@
                                 </div>
                             </div>
                             <div class="row">
+                                <div class="col-sm-12">
+                                    <p class="float-left space-50 text-right font-weight-bold" style="width: 50%;">
+                                        Comisión de destino: &nbsp;</p>
+                                    <p class="float-right space-50 text-left"
+                                       style="width: 50%;">{{$expedient->commissions->name}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-sm-4">
                                     <p class="float-left space-50 text-right font-weight-bold" style="width: 50%;">
                                         Tema: &nbsp;</p>

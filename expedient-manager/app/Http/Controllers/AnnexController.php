@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Annex;
+use App\Models\Expedient;
 use Illuminate\Http\Request;
 
 class AnnexController extends Controller
@@ -15,7 +16,6 @@ class AnnexController extends Controller
     public function index()
     {
         $annexes = Annex::all();
-
         return view('annexes.index', compact('annexes'));
     }
 

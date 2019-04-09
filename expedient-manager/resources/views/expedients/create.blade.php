@@ -108,13 +108,17 @@
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="state" class="text-md-right">Estado</label>
-                                            <input type="text" name="state" value="Pendiente"
-                                                   class="form-control {{ $errors->has('state') ? ' is-invalid' : '' }} disabled"
-                                                   required readonly>
+                                            <label for="commission_id" class="text-md-right">Comisión de destino</label>
+                                            <select name="commission_id" id="commission_id"
+                                                    class="form-control {{ $errors->has('commission_id') ? ' is-invalid' : '' }}"
+                                                    required>
+                                                @foreach(\App\Models\Commission::all() as $destination)
+                                                    <option value="{{$destination->id}}">{{$destination->name}}</option>
+                                                @endforeach
+                                            </select>
                                             <span role="alert" class="invalid-feedback">
-                                            @if ($errors->has('state'))
-                                                    <strong>{{ $errors->first('state') }}</strong>
+                                            @if ($errors->has('commission_id'))
+                                                    <strong>{{ $errors->first('commission_id') }}</strong>
                                                 @endif
                                             </span>
                                         </div>
