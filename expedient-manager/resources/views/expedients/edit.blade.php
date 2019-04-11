@@ -111,18 +111,18 @@
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="first_destination" class="text-md-right">Comisión de
+                                            <label for="commission_id" class="text-md-right">Comisión de
                                                 destino</label>
-                                            <select name="first_destination" id="first_destination"
-                                                    class="form-control {{ $errors->has('first_destination') ? ' is-invalid' : '' }}"
+                                            <select name="commission_id" id="commission_id"
+                                                    class="form-control {{ $errors->has('commission_id') ? ' is-invalid' : '' }}"
                                                     required>
-                                                <option value="{{$expedient->commission_id}}">{{$expedient->commissions()->name}}</option>
+                                                <option value="{{$expedient->commission_id}}">{{$expedient->commissions->name}}</option>
                                                 @foreach(\App\Models\Commission::all() as $destination)
                                                     <option value="{{$destination->id}}">{{$destination->name}}</option>
                                                 @endforeach
                                             </select>
-                                            @if ($errors->has('first_destination'))
-                                                <strong>{{ $errors->first('first_destination') }}</strong>
+                                            @if ($errors->has('commission_id'))
+                                                <strong>{{ $errors->first('commission_id') }}</strong>
                                                 @endif
                                                 </span>
                                         </div>

@@ -12,7 +12,7 @@
                         <div class="card-body">
 
 
-                           <!-- <nav class="navbar navbar-light bg-light float-right">
+                        <!-- <nav class="navbar navbar-light bg-light float-right">
 
                                 <form class="form-inline float-right" method="get" name="search-expedient"
                                       action="{{route("movements.index")}}" role="search">
@@ -26,14 +26,14 @@
                             </nav> -->
 
 
-
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
                                     <th scope="col">Expediente</th>
                                     <th scope="col">Origen</th>
                                     <th scope="col">Destino</th>
-                                    <th scope="col">Tipo de movimiento</th>
+                                    <th scope="col">Nro. de Pase</th>
+                                    <th scope="col">Foja</th>
                                     <th scope="col">Usuario de origen</th>
                                     <th scope="col">Fecha</th>
                                 </tr>
@@ -42,10 +42,12 @@
                                 @foreach($movements as $movement)
                                     <tr>
 
-                                        <td>{{$movement->expedients->expedientNro}}</td>
+                                        <td>{{$movement->expedients->expedientNro}}
+                                            / {{substr($movement->expedients->creation_date, 0, 4)}}</td>
                                         <td>{{$movement->origin}}</td>
                                         <td>{{$movement->destination}}</td>
-                                        <td>{{$movement->movementType}}</td>
+                                        <td>{{$movement->movement_nro}}</td>
+                                        <td>{{$movement->foja}}</td>
                                         <td>{{$movement->users->name}}</td>
                                         <td>{{$movement->created_at}}</td>
                                     </tr>

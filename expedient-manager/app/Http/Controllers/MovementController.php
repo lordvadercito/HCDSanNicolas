@@ -35,24 +35,25 @@ class MovementController extends Controller
     {
         /**
          *Validacion de datos obtenidos desde el formulario de creacion de movimientos
+         * @field 'expedient_id', 'origin', 'destination', 'movement_nro', 'foja', 'origin_user', 'created_at'
          * @return boolean
          **/
         $data = request()->validate([
             'expedient_id' => ['required', 'numeric'],
             'origin' => ['required'],
-            'origin_detail' => 'string',
-            'destination_detail' => 'string',
             'destination' => ['required'],
-            'movementType' => ['required'],
+            'movement_nro' => ['numeric', 'required'],
+            'foja' => ['numeric', 'required'],
             'origin_user' => ['required', 'numeric']
         ], [
             'expedient_id.required' => 'Debe seleccionar un expediente',
             'expedient_id.numeric' => 'El valor del campo Expediente debe ser numerico',
             'origin.required' => 'Debe seleccionar un origen',
-            'origin_detail.string' => 'El detalle debe ser texto',
             'destination.required' => 'Debe seleccionar un destino',
-            'destination_detail.string' => 'El detalle debe ser texto',
-            'movementType.required' => 'Debe seleccionar el tipo de movimiento',
+            'movement_nro.numeric' => 'El campo debe ser numérico',
+            'movement_nro.required' => 'Debe seleccionar el número de movimiento',
+            'foja.numeric' => 'El campo Foja debe ser numérico',
+            'foja.required' => 'Debe ingresar el número de foja',
             'origin_user.required' => 'No pudo comprobarse el usuario que genera el movimiento',
             'origin_user.numeric' => 'El valor de usuario detectado no es numerico'
         ]);
@@ -61,10 +62,9 @@ class MovementController extends Controller
             Movement::create([
                 'expedient_id' => $data['expedient_id'],
                 'origin' => $data['origin'],
-                'origin_detail' => $data['origin_detail'],
                 'destination' => $data['destination'],
-                'destination_detail' => $data['destination_detail'],
-                'movementType' => $data['movementType'],
+                'movement_nro' => $data['movement_nro'],
+                'foja' => $data['foja'],
                 'origin_user' => $data['origin_user'],
             ]);
         } catch (Exception $e) {

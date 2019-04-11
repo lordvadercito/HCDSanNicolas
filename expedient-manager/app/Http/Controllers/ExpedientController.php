@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Annex;
 use App\Models\Expedient;
+use App\Models\Movement;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use mysql_xdevapi\Exception;
@@ -80,7 +81,7 @@ class ExpedientController extends Controller
 
 
         try {
-            Expedient::create([
+            $expedient = Expedient::create([
                 'expedientNro' => $data['expedientNro'],
                 'expedientDENro' => $data['expedientDENro'],
                 'projectType' => $data['projectType'],
@@ -99,6 +100,18 @@ class ExpedientController extends Controller
 
         } catch (Exception $e) {
             echo $e->getMessage();
+        }
+
+        if (!is_null($expedient)) {
+
+            Movement::create([
+                'expedient_id' => $expedient->id,
+                'origin' => $expedient->origin,
+                'destination' => 'Secretaría',
+                'movement_nro' => 1,
+                'foja' => 0,
+                'origin_user' => $expedient->user_id
+            ]);
         }
 
         return redirect('/expedientes');
