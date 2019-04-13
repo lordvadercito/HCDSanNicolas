@@ -21,6 +21,7 @@ class MovementController extends Controller
         return view('movements.index', compact('movements'));
     }
 
+
     public function show(Movement $movement)
     {
         return view('movements.show', compact('movement'));

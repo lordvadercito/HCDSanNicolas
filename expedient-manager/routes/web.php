@@ -106,6 +106,10 @@ Route::get('/comisiones/{commission}/editar', 'CommissionController@edit')->name
 Route::put('/comisiones/{commission}', 'CommissionController@update');
 
 
+//Notes routes
+
+Route::get('/notas', 'NoteController@index')->name('notes.index');
+
 //Home routes
 
 Route::get('/home', 'HomeController@index')->name('home');

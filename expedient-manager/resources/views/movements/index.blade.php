@@ -8,22 +8,22 @@
             <div class="row justify-content-center">
                 <div class="col-md-10 col-xs-12">
                     <div class="card">
-                        <div class="card-header">Movimientos de expedientes</div>
+                        <div class="card-header">Movimientos de expedientes | Tabla de pases</div>
                         <div class="card-body">
 
 
-                        <!-- <nav class="navbar navbar-light bg-light float-right">
+{{--                        <nav class="navbar navbar-light bg-light float-right">--}}
 
-                                <form class="form-inline float-right" method="get" name="search-expedient"
-                                      action="{{route("movements.index")}}" role="search">
-                                    <input name="expedientNro" id="expedientNro" class="form-control mr-sm-2"
-                                           autocomplete="off" type="search" placeholder="Nro. expediente"
-                                           aria-label="Search" >
-                                    <input type="date" id="creation_date" name="created_at"
-                                           class="form-control mr-sm-2">
-                                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-                                </form>
-                            </nav> -->
+{{--                                <form class="form-inline float-right" method="get" name="search-expedient"--}}
+{{--                                      action="{{route("movements.index")}}" role="search">--}}
+{{--                                    <input name="expedientNro" id="expedientNro" class="form-control mr-sm-2"--}}
+{{--                                           autocomplete="off" type="search" placeholder="Nro. expediente"--}}
+{{--                                           aria-label="Search" >--}}
+{{--                                    <input type="date" id="creation_date" name="created_at"--}}
+{{--                                           class="form-control mr-sm-2">--}}
+{{--                                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>--}}
+{{--                                </form>--}}
+{{--                            </nav>--}}
 
 
                             <table class="table table-hover">
