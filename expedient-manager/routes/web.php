@@ -110,6 +110,12 @@ Route::put('/comisiones/{commission}', 'CommissionController@update');
 
 Route::get('/notas', 'NoteController@index')->name('notes.index');
 
+Route::get('/notas/nuevo', 'NoteController@create')->name('notes.create');
+
+Route::get('/notas/{note}', 'NoteController@show')->name('notas.show');
+
+Route::post('/notas/creado', 'NoteController@store');
+
 //Home routes
 
 Route::get('/home', 'HomeController@index')->name('home');

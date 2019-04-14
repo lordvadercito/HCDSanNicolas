@@ -100,10 +100,10 @@
                                                    class="form-control {{ $errors->has('creation_date') ? ' is-invalid' : '' }}"
                                                    required>
                                             <span role="alert" class="invalid-feedback">
-                                            @if ($errors->has('creation_date'))
+                                                @if ($errors->has('creation_date'))
                                                     <strong>{{ $errors->first('creation_date') }}</strong>
                                                 @endif
-                                        </span>
+                                            </span>
                                         </div>
                                     </div>
                                     <div class="col">

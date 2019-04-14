@@ -11,7 +11,7 @@ class Note extends Model
     //
     protected $dates = ['deleted_at'];
 
-    protected $fillable = ['id', 'nro', 'type', 'direction', 'creation_date', 'origin', 'description', 'expedient_id', 'user_id'];
+    protected $fillable = ['nro', 'type', 'direction', 'creation_date', 'origin', 'description', 'expedient_id', 'user_id'];
 
     public function expedients()
     {

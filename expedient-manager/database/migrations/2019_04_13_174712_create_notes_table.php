@@ -16,7 +16,7 @@ class CreateNotesTable extends Migration
         Schema::create('notes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('nro');
-            $table->string('type');
+            $table->char('type');
             $table->char('direction');
             $table->date('creation_date');
             $table->string('origin');
