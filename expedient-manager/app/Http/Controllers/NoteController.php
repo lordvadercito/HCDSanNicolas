@@ -32,6 +32,11 @@ class NoteController extends Controller
         return View('notes.create');
     }
 
+    public function edit(Note $note)
+    {
+        return View('notes.edit', ['note' => $note]);
+    }
+
     public function store()
     {
         /**
@@ -80,6 +85,38 @@ class NoteController extends Controller
             echo $e->getMessage();
         }
 
+        return redirect('/notas');
+    }
+
+    public function update(Note $note)
+    {
+        $data = request()->validate([
+            'nro' => ['required', 'numeric'],
+            'type' => 'required',
+            'direction' => ['required', 'string'],
+            'creation_date' => ['required', 'date'],
+            'origin' => ['required', 'string'],
+            'description' => 'required',
+            'expedient_id' => ['required', 'numeric'],
+            'user_id' => ['required', 'numeric']
+        ], [
+            'nro.required' => 'Debe ingresar el número de nota o informe',
+            'nro.numeric' => 'Debe ser un valor numérico',
+            'type.required' => 'Debe elegir un tipo de documento (Nota o Informe)',
+            'direction.required' => 'Debe indicar la dirección del documento',
+            'direction.string' => 'Debe ser un campo de texto',
+            'creation_date.required' => 'Debe indicar la fecha de creación',
+            'creation_date.date' => 'El campo debe contener una fecha',
+            'origin.required' => 'Debe indicar el origen del documento',
+            'origin.string' => 'El origen debe ser un campo de texto',
+            'description.required' => 'Debe ingresar la descripción del documento',
+            'expedient_id.required' => 'Debe indicar el expediente al que vinculará este documento',
+            'expedient_id.numeric' => 'Debe ser un valor numérico',
+            'user_id.required' => 'Ocurrió un error al guardar el usuario de creación',
+            'user_id.numeric' => 'Ocurrió un error al guardar el usuario de creación (ID no numérico)'
+        ]);
+
+        $note->update($data);
         return redirect('/notas');
     }
 }

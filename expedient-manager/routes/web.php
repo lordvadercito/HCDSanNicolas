@@ -112,9 +112,14 @@ Route::get('/notas', 'NoteController@index')->name('notes.index');
 
 Route::get('/notas/nuevo', 'NoteController@create')->name('notes.create');
 
-Route::get('/notas/{note}', 'NoteController@show')->name('notas.show');
+Route::get('/notas/{note}', 'NoteController@show')->name('notes.show');
 
 Route::post('/notas/creado', 'NoteController@store');
+
+Route::get('/notas/{note}/editar', 'NoteController@edit')->name('notes.edit');
+
+Route::put('/notas/{note}', 'NoteCOntroller@update');
+
 
 //Home routes
 

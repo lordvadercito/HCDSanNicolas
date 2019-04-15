@@ -74,6 +74,18 @@
                             </li>
 
                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Notas e informes</a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('notes.index') }}">
+                                        {{ __('Notas e informes') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('notes.create') }}">
+                                        {{ __('Nueva nota o informe') }}
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Concejo</a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('blocks.index') }}">
