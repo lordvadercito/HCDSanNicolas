@@ -27,9 +27,13 @@ class MovementController extends Controller
         return view('movements.show', compact('movement'));
     }
 
-    public function create(Request $request)
+    public function create(Expedient $expedient)
     {
-        return view('movements.create', compact('request'));
+        $actual = Movement::where('expedient_id', $expedient->id)
+                ->orderBy('id','DESC')
+                ->take(1)
+                ->get();
+        return view('movements.create', compact('expedient', 'actual'));
     }
 
     public function store()

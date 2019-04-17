@@ -54,7 +54,7 @@ Route::put('/anexos/{annex}', 'AnnexController@update');
 
 Route::get('/movimientos', 'MovementController@index')->name('movements.index');
 
-Route::get('/movimientos/nuevo', 'MovementController@create')->name('movements.create');
+Route::get('/movimientos/{expedient}/nuevo', 'MovementController@create')->name('movements.create');
 
 Route::get('/movimientos/{movement}', 'MovementController@show')->name('movements.show');
 

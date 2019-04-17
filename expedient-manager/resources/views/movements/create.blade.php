@@ -8,83 +8,106 @@
             <div class="row justify-content-center">
                 <div class="col-md-9 col-xs-12">
                     <div class="card">
-                        <div class="card-header">Mover expediente</div>
+                        <div class="card-header">Mover expediente | Generar pase</div>
                         <div class="card-body">
                             <form method="POST" action="{{ url('/movimientos/creado') }}">
                                 @csrf
-                                <div class="form-group row">
-                                    <label for="expedient_id"
-                                           class="col-md-4 col-form-label text-md-right">Expediente</label>
-                                    <div class="col-md-6">
-                                        <input type="hidden" name="expedient_id" class="form-control"
-                                               value="{{$request->id}}">
-                                        <input type="number" disabled name="expedient" class="form-control"
-                                               value="{{$request->expedientNro}}">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="expedient_id" class="text-md-right">Expediente</label>
+                                            <input type="hidden" readonly name="expedient_id" id="expedient_id"
+                                                   class="form-control {{ $errors->has('expedient_id') ? ' is-invalid' : '' }}"
+                                                   required value="{{$expedient->id}}">
+                                            <input type="text" readonly
+                                                   class="form-control"
+                                                   required
+                                                   value="{{$expedient->expedientNro}} / {{substr($expedient->creation_date, 0, 4)}} - {{$expedient->subject}}">
+                                            <span role="alert" class="invalid-feedback">
+                                            @if ($errors->has('expedient_id'))
+                                                    <strong>{{ $errors->first('expedient_id') }}</strong>
+                                                @endif
+                                            </span>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="expedient" class="col-md-4 col-form-label text-md-right">Origen</label>
-                                    <div class="col-md-6">
-                                        <select name="origin" id="origin"
-                                                class="form-control {{ $errors->has('origin') ? ' is-invalid' : '' }}"
-                                                required>
-                                            @foreach(\App\Models\Origin::$origins as $origin)
-                                                <option value="{{$origin}}">{{$origin}}</option>
-                                            @endforeach
-                                        </select>
-                                        <br>
-                                        <input name="origin_detail" type="text" class="form-control" placeholder="Detalle de origen">
-
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="origin" class="text-md-right">Ubicación actual</label>
+                                            <input type="text" readonly name="origin" id="origin"
+                                                   class="form-control {{ $errors->has('origin') ? ' is-invalid' : '' }}"
+                                                   required value="{{$actual->first()->destination}}">
+                                            <span role="alert" class="invalid-feedback">
+                                            @if ($errors->has('origin'))
+                                                    <strong>{{ $errors->first('origin') }}</strong>
+                                                @endif
+                                            </span>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="expedient" class="col-md-4 col-form-label text-md-right">Destino</label>
-                                    <div class="col-md-6">
-                                        <select name="destination" id="destination"
-                                                class="form-control {{ $errors->has('destination') ? ' is-invalid' : '' }}"
-                                                required>
-                                            @foreach(\App\Models\Destination::$destinations as $destination)
-                                                <option value="{{$destination}}">{{$destination}}</option>
-                                            @endforeach
-                                        </select>
-                                        <br>
-                                        <input name="destination_detail" type="text" class="form-control" placeholder="Detalle de destino">
-
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="destination" class="text-md-right">Destino</label>
+                                            <input list="destinations" type="text" name="destination" id="destination"
+                                                   class="form-control {{ $errors->has('destination') ? ' is-invalid' : '' }}"
+                                                   required>
+                                            <datalist id="destinations">
+                                                @foreach(\App\Models\Destination::$destinations as $destiny)
+                                                    <option value="{{$destiny}}"></option>
+                                                @endforeach
+                                                @foreach(\App\Models\Commission::all() as $commission)
+                                                    <option value="{{$commission->name}}"></option>
+                                                @endforeach
+                                            </datalist>
+                                            <span role="alert" class="invalid-feedback">
+                                            @if ($errors->has('destination'))
+                                                    <strong>{{ $errors->first('destination') }}</strong>
+                                                @endif
+                                            </span>
+                                        </div>
                                     </div>
+
                                 </div>
-
-                                <div class="form-group row">
-                                    <label for="subject" class="col-md-4 col-form-label text-md-right">Tipo de
-                                        movimiento</label>
-                                    <div class="col-md-6">
-                                        <input type="text" name="movementType" value="{{ old('movementType') }}"
-                                               class="form-control {{ $errors->has('movementType') ? ' is-invalid' : '' }}"
-                                               required>
-                                        <span role="alert" class="invalid-feedback">
-                                            @if ($errors->has('movementType'))
-                                                <strong>{{ $errors->first('movementType') }}</strong>
-                                            @endif
-                                        </span>
-
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="movement_nro" class="text-md-right">Nro. de Pase</label>
+                                            <input type="number" readonly name="movement_nro" id="movement_nro"
+                                                   class="form-control {{ $errors->has('movement_nro') ? ' is-invalid' : '' }}"
+                                                   required value="{{$actual->first()->movement_nro + 1}}">
+                                            <span role="alert" class="invalid-feedback">
+                                            @if ($errors->has('movement_nro'))
+                                                    <strong>{{ $errors->first('movement_nro') }}</strong>
+                                                @endif
+                                            </span>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="origin_user" class="col-md-4 col-form-label text-md-right">Usuario de
-                                        origen</label>
-                                    <div class="col-md-6">
-                                        <input type="hidden" name="origin_user" value={{ auth()->user()->id }}>
-                                        <input disabled type="text" readonly value="{{auth()->user()->name}}"
-                                               class="form-control {{ $errors->has('origin_user') ? ' is-invalid' : '' }}"
-                                               required>
-                                        <span role="alert" class="invalid-feedback">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="foja" class="text-md-right">Foja</label>
+                                            <input type="number" name="foja" id="foja"
+                                                   class="form-control {{ $errors->has('foja') ? ' is-invalid' : '' }}"
+                                                   required value="{{$actual->first()->foja}}">
+                                            <span role="alert" class="invalid-feedback">
+                                            @if ($errors->has('foja'))
+                                                    <strong>{{ $errors->first('foja') }}</strong>
+                                                @endif
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="origin_user" class="text-md-right">Usuario</label>
+                                            <input type="hidden" name="origin_user" id="origin_user"
+                                                   class="form-control {{ $errors->has('origin_user') ? ' is-invalid' : '' }}"
+                                                   required value="{{ auth()->user()->id }}">
+                                            <input type="text" readonly
+                                                   class="form-control {{ $errors->has('origin_user') ? ' is-invalid' : '' }}"
+                                                   required value="{{auth()->user()->name}}">
+                                            <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('origin_user'))
-                                                <strong>{{ $errors->first('origin_user') }}</strong>
-                                            @endif
-                                        </span>
-
+                                                    <strong>{{ $errors->first('origin_user') }}</strong>
+                                                @endif
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                                 <br>

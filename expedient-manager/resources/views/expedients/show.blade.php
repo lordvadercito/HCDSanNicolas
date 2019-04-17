@@ -116,7 +116,7 @@
                                         Ubicación actual: &nbsp;</p>
                                     <!--TODO: Definir e implementar método para mostrar ubicación actual-->
                                     <p class="float-right space-50 text-left"
-                                       style="width: 50%;">A definir</p>
+                                       style="width: 50%;">{{$position->first()->destination}}</p>
                                 </div>
                             </div>
                             <div class="row">

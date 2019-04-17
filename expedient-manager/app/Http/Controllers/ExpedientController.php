@@ -29,7 +29,11 @@ class ExpedientController extends Controller
 
     public function show(Expedient $expedient)
     {
-        return view('expedients.show', compact('expedient'));
+        $position = Movement::where( 'expedient_id', $expedient->id)
+                    ->orderBy('id', 'desc')
+                    ->take(1)
+                    ->get();
+        return view('expedients.show', compact('expedient', 'position'));
     }
 
     public function create()

@@ -10,6 +10,7 @@
 namespace App\Models;
 
 use App\Exceptions\JsonHandler;
+use function GuzzleHttp\Promise\all;
 
 class Destination
 {
@@ -23,10 +24,12 @@ class Destination
      */
 
     public static $destinations = [
-        'Comisión',
-        'Peticiones',
-        'Departamento Ejecutivo'
+        'Secretaría',
+        'Concejo',
+        'Legislación general',
+
     ];
+
 
     public static function encode()
     {
