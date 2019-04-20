@@ -23,7 +23,8 @@ class CreateMovementsTable extends Migration
             $table->integer('foja');
             $table->integer('origin_user')->unsigned();
             $table->foreign('origin_user')->references('id')->on('users');
-             $table->timestamps();
+            $table->boolean('in_table');
+            $table->timestamps();
             $table->softDeletes();
         });
     }

@@ -110,6 +110,39 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="state" class="text-md-right">Estado</label>
+                                            <select name="state" id="state" class="form-control {{ $errors->has('archived') ? ' is-invalid' : '' }}"
+                                                    required>
+                                                @foreach(\App\Models\State::$states as $state)
+                                                    <option value="{{$state}}">{{$state}}</option>
+                                                 @endforeach
+                                            </select>
+                                            <span role="alert" class="invalid-feedback">
+                                            @if ($errors->has('state'))
+                                                    <strong>{{ $errors->first('state') }}</strong>
+                                                @endif
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="in_table" class="text-md-right">En tablas</label>
+                                            <select name="in_table" id="in_table" class="form-control {{ $errors->has('in_table') ? ' is-invalid' : '' }}"
+                                                    required>
+                                                <option value="0">No</option>
+                                                <option value="1">Si</option>
+                                            </select>
+                                            <span role="alert" class="invalid-feedback">
+                                            @if ($errors->has('in_table'))
+                                                    <strong>{{ $errors->first('in_table') }}</strong>
+                                                @endif
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
                                 <br>
                                 <br>
                                 <hr>

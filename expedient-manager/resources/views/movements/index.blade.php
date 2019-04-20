@@ -6,7 +6,7 @@
     <main class="py-4">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-10 col-xs-12">
+                <div class="col-md-12 col-xs-12">
                     <div class="card">
                         <div class="card-header">Movimientos de expedientes | Tabla de pases</div>
                         <div class="card-body">
@@ -35,6 +35,7 @@
                                     <th scope="col">Nro. de Pase</th>
                                     <th scope="col">Foja</th>
                                     <th scope="col">Usuario de origen</th>
+                                    <th scope="col">En tablas</th>
                                     <th scope="col">Fecha</th>
                                 </tr>
                                 </thead>
@@ -49,6 +50,11 @@
                                         <td>{{$movement->movement_nro}}</td>
                                         <td>{{$movement->foja}}</td>
                                         <td>{{$movement->users->name}}</td>
+                                        @if($movement->in_table == 0)
+                                            <td>No</td>
+                                        @else
+                                            <td>Si</td>
+                                        @endif
                                         <td>{{$movement->created_at}}</td>
                                     </tr>
                                 @endforeach

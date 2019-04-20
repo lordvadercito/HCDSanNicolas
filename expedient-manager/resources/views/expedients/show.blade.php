@@ -114,7 +114,6 @@
                                 <div class="col-sm-4">
                                     <p class="float-left space-50 text-right font-weight-bold" style="width: 50%;">
                                         Ubicación actual: &nbsp;</p>
-                                    <!--TODO: Definir e implementar método para mostrar ubicación actual-->
                                     <p class="float-right space-50 text-left"
                                        style="width: 50%;">{{$position->first()->destination}}</p>
                                 </div>

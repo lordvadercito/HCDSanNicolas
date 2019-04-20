@@ -114,6 +114,7 @@ class ExpedientController extends Controller
                 'destination' => 'Secretaría',
                 'movement_nro' => 1,
                 'foja' => 0,
+                'in_table' => 0,
                 'origin_user' => $expedient->user_id
             ]);
         }

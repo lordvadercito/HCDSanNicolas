@@ -22,9 +22,9 @@ class CreateNotesTable extends Migration
             $table->string('origin');
             $table->text('description');
             $table->integer('expedient_id')->unsigned();
-            $table->foreign('expedient_id')->reference('id')->on('expedients');
+            $table->foreign('expedient_id')->references('id')->on('expedients');
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->reference('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
             $table->softDeletes();
         });
