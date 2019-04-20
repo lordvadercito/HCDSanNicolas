@@ -121,6 +121,13 @@ Route::get('/notas/{note}/editar', 'NoteController@edit')->name('notes.edit');
 Route::put('/notas/{note}', 'NoteCOntroller@update');
 
 
+//Authority routes (Edit only)
+
+Route::get('/autoridades', 'AuthorityController@edit')->name('authorities.edit');
+
+Route::put('/autoridades/{authority}', 'AuthorityController@update');
+
+
 //Home routes
 
 Route::get('/home', 'HomeController@index')->name('home');

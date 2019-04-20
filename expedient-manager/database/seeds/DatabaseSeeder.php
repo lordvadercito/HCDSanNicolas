@@ -13,5 +13,6 @@ class DatabaseSeeder extends Seeder
     {
          $this->call(UserAdministratorCreateInUsersTable::class);
          $this->call(CommissionCreateInCommissionTable::class);
+         $this->call(PositionDefaultCreateAuthoritiesTable::class);
     }
 }
