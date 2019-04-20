@@ -108,6 +108,10 @@
                                     <a class="dropdown-item" href="{{ route('commissions.create') }}">
                                         {{ __('Nuevo comisión') }}
                                     </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{ route('authorities.edit') }}">
+                                        {{ __('Autoridades') }}
+                                    </a>
                                 </div>
                             </li>
 

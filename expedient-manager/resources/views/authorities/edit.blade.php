@@ -11,7 +11,7 @@
                         <div class="card-header">Autoridades</div>
                         <div class="card-body">
                             @foreach(\App\Models\Authority::all() as $authority)
-                                <div class="row">
+                                <div class="form-row">
                                     <form method="POST" class="form-inline" action="{{ url("/autoridades/{$authority->id}") }}">
                                         @method('PUT')
                                         @csrf
@@ -38,9 +38,15 @@
                                     </form>
                                 </div>
                                 <br>
-                                @endforeach
-                                </tbody>
-                                </table>
+                            @endforeach
+                                <br>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <a href="{{ route('expedients.index') }}" role="button"
+                                           class="btn btn-link float-left">Volver</a>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>

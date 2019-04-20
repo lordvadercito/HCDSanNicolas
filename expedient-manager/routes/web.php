@@ -128,6 +128,20 @@ Route::get('/autoridades', 'AuthorityController@edit')->name('authorities.edit')
 Route::put('/autoridades/{authority}', 'AuthorityController@update');
 
 
+//Act routes
+
+Route::get('/actas', 'ActController@index')->name('acts.index');
+
+Route::get('/actas/nueva', 'ActController@create')->name('acts.create');
+
+Route::post('/actas/creada', 'ActController@store');
+
+Route::get('/actas/{act}', 'ActController@show')->name('acts.show');
+
+Route::get('/actas/{act}/editar', 'ActController@edit')->name('acts.edit');
+
+Route::put('/actas/{act}', 'ActController@update');
+
 //Home routes
 
 Route::get('/home', 'HomeController@index')->name('home');
