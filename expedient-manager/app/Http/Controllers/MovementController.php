@@ -41,7 +41,8 @@ class MovementController extends Controller
     {
         /**
          *Validacion de datos obtenidos desde el formulario de creacion de movimientos
-         * @field 'expedient_id', 'origin', 'destination', 'movement_nro', 'foja', 'origin_user', 'created_at'
+         * @field 'expedient_id', 'origin', 'destination', 'movement_nro', 'foja', 'origin_user', 'created_at',
+         * 'in_table', 'observation'
          * @return boolean
          **/
         $data = request()->validate([
@@ -52,7 +53,8 @@ class MovementController extends Controller
             'foja' => ['numeric', 'required'],
             'origin_user' => ['required', 'numeric'],
             'state' => ['required'],
-            'in_table' => ['required', 'boolean']
+            'in_table' => ['required', 'boolean'],
+            'observation' => ['nullable', 'string']
         ], [
             'expedient_id.required' => 'Debe seleccionar un expediente',
             'expedient_id.numeric' => 'El valor del campo Expediente debe ser numerico',
@@ -66,7 +68,8 @@ class MovementController extends Controller
             'origin_user.numeric' => 'El valor de usuario detectado no es numerico',
             'state.required' => 'Debe indicar el estado del expediente',
             'in_table.required' => 'Debe indicar si el expediente está en tabla',
-            'in_table.boolean' => 'Sólo se admiten valores de verdadero o falso'
+            'in_table.boolean' => 'Sólo se admiten valores de verdadero o falso',
+            'observation.string' => 'El campo observación solo puede albergar texto'
         ]);
 
         try {
@@ -77,7 +80,8 @@ class MovementController extends Controller
                 'movement_nro' => $data['movement_nro'],
                 'foja' => $data['foja'],
                 'origin_user' => $data['origin_user'],
-                'in_table' => $data['in_table']
+                'in_table' => $data['in_table'],
+                'observation' => $data['observation']
             ]);
         } catch (Exception $e) {
             echo $e->getMessage();

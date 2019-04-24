@@ -114,11 +114,12 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="state" class="text-md-right">Estado</label>
-                                            <select name="state" id="state" class="form-control {{ $errors->has('archived') ? ' is-invalid' : '' }}"
+                                            <select name="state" id="state" onchange="enableTextArea();"
+                                                    class="form-control {{ $errors->has('archived') ? ' is-invalid' : '' }}"
                                                     required>
                                                 @foreach(\App\Models\State::$states as $state)
                                                     <option value="{{$state}}">{{$state}}</option>
-                                                 @endforeach
+                                                @endforeach
                                             </select>
                                             <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('state'))
@@ -130,7 +131,8 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="in_table" class="text-md-right">En tablas</label>
-                                            <select name="in_table" id="in_table" class="form-control {{ $errors->has('in_table') ? ' is-invalid' : '' }}"
+                                            <select name="in_table" id="in_table"
+                                                    class="form-control {{ $errors->has('in_table') ? ' is-invalid' : '' }}"
                                                     required>
                                                 <option value="0">No</option>
                                                 <option value="1">Si</option>
@@ -138,6 +140,21 @@
                                             <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('in_table'))
                                                     <strong>{{ $errors->first('in_table') }}</strong>
+                                                @endif
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="observation" class="text-md-right">Observaciones</label>
+                                            <textarea rows="6" name="observation" id="observation"
+                                                      class="form-control {{ $errors->has('observation') ? ' is-invalid' : '' }}"
+                                                      style="resize: none;" readonly>{{ old('observation') }}</textarea>
+                                            <span role="alert" class="invalid-feedback">
+                                            @if ($errors->has('observation'))
+                                                    <strong>{{ $errors->first('observation') }}</strong>
                                                 @endif
                                             </span>
                                         </div>
@@ -164,3 +181,13 @@
         </div>
     </main>
 @endsection
+<script>
+    function enableTextArea() {
+        // Esta función habilita el textarea de observaciones solo cuando el estado "Pase con despacho" es elegido
+        if ($('#state option:selected').val() === 'Pase con despacho') {
+            $('#observation').removeAttr('readonly');
+        }else{
+            $('#observation').attr('readonly', 'readonly');
+        }
+    }
+</script>

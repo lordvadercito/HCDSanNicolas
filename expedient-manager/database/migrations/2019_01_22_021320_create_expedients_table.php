@@ -28,7 +28,7 @@ class CreateExpedientsTable extends Migration
             $table->string('state');
             $table->boolean('archived');
             $table->string('incomeRecord');
-            $table->string('treatmentRecord');
+            $table->string('treatmentRecord')->nullable();
             $table->date('creation_date');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');

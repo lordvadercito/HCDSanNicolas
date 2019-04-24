@@ -5,7 +5,8 @@ use Illuminate\Database\Seeder;
 class PositionDefaultCreateAuthoritiesTable extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Crea los cargos del concejo, a fin de que estos queden fijos y solo puedan
+     * modificarse los nombres y los apellidos de los mismos
      *
      * @return void
      */
@@ -16,7 +17,15 @@ class PositionDefaultCreateAuthoritiesTable extends Seeder
         ]);
 
         \App\Models\Authority::create([
-            'position' => 'Secretario'
+            'position' => 'Secretario Legislativo'
+        ]);
+
+        \App\Models\Authority::create([
+            'position' => 'Vicepresidente'
+        ]);
+
+        \App\Models\Authority::create([
+            'position' => 'Vicepresidente 2°'
         ]);
     }
 }

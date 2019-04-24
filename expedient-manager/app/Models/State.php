@@ -27,6 +27,8 @@ class State
         "Rechazado por unanimidad",
         "Dos despachos",
         "Pase a comisión u oficina",
+        "Pase con despacho",
+        "Pase sin despacho",
         "Genera pedido (Citación)",
         "Sin tratamiento"
     ];

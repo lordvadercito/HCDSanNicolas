@@ -18,9 +18,11 @@
                                             <label for="expedientNro" class="text-md-right">Nro.
                                                 Expediente</label>
 
-                                            <input type="number" name="expedientNro" value="{{old('expedientNro')}}"
+                                            <input type="number" name="expedientNro" id="expedientNro"
+                                                   value="{{old('expedientNro')}}"
                                                    class="form-control {{ $errors->has('expedientNro') ? ' is-invalid' : '' }}"
-                                                   required autofocus placeholder="000000">
+                                                   required autofocus placeholder="000000"
+                                                   onchange="loadIncommingRecord();">
                                             <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('expedientNro'))
                                                     <strong>{{ $errors->first('expedientNro') }}</strong>
@@ -144,26 +146,9 @@
                                 <div class="form-row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="archived"
-                                                   class="text-md-right">Archivado</label>
-                                            <select name="archived" id="archived"
-                                                    class="form-control {{ $errors->has('archived') ? ' is-invalid' : '' }}"
-                                                    required>
-                                                <option value=0>No</option>
-                                                <option value=1>Si</option>
-                                            </select>
-                                            <span role="alert" class="invalid-feedback">
-                                            @if ($errors->has('archived'))
-                                                    <strong>{{ $errors->first('archived') }}</strong>
-                                                @endif
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group">
                                             <label for="incomeRecord" class="text-md-right">Registro de
                                                 entrada</label>
-                                            <input type="text" name="incomeRecord"
+                                            <input type="text" readonly name="incomeRecord" id="incomeRecord"
                                                    class="form-control {{ $errors->has('incomeRecord') ? ' is-invalid' : '' }}"
                                                    value="{{ old('incomeRecord') }}">
                                             <span role="alert" class="invalid-feedback">
@@ -231,7 +216,16 @@
         </div>
     </main>
 
+    <script>
+        // Esta función asigna automáticamente el número de expediente al registro de ingreso
+        function loadIncommingRecord()
+        {
+            var expedientNro = $('#expedientNro').val();
+            var inputTag = $('#incomeRecord');
 
+            inputTag.val(expedientNro);
+        }
+    </script>
 
 
 @endsection

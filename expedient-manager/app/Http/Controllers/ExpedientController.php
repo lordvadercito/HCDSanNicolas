@@ -58,9 +58,8 @@ class ExpedientController extends Controller
             'cover' => 'required',
             'origin' => 'required',
             'commission_id' => ['required', 'numeric'],
-            'archived' => 'required',
             'incomeRecord' => 'required',
-            'treatmentRecord' => 'required',
+            'treatmentRecord' => 'nullable',
             'creation_date' => ['required', 'date'],
             'user_id' => ['required', 'numeric']
         ], [
@@ -76,7 +75,6 @@ class ExpedientController extends Controller
             'commission_id.required' => 'Debe ingresar la comisión de destino',
             'commission_id.numeric' => 'El campo comisión de destino debe ser numérico',
             'incomeRecord.required' => 'Debe ingresar el acta ingreso',
-            'treatmentRecord.required' => 'Debe ingresar el acta de tratamiento',
             'creation_date.required' => 'Debe ingresar la fecha de creación del expediente',
             'creation_date.date' => 'El valor ingresado no es una fecha válida',
             'user_id.required' => 'Falta ingresar el id del usuario que generó el expediente',
@@ -95,7 +93,7 @@ class ExpedientController extends Controller
                 'origin' => $data['origin'],
                 'commission_id' => $data['commission_id'],
                 'state' => 'Pendiente',
-                'archived' => $data['archived'],
+                'archived' => 0,
                 'incomeRecord' => $data['incomeRecord'],
                 'treatmentRecord' => $data['treatmentRecord'],
                 'creation_date' => $data['creation_date'],
@@ -140,7 +138,7 @@ class ExpedientController extends Controller
             'commission_id' => ['required', 'numeric'],
             'archived' => 'required',
             'incomeRecord' => 'required',
-            'treatmentRecord' => 'required',
+            'treatmentRecord' => 'nullable',
             'creation_date' => ['required', 'date'],
             'user_id' => ['required', 'numeric']
         ], [
@@ -155,7 +153,6 @@ class ExpedientController extends Controller
             'commission_id.required' => 'Debe ingresar la comisión de destino',
             'commission_id.numeric' => 'El campo comisión de destino debe ser numérico',
             'incomeRecord.required' => 'Debe ingresar el acta ingreso',
-            'treatmentRecord.required' => 'Debe ingresar el acta de tratamiento',
             'creation_date.required' => 'Debe ingresar la fecha de creación del expediente',
             'creation_date.date' => 'El valor ingresado no es una fecha válida',
             'user_id.required' => 'Falta ingresar el id del usuario que generó el expediente',

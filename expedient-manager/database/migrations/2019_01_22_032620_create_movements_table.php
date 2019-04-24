@@ -24,6 +24,7 @@ class CreateMovementsTable extends Migration
             $table->integer('origin_user')->unsigned();
             $table->foreign('origin_user')->references('id')->on('users');
             $table->boolean('in_table');
+            $table->text('observation')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
