@@ -15,7 +15,12 @@ class Expedient extends Model
 
     public function annexes()
     {
-        return $this->belongsToMany(Annex::class);
+        return $this->belongsToMany(Expedient::class, 'annex_expedient', 'expedient_id', 'annex_id');
+    }
+
+    public function expedients()
+    {
+        return $this->belongsToMany(Expedient::class, 'annex_expedient', 'annex_id', 'expedient_id');
     }
 
     public function movements()

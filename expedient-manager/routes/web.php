@@ -34,20 +34,7 @@ Route::get('/expedientes/{expedient}/anexar', 'ExpedientController@loadAttachAnn
 
 Route::get('/expedientes/anexado/{annex}/{expedient}', 'ExpedientController@attachAnnex');
 
-
-//Annexes routes
-
-Route::get('/anexos', 'AnnexController@index')->name('annexes.index');
-
-Route::get('/anexos/nuevo', 'AnnexController@create')->name('annexes.create');
-
-Route::get('/anexos/{annex}', 'AnnexController@show')->name('annexes.show');
-
-Route::post('/anexos/creado', 'AnnexController@store');
-
-Route::get('/anexos/{annex}/editar', 'AnnexController@edit')->name('annexes.edit');
-
-Route::put('/anexos/{annex}', 'AnnexController@update');
+Route::get('/expedientes/desvincular/{annex}/{expedient}', 'ExpedientController@detachAnnex');
 
 
 //Movements routes

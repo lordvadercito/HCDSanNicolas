@@ -29,10 +29,10 @@ class ExpedientController extends Controller
 
     public function show(Expedient $expedient)
     {
-        $position = Movement::where( 'expedient_id', $expedient->id)
-                    ->orderBy('id', 'desc')
-                    ->take(1)
-                    ->get();
+        $position = Movement::where('expedient_id', $expedient->id)
+            ->orderBy('id', 'desc')
+            ->take(1)
+            ->get();
         return view('expedients.show', compact('expedient', 'position'));
     }
 
@@ -169,11 +169,11 @@ class ExpedientController extends Controller
          * Este metodo carga el formulario para asignar anexos
          * a los expedientes
          */
-        $annexes = Annex::all();
+        $annexes = Expedient::all();
         return view('expedients.annexes', array('annexes' => $annexes, 'expedient' => $expedient));
     }
 
-    public function attachAnnex(Annex $annex, Expedient $expedient)
+    public function attachAnnex(Expedient $annex, Expedient $expedient)
     {
         /**
          * Este metodo asigna un anexo a un expediente
@@ -181,6 +181,7 @@ class ExpedientController extends Controller
          * @param Expedient $expedient : El expediente al que se le quiere asignar el anexo
          * @return Cierra automáticamente la ventana emergente
          */
+
 
         try {
             $expedient->annexes()->attach($annex->id);
@@ -190,5 +191,24 @@ class ExpedientController extends Controller
 
         return "<script>window.close();</script>";
 
+    }
+
+    public function detachAnnex(Expedient $annex, Expedient $expedient)
+    {
+        /**
+         * Este metodo desvincula un anexo de un expediente
+         * @param Annex $annex : El anexo que se quiere desvincular
+         * @param Expedient $expedient : El expediente al que se le quiere desvincular el anexo
+         * @return Cierra recarga la pagina
+         */
+
+
+        try {
+            $expedient->annexes()->detach($annex->id);
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+
+        return redirect('/expedientes');
     }
 }

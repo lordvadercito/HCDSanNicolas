@@ -20,7 +20,7 @@ class CreateAnnexExpedientTable extends Migration
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('expedient_id')->references('id')->on('expedients');
-            $table->foreign('annex_id')->references('id')->on('annexes');
+            $table->foreign('annex_id')->references('id')->on('expedients');
         });
     }
 

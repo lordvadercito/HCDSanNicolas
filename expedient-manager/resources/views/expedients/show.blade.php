@@ -124,8 +124,8 @@
                             </div>
                             <div class="list-group" style="width: 90%;margin: 0 5%">
                                 @foreach($expedient->annexes as $annexes)
-                                    <a href="{{ action('AnnexController@show', ['id' => $annexes->id]) }}"
-                                       class="list-group-item list-group-item-action text-center">{{$annexes->nroAnnex . " - " . $annexes->title ." - ". $annexes->type}}</a>
+                                    <a href="{{ action('ExpedientController@show', ['id' => $annexes->id]) }}"
+                                       class="list-group-item list-group-item-action text-center">{{$annexes->expedientNro . " - " . $annexes->subject ." - ". $annexes->projectType}}</a>
                                 @endforeach
                             </div>
 

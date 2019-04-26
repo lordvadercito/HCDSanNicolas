@@ -116,7 +116,8 @@
                                             <select name="commission_id" id="commission_id"
                                                     class="form-control {{ $errors->has('commission_id') ? ' is-invalid' : '' }}"
                                                     required>
-                                                <option value="{{$expedient->commission_id}}">{{$expedient->commissions->name}}</option>
+                                                <option
+                                                    value="{{$expedient->commission_id}}">{{$expedient->commissions->name}}</option>
                                                 @foreach(\App\Models\Commission::all() as $destination)
                                                     <option value="{{$destination->id}}">{{$destination->name}}</option>
                                                 @endforeach
@@ -221,6 +222,21 @@
                                             <strong>{{ $errors->first('user_id') }}</strong>
                                         @endif
                                         </span>
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <p class="col-sm-12 text-center font-weight-bold">
+                                            Anexos vinculados: &nbsp;</p>
+                                    </div>
+                                    <div class="list-group" style="width: 90%;margin: 0 5%">
+                                        @foreach($expedient->annexes as $annexes)
+                                            <p class="list-group-item list-group-item-action text-center">{{$annexes->expedientNro . " - " . $annexes->subject ." - ". $annexes->projectType}}
+
+                                                <a href="{{ action('ExpedientController@show', ['id' => $annexes->id]) }}" target="_blank" role="button" class="btn btn-link">[Ver]</a>
+                                                <a href="{{ action('ExpedientController@detachAnnex', ['annex' => $annexes, 'expedient' => $expedient]) }}" role="button" class="btn btn-link" style="color: red;">[Desvincular]</a>
+                                            </p>
+                                        @endforeach
+                                    </div>
                                 </div>
                                 <br>
                                 <hr>

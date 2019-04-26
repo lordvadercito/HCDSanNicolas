@@ -15,7 +15,7 @@
                                 <thead>
                                 <tr>
                                     <th scope="col">Nro.</th>
-                                    <th scope="col">Titulo</th>
+                                    <th scope="col">Asunto</th>
                                     <th scope="col">Tipo</th>
                                     <th scope="col"></th>
                                     <th scope="col"></th>
@@ -24,14 +24,15 @@
                                 <tbody>
                                 @foreach($annexes as $annex)
                                     <tr>
-                                        <th>{{$annex->nroAnnex}}</th>
-                                        <td>{{$annex->title}}</td>
-                                        <td>{{$annex->type}}</td>
+                                        <th>{{$annex->expedientNro}}</th>
+                                        <td>{{$annex->subject}}</td>
+                                        <td>{{$annex->projectType}}</td>
+                                        <td>{{$annex->id}}</td>
                                         <td><a role="button" class="btn btn-primary"
                                                href="{{ action('ExpedientController@attachAnnex', ['annex' => $annex, 'expedient' => $expedient]) }}">Anexar</a>
                                         </td>
                                         <td><a role="button" class="btn btn-secondary"
-                                               href="{{ action('AnnexController@show', ['id' => $annex->id]) }}">Ver
+                                               href="{{ action('ExpedientController@show', ['id' => $annex->id]) }}">Ver
                                                 detalle</a>
                                         </td>
                                     </tr>

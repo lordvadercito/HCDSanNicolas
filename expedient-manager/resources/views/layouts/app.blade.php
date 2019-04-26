@@ -60,13 +60,6 @@
                                         {{ __('Nuevo expediente') }}
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{{ route('annexes.index') }}">
-                                        {{ __('Anexos') }}
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('annexes.create') }}">
-                                        {{ __('Nuevo anexo') }}
-                                    </a>
-                                    <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="{{ route('movements.index') }}">
                                         {{ __('Movimientos de expedientes') }}
                                     </a>
