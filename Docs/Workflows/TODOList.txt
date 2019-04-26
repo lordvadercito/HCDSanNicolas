@@ -3,19 +3,19 @@ TODO LIST:
 Expedientes:
  1.- Permitir agregar anexos desde la vista de creación de expedientes
  2.- La ventana de anexos debe incluir otros expedientes ya cargados
- 3.- En la vista de creación, permitir agregar la comisión a la que se destina el expediente
+ 3.- En la vista de creación, permitir agregar la comisión a la que se destina el expediente (Hecho 09/04)
 
 Movimientos:
- 1.- Al crear un expediente, por defecto debe aparecer en esta tabla con el destino por defecto: Secretaría
- 2.- Agregar el titulo "Pases" ya que es la nomenclatura del usuario
- 3.- Mostrar ubicación actual
+ 1.- Al crear un expediente, por defecto debe aparecer en esta tabla con el destino por defecto: Secretaría (Hecho 11/04)
+ 2.- Agregar el titulo "Pases" ya que es la nomenclatura del usuario (Hecho 11/04)
+ 3.- Mostrar ubicación actual (Hecho 11/04)
  4.- Poder indicar si el expediente está en tabla
- 5.- Agregar Nro. foja
+ 5.- Agregar Nro. foja // ¿Qué número va por defecto? (Hecho 14/04)
 
 Anexos:
- 1.- En la vista de creación, agregar un <select> para elegir entre "Nota" o "Informe"
- 2.- Debe contener el campo "Solicitado en el expediente: " Donde constará el expediente en el que fue anexado
- 3.- Agregar un <select> para indicar si es de Entrada o de Salida
+ 1.- En la vista de creación, agregar un <select> para elegir entre "Nota" o "Informe" (Hecho 15/04)
+ 2.- Debe contener el campo "Solicitado en el expediente: " Donde constará el expediente en el que fue anexado (Hecho 15/04)
+ 3.- Agregar un <select> para indicar si es de Entrada o de Salida (Hecho 15/04)
 
 Actas:
  1.- Crear tabla de Actas

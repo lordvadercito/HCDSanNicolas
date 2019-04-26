@@ -1,0 +1,12 @@
+.submenu1, .submenu2, .submenu3, .submenu4, .submenu5{
+	display:none;
+	left:100%;
+	background: #FFF;
+	position:absolute;
+	width:100%;
+	padding: 1% 0%;
+	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);
+	
+	
+	
+}	
