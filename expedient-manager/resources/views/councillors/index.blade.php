@@ -8,8 +8,12 @@
             <div class="row justify-content-center">
                 <div class="col-md-10 col-xs-12">
                     <div class="card">
-                        <div class="card-header">Concejales cargados</div>
+                        <div class="card-header">Concejales</div>
                         <div class="card-body">
+                            <nav class="navbar navbar-light bg-light">
+                                <a role="button" class="btn btn-primary"
+                                   href="{{ action('CouncillorController@create') }}">Nuevo concejal</a>
+                            </nav>
                             <table class="table table-hover">
                                 <thead>
                                 <tr>

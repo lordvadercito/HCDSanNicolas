@@ -113,7 +113,8 @@
                                                     class="form-control {{ $errors->has('expedient_id') ? ' is-invalid' : '' }}"
                                                     required>
                                                 @foreach(\App\Models\Expedient::all() as $expedient)
-                                                    <option value="{{$expedient->id}}">{{$expedient->expedientNro}} - {{$expedient->subject}}</option>
+                                                    <option value="{{$expedient->id}}">{{$expedient->expedientNro}}
+                                                        - {{$expedient->subject}}</option>
                                                 @endforeach
                                             </select>
                                             <span role="alert" class="invalid-feedback">
@@ -155,7 +156,9 @@
                                            class="btn btn-link float-left">Volver</a>
                                     </div>
                                     <div class="col-sm-6">
-                                        <button type="submit" class="btn btn-primary float-right">Guardar</button>
+                                        <button type="submit" class="btn btn-primary float-right">Actualizar</button>
+                                        <a href="{{action('NoteController@delete', ['id' => $note->id])}}"
+                                           role="button" class="btn btn-danger float-right button-spacer">Eliminar</a>
                                     </div>
 
                                 </div>

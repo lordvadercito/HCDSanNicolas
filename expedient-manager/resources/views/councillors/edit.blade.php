@@ -8,89 +8,100 @@
             <div class="row justify-content-center">
                 <div class="col-md-9 col-xs-12">
                     <div class="card">
-                        <div class="card-header">Editar concejales</div>
+                        <div class="card-header">Editar concejal</div>
                         <div class="card-body">
                             <form method="POST" action="{{ url("concejales/{$councillor->id}") }}">
                                 @method('PUT')
                                 @csrf
 
-                                <div class="form-group row">
-                                    <label for="expedientNro"
-                                           class="col-md-4 col-form-label text-md-right">Nombre</label>
-                                    <div class="col-md-6">
-                                        <input type="text" name="name" value="{{old('name', $councillor->name)}}"
-                                               class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                               required autofocus>
-                                        <span role="alert" class="invalid-feedback">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="name" class="text-md-right">Nombre</label>
+
+                                            <input type="text" name="name" id="name"
+                                                   value="{{old('name', $councillor->name)}}"
+                                                   class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}"
+                                                   required autofocus autocomplete="off">
+                                            <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('name'))
-                                                <strong>{{ $errors->first('name') }}</strong>
-                                            @endif
-                                        </span>
+                                                    <strong>{{ $errors->first('name') }}</strong>
+                                                @endif
+                                            </span>
 
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="surname" class="col-md-4 col-form-label text-md-right">Apellido</label>
-                                    <div class="col-md-6">
-                                        <input type="text" name="surname" value="{{old('surname', $councillor->surname)}}"
-                                               class="form-control {{ $errors->has('surname') ? ' is-invalid' : '' }}"
-                                               required autofocus>
-                                        <span role="alert" class="invalid-feedback">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="surname" class="text-md-right">Apellido</label>
+                                            <input type="text" name="surname" id="surname"
+                                                   value="{{old('surname', $councillor->surname)}}"
+                                                   class="form-control {{ $errors->has('surname') ? ' is-invalid' : '' }}"
+                                                   required autocomplete="off">
+                                            <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('surname'))
-                                                <strong>{{ $errors->first('surname') }}</strong>
-                                            @endif
-                                        </span>
-
+                                                    <strong>{{ $errors->first('surname') }}</strong>
+                                                @endif
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
-                                    <label for="blocks_id" class="col-md-4 col-form-label text-md-right">Bloque</label>
-                                    <div class="col-md-6">
-                                        <select name="blocks_id" id="blocks_id"
-                                                class="form-control {{ $errors->has('blocks_id') ? ' is-invalid' : '' }}"
-                                                required>
-                                            <option value="{{old('blocks_id', $councillor->blocks_id)}}">{{old('blocks_id', $councillor->block->name)}}</option>
-                                            @foreach(\App\Models\Block::all() as $block)
-                                                <option value="{{$block->id}}">{{$block->name}}</option>
-                                            @endforeach
-                                        </select>
-                                        <span role="alert" class="invalid-feedback">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="blocks_id" class="text-md-right">Bloque</label>
+
+                                            <select name="blocks_id" id="blocks_id"
+                                                    class="form-control {{ $errors->has('blocks_id') ? ' is-invalid' : '' }}"
+                                                    required>
+                                                @foreach(\App\Models\Block::all() as $block)
+                                                    @if($block->id == $councillor->blocks_id)
+                                                        <option value="{{$block->id}}"
+                                                                selected>{{$block->name}}</option>
+                                                    @else
+                                                        <option value="{{$block->id}}">{{$block->name}}</option>
+                                                    @endif
+                                                @endforeach
+                                            </select>
+                                            <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('blocks_id'))
-                                                <strong>{{ $errors->first('blocks_id') }}</strong>
-                                            @endif
+                                                    <strong>{{ $errors->first('blocks_id') }}</strong>
+                                                @endif
                                         </span>
 
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="commissions_id"
-                                           class="col-md-4 col-form-label text-md-right">Comision</label>
-                                    <div class="col-md-6">
-                                        <select name="commissions_id" id="commissions_id"
-                                                class="form-control {{ $errors->has('commissions_id') ? ' is-invalid' : '' }}"
-                                                required>
-                                            <option value="{{old('commissions_id', $councillor->commissions_id)}}">{{old('commissions_id', $councillor->commission->name)}}</option>
-                                            @foreach(\App\Models\Commission::all() as $commission)
-                                                <option value="{{$commission->id}}">{{$commission->name}}</option>
-                                            @endforeach
-                                        </select>
-                                        <span role="alert" class="invalid-feedback">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="commissions_id" class="text-md-right">Comisión</label>
+                                            <select name="commissions_id" id="commissions_id"
+                                                    class="form-control {{ $errors->has('commissions_id') ? ' is-invalid' : '' }}"
+                                                    required>
+                                                @foreach(\App\Models\Commission::all() as $commission)
+                                                    @if($commission->id == $councillor->commissions_id)
+                                                        <option value="{{$commission->id}}"
+                                                                selected>{{$commission->name}}</option>
+                                                    @else
+                                                        <option
+                                                            value="{{$commission->id}}">{{$commission->name}}</option>
+                                                    @endif
+                                                @endforeach
+                                            </select>
+                                            <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('$commission'))
-                                                <strong>{{ $errors->first('$commission') }}</strong>
-                                            @endif
+                                                    <strong>{{ $errors->first('$commission') }}</strong>
+                                                @endif
                                         </span>
-
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
-                                    <label for="start_of_mandate"
-                                           class="col-md-4 col-form-label text-md-right">Inicio de mandato</label>
-                                    <div class="col-md-6">
-                                        <input type="date" name="start_of_mandate" value="{{old('start_of_mandate', $councillor->start_of_mandate)}}"
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label for="start_of_mandate" class="text-md-right">Inicio de mandato</label>
+                                        <input type="date" name="start_of_mandate"
+                                               value="{{old('start_of_mandate', $councillor->start_of_mandate)}}"
                                                class="form-control {{ $errors->has('start_of_mandate') ? ' is-invalid' : '' }}"
                                                required autofocus>
                                         <span role="alert" class="invalid-feedback">
@@ -99,14 +110,11 @@
                                             @endif
                                         </span>
                                     </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="end_of_mandate"
-                                           class="col-md-4 col-form-label text-md-right">Finalizazcion de
-                                        mandato</label>
-                                    <div class="col-md-6">
-                                        <input type="date" name="end_of_mandate" value="{{old('end_of_mandate',$councillor->end_of_mandate)}}"
+                                    <div class="col">
+                                        <label for="end_of_mandate" class="text-md-right">Finalización de
+                                            mandato</label>
+                                        <input type="date" name="end_of_mandate"
+                                               value="{{old('end_of_mandate', $councillor->end_of_mandate)}}"
                                                class="form-control {{ $errors->has('end_of_mandate') ? ' is-invalid' : '' }}"
                                                required autofocus>
                                         <span role="alert" class="invalid-feedback">
@@ -115,30 +123,42 @@
                                             @endif
                                         </span>
                                     </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="active"
-                                           class="col-md-4 col-form-label text-md-right">Activo</label>
-                                    <div class="col-md-6">
-                                        <select name="active" id="active"
-                                                class="form-control {{ $errors->has('active') ? ' is-invalid' : '' }}"
-                                                required>
-                                            {{--TODO: Mostrar primero la opcion activa--}}
-                                            <option value=0>No</option>
-                                            <option value=1>Si</option>
-                                        </select>
-                                        <span role="alert" class="invalid-feedback">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="active"
+                                                   cclass="text-md-right">Activo</label>
+                                            <select name="active" id="active"
+                                                    class="form-control {{ $errors->has('active') ? ' is-invalid' : '' }}"
+                                                    required>
+                                                @if($councillor->active == 0)
+                                                    <option value=0 selected>No</option>
+                                                    <option value=1>Si</option>
+                                                @else
+                                                    <option value=1 selected>Si</option>
+                                                    <option value=0>No</option>
+                                                @endif
+                                            </select>
+                                            <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('active'))
-                                                <strong>{{ $errors->first('active') }}</strong>
-                                            @endif
+                                                    <strong>{{ $errors->first('active') }}</strong>
+                                                @endif
                                         </span>
-
+                                        </div>
                                     </div>
                                 </div>
                                 <br>
-                                <button type="submit" class="btn btn-primary float-right">Guardar</button>
-
+                                <hr>
+                                <div class="row">
+                                    <div class="col">
+                                        <a href="{{ URL::previous() }}" role="button"
+                                           class="btn btn-link float-left">Volver</a>
+                                    </div>
+                                    <div class="col">
+                                        <button type="submit" class="btn btn-primary float-right">Actualizar</button>
+                                        <a href="{{action('CouncillorController@delete', ['id' => $councillor->id])}}"
+                                           role="button" class="btn btn-danger float-right button-spacer">Eliminar</a>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>

@@ -78,4 +78,10 @@ class CommissionController extends Controller
         $commission->update($data);
         return redirect('/comisiones');
     }
+
+    public function delete(Commission $commission)
+    {
+        $commission->delete();
+        return redirect('/comisiones');
+    }
 }

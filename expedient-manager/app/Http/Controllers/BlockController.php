@@ -78,4 +78,10 @@ class BlockController extends Controller
         $block->update($data);
         return redirect('/bloques');
     }
+
+    public function delete(Block $block)
+    {
+        $block->delete();
+        return redirect('/bloques');
+    }
 }

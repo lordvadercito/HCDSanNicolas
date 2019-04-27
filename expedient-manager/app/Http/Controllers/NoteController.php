@@ -119,4 +119,10 @@ class NoteController extends Controller
         $note->update($data);
         return redirect('/notas');
     }
+
+    public function delete(Note $note)
+    {
+        $note->delete();
+        return redirect('/notas');
+    }
 }

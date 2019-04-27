@@ -43,7 +43,17 @@
                                     </div>
                                 </div>
                                 <br>
-                                <button type="submit" class="btn btn-primary float-right">Guardar</button>
+                                <hr>
+                                <div class="row">
+                                    <div class="col">
+                                        <a href="{{ URL::previous() }}" role="button"
+                                           class="btn btn-link float-left">Volver</a>
+                                    </div>
+                                    <div class="col">
+                                        <button type="submit" class="btn btn-primary float-right">Guardar</button>
+                                    </div>
+                                </div>
+
                             </form>
                         </div>
                     </div>

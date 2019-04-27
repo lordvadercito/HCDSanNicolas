@@ -62,6 +62,8 @@ Route::get('/concejales/{councillor}/editar', 'CouncillorController@edit')->name
 
 Route::put('/concejales/{councillor}', 'CouncillorController@update');
 
+Route::get('/concejales/{councillor}/eliminar', 'CouncillorController@delete');
+
 
 //Blocks routes
 
@@ -76,6 +78,8 @@ Route::post('/bloques/creado', 'BlockController@store');
 Route::get('/bloques/{block}/editar', 'BlockController@edit')->name('blocks.edit');
 
 Route::put('/bloques/{block}', 'BlockController@update');
+
+Route::get('/bloques/{block}/eliminar', 'BlockController@delete');
 
 
 //Commissions routes
@@ -92,6 +96,8 @@ Route::get('/comisiones/{commission}/editar', 'CommissionController@edit')->name
 
 Route::put('/comisiones/{commission}', 'CommissionController@update');
 
+Route::get('/comisiones/{commission}/eliminar', 'CommissionController@delete');
+
 
 //Notes routes
 
@@ -105,7 +111,9 @@ Route::post('/notas/creado', 'NoteController@store');
 
 Route::get('/notas/{note}/editar', 'NoteController@edit')->name('notes.edit');
 
-Route::put('/notas/{note}', 'NoteCOntroller@update');
+Route::put('/notas/{note}', 'NoteController@update');
+
+Route::get('/notas/{note}/eliminar', 'NoteController@delete');
 
 
 //Authority routes (Edit only)

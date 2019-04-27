@@ -10,6 +10,10 @@
                     <div class="card">
                         <div class="card-header">Comisiones parlamentarias cargadas</div>
                         <div class="card-body">
+                            <nav class="navbar navbar-light bg-light">
+                                <a role="button" class="btn btn-primary"
+                                   href="{{ action('CommissionController@create') }}">Nueva comisión</a>
+                            </nav>
                             <table class="table table-hover">
                                 <thead>
                                 <tr>

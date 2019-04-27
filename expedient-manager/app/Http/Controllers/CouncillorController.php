@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Block;
 use App\Models\Councillor;
 use Illuminate\Http\Request;
 
@@ -111,6 +112,12 @@ class CouncillorController extends Controller
         ]);
 
         $councillor->update($data);
+        return redirect('/concejales');
+    }
+
+    public function delete(Councillor $councillor)
+    {
+        $councillor->delete();
         return redirect('/concejales');
     }
 }

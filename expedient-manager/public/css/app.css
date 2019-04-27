@@ -10683,3 +10683,7 @@ a.text-dark:focus {
   color: #ffffff;
 }
 
+.button-spacer {
+  margin-right: 20px;
+}
+

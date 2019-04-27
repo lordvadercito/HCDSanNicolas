@@ -28,6 +28,14 @@
                                 <p class="col-xs-5 float-right space-50 text-left"
                                    style="width: 50%;">{{$block->created_at}}</p>
                             </div>
+                            <br>
+                            <hr>
+                            <div class="row">
+                                <div class="col">
+                                    <a href="{{ URL::previous() }}" role="button"
+                                       class="btn btn-link float-left">Volver</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

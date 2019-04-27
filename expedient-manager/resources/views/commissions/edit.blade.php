@@ -32,7 +32,8 @@
                                     <label for="description"
                                            class="col-md-4 col-form-label text-md-right">Descripcion</label>
                                     <div class="col-md-6">
-                                        <input type="text" name="description" value="{{old('description', $commission->description)}}"
+                                        <input type="text" name="description"
+                                               value="{{old('description', $commission->description)}}"
                                                class="form-control {{ $errors->has('description') ? ' is-invalid' : '' }}"
                                                required autofocus>
                                         <span role="alert" class="invalid-feedback">
@@ -43,9 +44,19 @@
 
                                     </div>
                                 </div>
-
                                 <br>
-                                <button type="submit" class="btn btn-primary float-right">Guardar</button>
+                                <hr>
+                                <div class="row">
+                                    <div class="col">
+                                        <a href="{{ URL::previous() }}" role="button"
+                                           class="btn btn-link float-left">Volver</a>
+                                    </div>
+                                    <div class="col">
+                                        <button type="submit" class="btn btn-primary float-right">Actualizar</button>
+                                        <a href="{{action('CommissionController@delete', ['id' => $commission->id])}}"
+                                           role="button" class="btn btn-danger float-right button-spacer">Eliminar</a>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>
