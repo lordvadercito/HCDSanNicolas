@@ -20,8 +20,8 @@ class CreateActsTable extends Migration
             $table->string('hcd_president');
             $table->string('hcd_secretary');
             $table->string('session_type');
-            $table->date('session_start')->nullable();
-            $table->date('session_end')->nullable();
+            $table->dateTime('session_start')->nullable();
+            $table->dateTime('session_end')->nullable();
             $table->text('tribute')->nullable();
             $table->text('observation')->nullable();
             $table->softDeletes();

@@ -137,6 +137,11 @@ Route::get('/actas/{act}/editar', 'ActController@edit')->name('acts.edit');
 
 Route::put('/actas/{act}', 'ActController@update');
 
+Route::get('/actas/{act}/eliminar', 'ActController@delete');
+
+Route::get('/actas/{act}/pdf', 'ActController@pdf')->name('acts.pdf');
+
+
 //Home routes
 
 Route::get('/home', 'HomeController@index')->name('home');

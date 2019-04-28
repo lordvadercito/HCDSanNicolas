@@ -118,4 +118,18 @@ class ActController extends Controller
         return redirect('/actas');
     }
 
+    public function delete(Act $act)
+    {
+        $act->delete();
+        return redirect('/actas');
+    }
+
+    public function pdf(Act $act)
+    {
+        $view = \View::make('acts.show', compact('act'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream('show.pdf');
+    }
+
 }
