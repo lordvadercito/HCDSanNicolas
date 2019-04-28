@@ -15,7 +15,9 @@ class CouncillorController extends Controller
 
     public function index()
     {
-        $councillors = Councillor::all();
+        $councillors = Councillor::orderBy('name', 'ASC')
+            ->paginate(10);
+
         return view('councillors.index', compact('councillors'));
     }
 

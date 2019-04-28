@@ -47,6 +47,12 @@
                     </div>
                 </div>
             </div>
+            <br>
+            <hr>
+            <br>
+            <div class="row text-center justify-content-center">
+                {{ $councillors->links() }}
+            </div>
         </div>
     </main>
 @endsection

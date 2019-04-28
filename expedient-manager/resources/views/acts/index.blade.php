@@ -12,7 +12,7 @@
                         <div class="card-body">
                             <nav class="navbar navbar-light bg-light">
                                 <a role="button" class="btn btn-primary"
-                                   href="{{ action('ActController@create') }}">Nueva acta</a>
+                                   href="{{ action('ActController@create') }}">Nuevo acta</a>
                             </nav>
                             <table class="table table-hover">
                                 <thead>
