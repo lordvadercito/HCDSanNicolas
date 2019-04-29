@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDayOrdersTable extends Migration
+class CreateDayOrderExpedientsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateDayOrdersTable extends Migration
      */
     public function up()
     {
-        Schema::create('day_orders', function (Blueprint $table) {
+        Schema::create('day_order_expedients', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('act_id')->unsigned();
-            $table->DateTime('dateOrder');
-            $table->integer('sessionNro');
-            $table->boolean('lock');
-            $table->foreign('act_id')->references('id')->on('acts');
+            $table->integer('day_order_id')->unsigned();
+            $table->integer('expedient_id')->unsigned();
+            $table->foreign('day_order_id')->references('id')->on('day_orders');
+            $table->foreign('expedient_id')->references('id')->on('expedients');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -32,6 +31,6 @@ class CreateDayOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('day_orders');
+        Schema::dropIfExists('day_order__expedients');
     }
 }

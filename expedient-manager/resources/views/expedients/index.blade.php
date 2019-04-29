@@ -30,7 +30,7 @@
                                     <th scope="col">Tipo</th>
                                     <th scope="col">Asunto</th>
                                     <th scope="col">Estado</th>
-                                    <th scope="col">Creación</th>
+{{--                                    <th scope="col">Creación</th>--}}
                                     <th scope="col"></th>
                                     <th scope="col"></th>
                                 </tr>
@@ -42,7 +42,7 @@
                                         <td>{{$expedient->projectType}}</td>
                                         <td>{{$expedient->subject}}</td>
                                         <td>{{$expedient->state}}</td>
-                                        <td>{{$expedient->creation_date }}</td>
+{{--                                        <td>{{$expedient->creation_date }}</td>--}}
                                         <td><a role="button" class="btn btn-primary"
                                                href="{{ action('ExpedientController@edit', ['id' => $expedient->id]) }}">Editar</a>
                                         </td>

@@ -142,6 +142,30 @@ Route::get('/actas/{act}/eliminar', 'ActController@delete');
 Route::get('/actas/{act}/pdf', 'ActController@pdf')->name('acts.pdf');
 
 
+//Day Orders routes
+
+Route::get('/orden', 'DayOrderController@index')->name('dayOrders.index');
+
+Route::get('/orden/nuevo', 'DayOrderController@create')->name('dayOrders.create');
+
+Route::post('/orden/creado', 'DayOrderController@store');
+
+Route::get('/orden/{dayOrder}/anexar', 'DayOrderController@annex')->name('dayOrders.annex');
+
+Route::post('/orden/anexado', 'DayOrderController@attached');
+
+Route::get('/orden/{dayOrder}', 'DayOrderController@show')->name('dayOrders.show');
+
+Route::get('/orden/{dayOrder}/editar', 'DayOrderController@edit')->name('dayOrders.edit');
+
+Route::put('/orden/{dayOrder}', 'DayOrderController@update');
+
+Route::get('/orden/{dayOrder}/eliminar', 'DayOrderController@delete');
+
+Route::get('/orden/{dayOrder}/pdf', 'DayOrderController@viewPdf')->name('dayOrders.pdf');
+
+Route::get('/orden/{dayOrder}/pdf/descarga', 'DayOrderController@downloadPdf')->name('dayOrdersDownload.pdf');
+
 //Home routes
 
 Route::get('/home', 'HomeController@index')->name('home');

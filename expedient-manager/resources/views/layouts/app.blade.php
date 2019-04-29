@@ -117,6 +117,13 @@
                                     <a class="dropdown-item" href="{{ route('acts.create') }}">
                                         {{ __('Nuevo acta') }}
                                     </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{ route('dayOrders.index') }}">
+                                        {{ __('Órdenes del día') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('dayOrders.create') }}">
+                                        {{ __('Nuevo orden del día') }}
+                                    </a>
                                 </div>
                             </li>
 
