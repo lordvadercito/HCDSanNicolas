@@ -139,7 +139,9 @@ Route::put('/actas/{act}', 'ActController@update');
 
 Route::get('/actas/{act}/eliminar', 'ActController@delete');
 
-Route::get('/actas/{act}/pdf', 'ActController@pdf')->name('acts.pdf');
+Route::get('/actas/{act}/pdf', 'ActController@viewPdf')->name('acts.pdf');
+
+Route::get('/actas/{act}/pdf/descarga', 'ActController@downloadPdf')->name('actsDownload.pdf');
 
 
 //Day Orders routes

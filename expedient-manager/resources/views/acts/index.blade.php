@@ -35,11 +35,11 @@
                                                href="{{ action('ActController@edit', ['id' => $act->id]) }}">Editar</a>
                                         </td>
                                         <td><a role="button" class="btn btn-secondary" target="_blank"
-                                                    href="{{ action('ActController@show', ['id' => $act->id]) }}">Ver
+                                                    href="{{ action('ActController@viewPdf', ['id' => $act->id]) }}">Ver
                                                 acta</a>
                                         </td>
                                         <td><a role="button" class="btn btn-success"
-                                               href="{{ action('ActController@pdf', ['id' => $act->id]) }}" target="_blank">Descargar</a>
+                                               href="{{ action('ActController@downloadPdf', ['id' => $act->id]) }}" target="_blank">Descargar</a>
                                         </td>
                                     </tr>
                                 @endforeach
