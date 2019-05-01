@@ -23,7 +23,7 @@
 
     <style>
         html, body {
-            background-image: url("../img/backgrounds/<?php echo $selectedBg; ?>");
+            background-image: url("/img/backgrounds/<?php echo $selectedBg; ?>");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
