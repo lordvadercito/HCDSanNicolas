@@ -112,7 +112,7 @@
         </div>
     @endif
 
-    <img class="col-sm-12 logo" src="../img/logoB.png" alt="HCD San Nicolas">
+    <img class="col-sm-12 logo" src="{{asset('/img/logoB.png')}}" alt="HCD San Nicolas">
 
     <div class="content">
         <div class="title m-b-md">
@@ -122,7 +122,7 @@
         <div class="links">
             <a href="{{ route('login') }}">Acceder</a>
             <a href="{{ route('register') }}">Nuevo usuario</a>
-            <a href="https://laravel-news.com">Ayuda</a>
+            <a href="mailto:hello@agustinducca?subject=Solicitud%20de%20soporte%20-%20Expedient-Manager%20HCD%20San%20Nicolas">Ayuda</a>
         </div>
     </div>
 </div>
