@@ -1,0 +1,10 @@
+{
+    "name": "ricardomatias/web",
+    "authors": [
+        {
+            "name": "matiasricardo32",
+            "email": "ricardomatias.deb@gmail.com"
+        }
+    ],
+    "require": {}
+}
