@@ -17,7 +17,7 @@
                                       action="{{route("expedients.index")}}" role="search">
                                     <input name="expedientNro" id="expedientNro" class="form-control mr-sm-2"
                                            autocomplete="off" type="search" placeholder="Nro. expediente"
-                                           aria-label="Search" >
+                                           aria-label="Search">
                                     <input type="date" id="creation_date" name="creation_date"
                                            class="form-control mr-sm-2">
                                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
@@ -30,7 +30,7 @@
                                     <th scope="col">Tipo</th>
                                     <th scope="col">Asunto</th>
                                     <th scope="col">Estado</th>
-{{--                                    <th scope="col">Creación</th>--}}
+                                    <th scope="col"></th>
                                     <th scope="col"></th>
                                     <th scope="col"></th>
                                 </tr>
@@ -38,17 +38,20 @@
                                 <tbody>
                                 @foreach($expedients as $expedient)
                                     <tr>
-                                        <td>{{$expedient->expedientNro}} / {{substr($expedient->creation_date, 0, 4)}}</td>
+                                        <td>{{$expedient->expedientNro}}
+                                            / {{substr($expedient->creation_date, 0, 4)}}</td>
                                         <td>{{$expedient->projectType}}</td>
                                         <td>{{$expedient->subject}}</td>
                                         <td>{{$expedient->state}}</td>
-{{--                                        <td>{{$expedient->creation_date }}</td>--}}
+                                        {{--                                        <td>{{$expedient->creation_date }}</td>--}}
                                         <td><a role="button" class="btn btn-primary"
                                                href="{{ action('ExpedientController@edit', ['id' => $expedient->id]) }}">Editar</a>
                                         </td>
                                         <td><a role="button" class="btn btn-secondary"
-                                               href="{{ action('ExpedientController@show', ['id' => $expedient->id]) }}">Ver
-                                                detalle</a>
+                                               href="{{ action('ExpedientController@show', ['id' => $expedient->id]) }}">Ver</a>
+                                        </td>
+                                        <td><a role="button" class="btn btn-success"
+                                               href="{{action('MovementController@fastPass',['id' => $expedient->id])}}">Pase</a>
                                         </td>
                                     </tr>
                                 @endforeach

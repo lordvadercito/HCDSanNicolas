@@ -43,6 +43,8 @@ Route::get('/movimientos', 'MovementController@index')->name('movements.index');
 
 Route::get('/movimientos/{expedient}/nuevo', 'MovementController@create')->name('movements.create');
 
+Route::get('/movimientos/{expedient}/pase', 'MovementController@fastPass')->name('movements.fastPass');
+
 Route::get('/movimientos/{movement}', 'MovementController@show')->name('movements.show');
 
 Route::post('/movimientos/creado', 'MovementController@store');

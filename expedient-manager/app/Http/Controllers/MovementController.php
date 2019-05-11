@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Expedient;
 use App\Models\Movement;
+use Illuminate\View\View;
 
 class MovementController extends Controller
 {
@@ -25,7 +26,7 @@ class MovementController extends Controller
         return view('movements.show', compact('movement'));
     }
 
-    public function create(Expedient $expedient)
+    private static function getExpedient(Expedient $expedient)
     {
         /**
          * Obtiene el expediente de referencia que se desea mover
@@ -34,7 +35,23 @@ class MovementController extends Controller
             ->orderBy('id', 'DESC')
             ->take(1)
             ->get();
+
+        return $actual;
+    }
+
+    public function create(Expedient $expedient)
+    {
+        $actual = self::getExpedient($expedient);
         return view('movements.create', compact('expedient', 'actual'));
+    }
+
+    public function fastPass(Expedient $expedient)
+    {
+        /**
+         * Crea pases rápidos de expedientes, en los cuales solo se puede elegir si es pase con o sin despacho
+         */
+        $actual = self::getExpedient($expedient);
+        return View('movements.fastPass', compact('expedient', 'actual'));
     }
 
     public function store()
