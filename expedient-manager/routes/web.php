@@ -170,6 +170,24 @@ Route::get('/orden/{dayOrder}/pdf', 'DayOrderController@viewPdf')->name('dayOrde
 
 Route::get('/orden/{dayOrder}/pdf/descarga', 'DayOrderController@downloadPdf')->name('dayOrdersDownload.pdf');
 
+
+//News routes
+
+Route::get('/noticias', 'NewsController@index')->name('news.index');
+
+Route::get('/noticias/nueva', 'NewsController@create')->name('news.create');
+
+Route::post('/noticias/creada', 'NewsController@store');
+
+Route::get('/noticias/{news}', 'NewsController@show')->name('news.show');
+
+Route::get('/noticias/{news}/editar', 'NewsController@edit')->name('news.edit');
+
+Route::put('/noticias/{news}', 'NewsController@update');
+
+Route::get('/noticias/{news}/eliminar', 'NewsController@delete');
+
+
 //Home routes
 
 Route::get('/home', 'HomeController@index')->name('home');

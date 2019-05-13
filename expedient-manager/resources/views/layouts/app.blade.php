@@ -146,6 +146,9 @@
                                     </form>
                                 </div>
                             </li>
+                            <li class="nav-item">
+                                <a class="btn btn-outline-success" href="{{ route('news.index') }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>Prensa</a>
+                            </li>
                         @endguest
                     </ul>
                 </div>
