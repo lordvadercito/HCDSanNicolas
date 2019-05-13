@@ -38,10 +38,16 @@ class NewsController extends Controller
          * @return boolean
          * @fields: 'title', 'excerpt', 'body', 'category', 'image_name', 'image_path', 'user_id', 'created_at'
          **/
+        if ($request->hasFile('image_file')) {
+            $image = $request->file('image_file');
+            $file_name = $image->getClientOriginalName();
+            \Storage::disk('local')->put($file_name, \File::get($image));
 
-        $image = $request->file('image_file');
-        $file_name = $image->getClientOriginalName();
-        \Storage::disk('local')->put($file_name, \File::get($image));
+            $data['image_name'] = $file_name;
+            $data['image_path'] = public_path() . '/storage/' . $file_name;
+        } else {
+            $file_name = null;
+        }
 
         $data = request()->validate([
             'title' => ['required', 'string'],
@@ -83,8 +89,9 @@ class NewsController extends Controller
         return view('news.edit', ['news' => $news]);
     }
 
-    public function update(News $news)
+    public function update(News $news, Request $request)
     {
+
         $data = request()->validate([
             'title' => ['required', 'string'],
             'excerpt' => ['required', 'string'],
@@ -103,6 +110,15 @@ class NewsController extends Controller
             'category.string' => 'La categoría debe ser un texto',
             'user_id.required' => 'Error al capturar el usuario de creación de la noticia',
         ]);
+
+        if ($request->hasFile('image_file')) {
+            $image = $request->file('image_file');
+            $file_name = $image->getClientOriginalName();
+            \Storage::disk('local')->put($file_name, \File::get($image));
+
+            $data['image_name'] = $file_name;
+            $data['image_path'] = public_path() . '/storage/' . $file_name;
+        }
 
         $news->update($data);
         return redirect('/noticias');

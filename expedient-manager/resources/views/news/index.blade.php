@@ -45,6 +45,12 @@
                     </div>
                 </div>
             </div>
+            <br>
+            <hr>
+            <br>
+            <div class="row text-center justify-content-center">
+                {{ $news->links() }}
+            </div>
         </div>
     </main>
 @endsection
