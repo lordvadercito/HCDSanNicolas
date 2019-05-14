@@ -42,9 +42,6 @@ class NewsController extends Controller
             $image = $request->file('image_file');
             $file_name = $image->getClientOriginalName();
             \Storage::disk('local')->put($file_name, \File::get($image));
-
-            $data['image_name'] = $file_name;
-            $data['image_path'] = public_path() . '/storage/' . $file_name;
         } else {
             $file_name = null;
         }
@@ -54,7 +51,7 @@ class NewsController extends Controller
             'excerpt' => ['required', 'string'],
             'body' => ['required', 'string'],
             'category' => ['nullable', 'string'],
-            'image_name' => ['nullable', 'string'],
+            'image_file' => ['nullable', 'mimes:jpeg,bmp,png,gif'],
             'image_path' => ['nullable', 'string'],
             'user_id' => ['required', 'numeric']
         ], [
@@ -65,6 +62,7 @@ class NewsController extends Controller
             'body.required' => 'Debe ingresar el cuerpo de la noticia',
             'body.string' => 'El cuerpo de la noticia debe ser un texto',
             'category.string' => 'La categoría debe ser un texto',
+            'image_file.mimes' => 'El tipo de archivo seleccionado no es válido',
             'user_id.required' => 'Error al capturar el usuario de creación de la noticia',
         ]);
         try {
@@ -97,7 +95,7 @@ class NewsController extends Controller
             'excerpt' => ['required', 'string'],
             'body' => ['required', 'string'],
             'category' => ['nullable', 'string'],
-            'image_name' => ['nullable', 'string'],
+            'image_name' => ['nullable', 'string', 'mimes:jpeg,bmp,png,gif'],
             'image_path' => ['nullable', 'string'],
             'user_id' => ['required', 'numeric']
         ], [
@@ -108,6 +106,7 @@ class NewsController extends Controller
             'body.required' => 'Debe ingresar el cuerpo de la noticia',
             'body.string' => 'El cuerpo de la noticia debe ser un texto',
             'category.string' => 'La categoría debe ser un texto',
+            'image_name.mimes' => 'El tipo de archivo seleccionado no es válido',
             'user_id.required' => 'Error al capturar el usuario de creación de la noticia',
         ]);
 

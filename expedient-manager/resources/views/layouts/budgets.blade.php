@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{--<title>{{ config('app.name', 'Laravel') }}</title>--}}
-    <title>Webmaster | Prensa</title>
+    <title>Webmaster | Presupuestos</title>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 
@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <link href="{{ asset('css/news.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/budgets.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">
@@ -25,11 +25,9 @@
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
                 {{--{{ config('app.name', 'Laravel') }}--}}
-                Webmaster | Prensa
+                Webmaster | Presupuestos
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="{{ __('Toggle navigation') }}">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -53,27 +51,23 @@
                         @endif
                     @else
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('news.index') }}" role="button" aria-haspopup="true"
-                               aria-expanded="false" v-pre>Noticias</a>
+                            <a class="nav-link" href="{{ route('news.index') }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>Noticias</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('news.create') }}" role="button" aria-haspopup="true"
-                               aria-expanded="false" v-pre>Nueva noticia</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('budgets.index') }}" role="button" aria-haspopup="true"
-                               aria-expanded="false" v-pre>Presupuestos</a>
+                            <a class="nav-link" href="{{ route('news.create') }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>Nueva noticia</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('budgets.create') }}" role="button" aria-haspopup="true"
-                               aria-expanded="false" v-pre>Subir presupuesto</a>
+                            <a class="nav-link" href="{{ route('budgets.index') }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>Presupuestos</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="btn btn-outline-success" href="{{ route('home') }}" role="button"
-                               aria-haspopup="true" aria-expanded="false" v-pre>Expedient Manager</a>
+                            <a class="nav-link" href="{{ route('budgets.create') }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>Subir presupuesto</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="btn btn-outline-success" href="{{ route('home') }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>Expedient Manager</a>
                         </li>
                     @endguest
                 </ul>
@@ -87,3 +81,4 @@
 </div>
 </body>
 </html>
+

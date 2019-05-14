@@ -18,7 +18,7 @@
                                         <div class="form-group">
                                             <label for="title" class="text-md-right">Título</label>
                                             <input name="title" id="title" type="text"
-                                                   class="form-control"
+                                                   class="form-control {{ $errors->has('title') ? ' is-invalid' : '' }}"
                                                    required autocomplete="off">
                                             <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('title'))
@@ -33,7 +33,7 @@
                                         <div class="form-group">
                                             <label for="excerpt" class="text-md-right">Extracto</label>
                                             <textarea rows="3" style="resize: none;" name="excerpt" id="excerpt"
-                                                      class="form-control {{ $errors->has('excerpt') ? ' is-invalid' : '' }}"
+                                                      class="form-control pdf_file"
                                                       required autocomplete="off"></textarea>
                                             <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('excerpt'))
@@ -79,8 +79,8 @@
                                                    class="form-control {{ $errors->has('user_id') ? ' is-invalid' : '' }}"
                                                    value="{{auth()->user()->name}}" readonly>
                                             <span role="alert" class="invalid-feedback">
-                                            @if ($errors->has('category'))
-                                                    <strong>{{ $errors->first('category') }}</strong>
+                                            @if ($errors->has('user_id'))
+                                                    <strong>{{ $errors->first('user_id') }}</strong>
                                                 @endif
                                             </span>
                                         </div>
@@ -91,7 +91,13 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="image_file">Subir imagen&nbsp;</label>
-                                            <input name="image_file" type="file" class="form-control">
+                                            <input name="image_file" type="file" accept="image/*"
+                                                   class="form-control {{ $errors->has('image_file') ? ' is-invalid' : '' }}">
+                                            <span role="alert" class="invalid-feedback">
+                                            @if ($errors->has('image_file'))
+                                                    <strong>{{ $errors->first('image_file') }}</strong>
+                                                @endif
+                                            </span>
                                         </div>
                                     </div>
                                 </div>

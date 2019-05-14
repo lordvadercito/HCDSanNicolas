@@ -188,6 +188,19 @@ Route::put('/noticias/{news}', 'NewsController@update');
 Route::get('/noticias/{news}/eliminar', 'NewsController@delete');
 
 
+//Budget routes
+
+Route::get('/presupuestos', 'BudgetController@index')->name('budgets.index');
+
+Route::get('/presupuestos/nuevo', 'BudgetController@create')->name('budgets.create');
+
+Route::post('/presupuestos/creado', 'BudgetController@store');
+
+Route::get('/presupuestos/{budget}', 'BudgetController@show')->name('budgets.show');
+
+Route::get('/presupuestos/{budget}/eliminar', 'BudgetController@delete');
+
+
 //Home routes
 
 Route::get('/home', 'HomeController@index')->name('home');
