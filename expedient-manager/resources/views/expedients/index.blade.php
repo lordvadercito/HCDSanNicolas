@@ -33,6 +33,7 @@
                                     <th scope="col"></th>
                                     <th scope="col"></th>
                                     <th scope="col"></th>
+                                    <th scope="col"></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -53,6 +54,8 @@
                                         <td><a role="button" class="btn btn-success"
                                                href="{{action('MovementController@fastPass',['id' => $expedient->id])}}">Pase</a>
                                         </td>
+                                        <td><a role="button" class="btn btn-outline-info" target="_blank"
+                                               href="{{ action('ExpedientController@viewPdf', ['id' => $expedient->id]) }}">Exportar</a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>

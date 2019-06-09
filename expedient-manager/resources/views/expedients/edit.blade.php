@@ -10,7 +10,8 @@
                     <div class="card">
                         <div class="card-header">Editar expediente</div>
                         <div class="card-body">
-                            <form method="POST" action="{{ url("/expedientes/{$expedient->id}") }}">
+                            <form method="POST" action="{{ url("/expedientes/{$expedient->id}") }}"
+                                  enctype="multipart/form-data">
                                 @method('PUT')
                                 @csrf
                                 <div class="form-row">
@@ -49,6 +50,52 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="excerpt" class="text-md-center">Resumen del expediente</label>
+                                            <textarea rows="3" name="excerpt" id="excerpt"
+                                                      class="form-control {{ $errors->has('excerpt') ? ' is-invalid' : '' }}"
+                                                      style="resize: none;">{{ old('excerpt', $expedient->excerpt) }}</textarea>
+                                            <span role="alert" class="invalid-feedback">
+                                                @if ($errors->has('excerpt'))
+                                                    <strong>{{ $errors->first('excerpt') }}</strong>
+                                                @endif
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="ordinanceNro" class="text-md-right">Nro. Ordenanza</label>
+                                            <input type="text" name="ordinanceNro" id="ordinanceNro"
+                                                   value="{{ old('ordinanceNro', $expedient->ordinanceNro) }}"
+                                                   class="form-control {{ $errors->has('ordinanceNro') ? ' is-invalid' : '' }}">
+                                            <span role="alert" class="invalid-feedback">
+                                            @if ($errors->has('ordinanceNro'))
+                                                    <strong>{{ $errors->first('ordinanceNro') }}</strong>
+                                                @endif
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="resolutionNro" class="text-md-right">Nro. Resolución</label>
+                                            <input type="text" name="resolutionNro" id="resolutionNro"
+                                                   value="{{ old('resolutionNro', $expedient->resolutionNro) }}"
+                                                   class="form-control {{ $errors->has('resolutionNro') ? ' is-invalid' : '' }}">
+                                            <span role="alert" class="invalid-feedback">
+                                            @if ($errors->has('resolutionNro'))
+                                                    <strong>{{ $errors->first('resolutionNro') }}</strong>
+                                                @endif
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="form-row">
                                     <div class="col">
                                         <div class="form-group">
@@ -215,6 +262,23 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="recommendation" class="text-md-center">Recomendación</label>
+                                            <textarea rows="3" name="recommendation" id="recommendation"
+                                                      class="form-control {{ $errors->has('recommendation') ? ' is-invalid' : '' }}"
+                                                      style="resize: none;">{{ old('recommendation', $expedient->excerpt) }}</textarea>
+                                            <span role="alert" class="invalid-feedback">
+                                                @if ($errors->has('recommendation'))
+                                                    <strong>{{ $errors->first('recommendation') }}</strong>
+                                                @endif
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="col-md-6">
                                     <input type="hidden" name="user_id" value={{ $expedient->user_id }}>
                                     <span role="alert" class="invalid-feedback">
@@ -232,20 +296,43 @@
                                         @foreach($expedient->annexes as $annexes)
                                             <p class="list-group-item list-group-item-action text-center">{{$annexes->expedientNro . " - " . $annexes->subject ." - ". $annexes->projectType}}
 
-                                                <a href="{{ action('ExpedientController@show', ['id' => $annexes->id]) }}" target="_blank" role="button" class="btn btn-link">[Ver]</a>
-                                                <a href="{{ action('ExpedientController@detachAnnex', ['annex' => $annexes, 'expedient' => $expedient]) }}" role="button" class="btn btn-link" style="color: red;">[Desvincular]</a>
+                                                <a href="{{ action('ExpedientController@show', ['id' => $annexes->id]) }}"
+                                                   target="_blank" role="button" class="btn btn-link">[Ver]</a>
+                                                <a href="{{ action('ExpedientController@detachAnnex', ['annex' => $annexes, 'expedient' => $expedient]) }}"
+                                                   role="button" class="btn btn-link"
+                                                   style="color: red;">[Desvincular]</a>
                                             </p>
                                         @endforeach
                                     </div>
+                                    <br>
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label class="text-center" for="pdf_file">Adjuntar archivo (pdf)</label>
+                                                <a target="_blank" href="/../storage/{{$expedient->file_annex_name}}"><p class="list-group-item list-group-item-action text-center">{{$expedient->file_annex_name}}</p></a>
+                                                <input type="file" accept=".pdf" name="pdf_file"
+                                                       class="form-control {{ $errors->has('pdf_file') ? ' is-invalid' : '' }}">
+                                                <span role="alert" class="invalid-feedback">
+                                                    @if ($errors->has('pdf_file'))
+                                                        <strong>{{ $errors->first('pdf_file') }}</strong>
+                                                    @endif
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+
                                 <br>
                                 <hr>
                                 <div class="row">
-                                    <div class="col-sm-8">
+                                    <div class="col-sm-6">
                                         <a href="{{ URL::previous() }}" role="button"
                                            class="btn btn-link float-left">Volver</a>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-6">
+                                        <a role="button" class="btn btn-secondary" target="_blank"
+                                           href="{{ action('ExpedientController@viewPdf', ['id' => $expedient->id]) }}">Exportar
+                                            a PDF</a>
                                         <a href="javascript:window.open('anexar','{{$expedient}}','toolbar=no');void 0"
                                            role="button" class="btn btn-success">Agregar anexo</a>
                                         <button type="submit" class="btn btn-primary float-right">Actualizar</button>

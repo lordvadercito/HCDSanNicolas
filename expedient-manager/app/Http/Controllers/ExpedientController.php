@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Act;
 use App\Models\Annex;
 use App\Models\Expedient;
 use App\Models\Movement;
@@ -12,6 +13,12 @@ use mysql_xdevapi\Exception;
 
 class ExpedientController extends Controller
 {
+    /**
+     * @fields: 'id', 'expedientNro', 'expedientDENro', 'projectType', 'subject', 'secondary_subject', 'cover',
+     * 'origin', 'commission_id', 'state', 'archived', 'incomeRecord', 'treatmentRecord', 'user_id', 'creted_at',
+     * 'creation_date', 'ordinanceNro', 'resolutionNro', 'excerpt', 'recommendation', 'file_annex_name', 'file_annex_path'
+     */
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -51,14 +58,12 @@ class ExpedientController extends Controller
          **/
         $data = request()->validate([
             'expedientNro' => ['required', 'numeric', 'unique:expedients,expedientNro'],
-            'expedientDENro' => ['nullable', 'string'],
             'projectType' => 'required',
             'subject' => 'required',
-            'secondary_subject' => ['nullable', 'string'],
-            'cover' => 'required',
+            'cover' => 'nullable',
             'origin' => 'required',
             'commission_id' => ['required', 'numeric'],
-            'incomeRecord' => 'required',
+            'incomeRecord' => 'nullable',
             'treatmentRecord' => 'nullable',
             'creation_date' => ['required', 'date'],
             'user_id' => ['required', 'numeric']
@@ -66,11 +71,8 @@ class ExpedientController extends Controller
             'expedientNro.required' => 'Debe ingresar un número de expediente',
             'expedientNro.numeric' => 'El número de expediente debe ser un valor numérico',
             'expedientNro.unique' => 'Ya existe un expediente con ese número',
-            'expedientDENro.string' => 'El numero de expediente debe tener el formato "Nro Expediente/Año"',
             'projectType.required' => 'Debe ingresar el tipo de proyecto del expediente',
             'subject.required' => 'Debe ingresar un asunto para el expediente',
-            'secondary_subject.string' => 'El tema secundario debe ser un campo de texto',
-            'cover.required' => 'Debe ingresar una carátula para el expediente',
             'origin' => 'Debe especificar el origen del expediente',
             'commission_id.required' => 'Debe ingresar la comisión de destino',
             'commission_id.numeric' => 'El campo comisión de destino debe ser numérico',
@@ -85,16 +87,14 @@ class ExpedientController extends Controller
         try {
             $expedient = Expedient::create([
                 'expedientNro' => $data['expedientNro'],
-                'expedientDENro' => $data['expedientDENro'],
                 'projectType' => $data['projectType'],
                 'subject' => $data['subject'],
-                'secondary_subject' => $data['secondary_subject'],
-                'cover' => $data['cover'],
+                'cover' => $data['cover'] != null ? $data['cover'] : 'Ingrese una carátula',
                 'origin' => $data['origin'],
                 'commission_id' => $data['commission_id'],
                 'state' => 'Pendiente',
                 'archived' => 0,
-                'incomeRecord' => $data['incomeRecord'],
+                'incomeRecord' => $data['expedientNro'],
                 'treatmentRecord' => $data['treatmentRecord'],
                 'creation_date' => $data['creation_date'],
                 'user_id' => $data['user_id']
@@ -127,6 +127,23 @@ class ExpedientController extends Controller
 
     public function update(Expedient $expedient)
     {
+
+        /**
+         *Validacion de datos obtenidos desde el formulario de subida de pdf
+         * @return boolean
+         * @fields: 'file_annex_name', 'file_annex_path'
+         **/
+        $request = request();
+        if ($request->hasFile('pdf_file') && ($request->file('pdf_file')->extension('pdf'))) {
+            $file = $request->file('pdf_file');
+            $file_name = $file->getClientOriginalName();
+            \Storage::disk('local')->put($file_name, \File::get($file));
+
+        } else {
+            $file_name = null;
+        }
+
+
         $data = request()->validate([
             'expedientNro' => ['required', 'numeric'],
             'expedientDENro' => ['nullable', 'string'],
@@ -140,7 +157,14 @@ class ExpedientController extends Controller
             'incomeRecord' => 'required',
             'treatmentRecord' => 'nullable',
             'creation_date' => ['required', 'date'],
-            'user_id' => ['required', 'numeric']
+            'user_id' => ['required', 'numeric'],
+            'ordinanceNro' => 'nullable',
+            'resolutionNro' => 'nullable',
+            'excerpt' => 'nullable',
+            'recommendation' => 'nullable',
+            'file_annex_name' => ['nullable', 'mimes:pdf'],
+            'file_annex_path' => 'nullable'
+
         ], [
             'expedientNro.required' => 'Debe ingresar un número de expediente',
             'expedientNro.numeric' => 'El número de expediente debe ser un valor numérico',
@@ -158,6 +182,9 @@ class ExpedientController extends Controller
             'user_id.required' => 'Falta ingresar el id del usuario que generó el expediente',
             'user_id.numeric' => 'El id de usuario debe ser numérico'
         ]);
+
+        $data['file_annex_name'] = $file_name;
+        $data['file_annex_path'] = public_path() . '/storage/' . $file_name;
 
         $expedient->update($data);
         return redirect('/expedientes');
@@ -210,5 +237,13 @@ class ExpedientController extends Controller
         }
 
         return redirect('/expedientes');
+    }
+
+    public function viewPdf(Expedient $expedient)
+    {
+        $view = \View::make('expedients.pdf', compact('expedient'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream('expediente-' . $expedient->expedientNro . '.pdf');
     }
 }

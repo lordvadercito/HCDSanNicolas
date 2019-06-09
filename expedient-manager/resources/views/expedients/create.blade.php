@@ -31,26 +31,6 @@
 
                                         </div>
                                     </div>
-
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="expedientDENro" class="text-md-right">Nro.
-                                                Expediente D.E.</label>
-                                            <input type="text" name="expedientDENro"
-                                                   value="{{old('expedientDENro')}}"
-                                                   class="form-control {{ $errors->has('expedientDENro') ? ' is-invalid' : '' }}"
-                                                   autofocus placeholder="000000/2000">
-                                            <span role="alert" class="invalid-feedback">
-                                            @if ($errors->has('expedientDENro'))
-                                                    <strong>{{ $errors->first('expedientDENro') }}</strong>
-                                                @endif
-                                            </span>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-row">
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="projectType" class="text-md-right">Tipo de
@@ -65,6 +45,11 @@
                                             </span>
                                         </div>
                                     </div>
+
+                                </div>
+
+                                <div class="form-row">
+
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="subject" class="text-md-right">Tema</label>
@@ -78,19 +63,22 @@
                                             </span>
                                         </div>
                                     </div>
+
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="secondary_subject" class="text-md-right">Tema secundario</label>
-                                            <input type="text" name="secondary_subject"
-                                                   value="{{ old('secondary_subject') }}"
-                                                   class="form-control {{ $errors->has('secondary_subject') ? ' is-invalid' : '' }}">
+                                            <label for="treatmentRecord" class="text-md-right">Registro
+                                                de tratamiento</label>
+                                            <input type="text" name="treatmentRecord"
+                                                   class="form-control {{ $errors->has('treatmentRecord') ? ' is-invalid' : '' }}"
+                                                   value="{{ old('treatmentRecord') }}">
                                             <span role="alert" class="invalid-feedback">
-                                            @if ($errors->has('secondary_subject'))
-                                                    <strong>{{ $errors->first('secondary_subject') }}</strong>
+                                            @if ($errors->has('treatmentRecord'))
+                                                    <strong>{{ $errors->first('treatmentRecord') }}</strong>
                                                 @endif
                                             </span>
                                         </div>
                                     </div>
+
                                 </div>
                                 <div class="form-row">
                                     <div class="col">
@@ -144,34 +132,7 @@
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="incomeRecord" class="text-md-right">Registro de
-                                                entrada</label>
-                                            <input type="text" readonly name="incomeRecord" id="incomeRecord"
-                                                   class="form-control {{ $errors->has('incomeRecord') ? ' is-invalid' : '' }}"
-                                                   value="{{ old('incomeRecord') }}">
-                                            <span role="alert" class="invalid-feedback">
-                                            @if ($errors->has('incomeRecord'))
-                                                    <strong>{{ $errors->first('incomeRecord') }}</strong>
-                                                @endif
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="treatmentRecord" class="text-md-right">Registro
-                                                de tratamiento</label>
-                                            <input type="text" name="treatmentRecord"
-                                                   class="form-control {{ $errors->has('treatmentRecord') ? ' is-invalid' : '' }}"
-                                                   value="{{ old('treatmentRecord') }}">
-                                            <span role="alert" class="invalid-feedback">
-                                            @if ($errors->has('treatmentRecord'))
-                                                    <strong>{{ $errors->first('treatmentRecord') }}</strong>
-                                                @endif
-                                            </span>
-                                        </div>
-                                    </div>
+
                                 </div>
                                 <div class="form-row">
                                     <div class="col">

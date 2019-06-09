@@ -132,15 +132,20 @@
                             <br>
                             <hr>
                             <div class="row">
-                                <div class="col-sm-8">
+                                <div class="col-sm-6">
                                     <a href="{{route("expedients.index")}}" role="button"
                                        class="btn btn-link float-left">Volver</a>
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-6">
                                     <a role="button" class="btn btn-success"
                                        href="{{ action('MovementController@create', ['id' => $expedient->id, 'expedientNro' => $expedient->expedientNro ]) }}">Mover
                                         expediente
                                     </a>
+                                    @if(!is_null($expedient->file_annex_name))
+                                        <a target="_blank" role="button" href="../storage/{{$expedient->file_annex_name}}" class="btn btn-outline-info">PDF Anexo</a>
+                                    @else
+                                        <button type="button" href="#" class="btn btn-outline-info" disabled>PDF Anexo</button>
+                                    @endif
                                     <a role="button" class="btn btn-primary float-right"
                                        href="{{ action('ExpedientController@edit', ['id' => $expedient->id]) }}">Editar
                                     </a>

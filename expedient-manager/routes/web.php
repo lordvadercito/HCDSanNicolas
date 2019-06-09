@@ -36,6 +36,8 @@ Route::get('/expedientes/anexado/{annex}/{expedient}', 'ExpedientController@atta
 
 Route::get('/expedientes/desvincular/{annex}/{expedient}', 'ExpedientController@detachAnnex');
 
+Route::get('/expedientes/{expedient}/pdf', 'ExpedientController@viewPdf')->name('expedients.pdf');
+
 
 //Movements routes
 
