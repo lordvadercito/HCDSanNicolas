@@ -293,30 +293,33 @@
                                             Anexos vinculados: &nbsp;</p>
                                     </div>
                                     <div class="list-group" style="width: 90%;margin: 0 5%">
-                                        @foreach($expedient->annexes as $annexes)
-                                            <p class="list-group-item list-group-item-action text-center">{{$annexes->expedientNro . " - " . $annexes->subject ." - ". $annexes->projectType}}
+                                            @foreach($expedient->annexes as $annexes)
+                                                <p class="list-group-item list-group-item-action text-center">{{$annexes->expedientNro . " - " . $annexes->subject ." - ". $annexes->projectType}}
 
-                                                <a href="{{ action('ExpedientController@show', ['id' => $annexes->id]) }}"
-                                                   target="_blank" role="button" class="btn btn-link">[Ver]</a>
-                                                <a href="{{ action('ExpedientController@detachAnnex', ['annex' => $annexes, 'expedient' => $expedient]) }}"
-                                                   role="button" class="btn btn-link"
-                                                   style="color: red;">[Desvincular]</a>
-                                            </p>
-                                        @endforeach
+                                                    <a href="{{ action('ExpedientController@show', ['id' => $annexes->id]) }}"
+                                                       target="_blank" role="button" class="btn btn-link">[Ver]</a>
+                                                    <a href="{{ action('ExpedientController@detachAnnex', ['annex' => $annexes, 'expedient' => $expedient]) }}"
+                                                       role="button" class="btn btn-link"
+                                                       style="color: red;">[Desvincular]</a>
+                                                </p>
+                                            @endforeach
                                     </div>
                                     <br>
                                     <div class="form-row">
                                         <div class="col">
                                             <div class="form-group">
                                                 <label class="text-center" for="pdf_file">Adjuntar archivo (pdf)</label>
-                                                <a target="_blank" href="/../storage/{{$expedient->file_annex_name}}"><p class="list-group-item list-group-item-action text-center">{{$expedient->file_annex_name}}</p></a>
-                                                <input type="file" accept=".pdf" name="pdf_file"
-                                                       class="form-control {{ $errors->has('pdf_file') ? ' is-invalid' : '' }}">
-                                                <span role="alert" class="invalid-feedback">
-                                                    @if ($errors->has('pdf_file'))
-                                                        <strong>{{ $errors->first('pdf_file') }}</strong>
-                                                    @endif
-                                            </span>
+                                                @if(!is_null($expedient->file_annex_name))
+                                                    <a target="_blank" href="/../storage/{{$expedient->file_annex_name}}"><p class="list-group-item list-group-item-action text-center">{{$expedient->file_annex_name}}</p></a>
+                                                @endif
+                                                    <input type="file" accept=".pdf" name="pdf_file"
+                                                           class="form-control {{ $errors->has('pdf_file') ? ' is-invalid' : '' }}">
+                                                    <span role="alert" class="invalid-feedback">
+                                                        @if ($errors->has('pdf_file'))
+                                                            <strong>{{ $errors->first('pdf_file') }}</strong>
+                                                        @endif
+                                                    </span>
+
                                             </div>
                                         </div>
                                     </div>

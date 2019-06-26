@@ -66,14 +66,13 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="treatmentRecord" class="text-md-right">Registro
-                                                de tratamiento</label>
-                                            <input type="text" name="treatmentRecord"
-                                                   class="form-control {{ $errors->has('treatmentRecord') ? ' is-invalid' : '' }}"
-                                                   value="{{ old('treatmentRecord') }}">
+                                            <label for="expedientDENro" class="text-md-right">Nro. Expediente D.E.</label>
+                                            <input type="text" name="expedientDENro"
+                                                   class="form-control {{ $errors->has('expedientDENro') ? ' is-invalid' : '' }}"
+                                                   value="{{ old('expedientDENro') }}">
                                             <span role="alert" class="invalid-feedback">
-                                            @if ($errors->has('treatmentRecord'))
-                                                    <strong>{{ $errors->first('treatmentRecord') }}</strong>
+                                            @if ($errors->has('expedientDENro'))
+                                                    <strong>{{ $errors->first('expedientDENro') }}</strong>
                                                 @endif
                                             </span>
                                         </div>
@@ -156,6 +155,7 @@
                                             <strong>{{ $errors->first('user_id') }}</strong>
                                         @endif
                                         </span>
+                                    <input type="hidden" name="incomeRecord" id="incomeRecord">
                                 </div>
                                 <br>
                                 <hr>

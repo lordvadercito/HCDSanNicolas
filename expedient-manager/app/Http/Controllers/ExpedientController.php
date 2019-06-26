@@ -62,9 +62,9 @@ class ExpedientController extends Controller
             'subject' => 'required',
             'cover' => 'nullable',
             'origin' => 'required',
+            'incomeRecord' => 'required',
             'commission_id' => ['required', 'numeric'],
-            'incomeRecord' => 'nullable',
-            'treatmentRecord' => 'nullable',
+            'expedientDENro' => 'nullable',
             'creation_date' => ['required', 'date'],
             'user_id' => ['required', 'numeric']
         ], [
@@ -74,9 +74,9 @@ class ExpedientController extends Controller
             'projectType.required' => 'Debe ingresar el tipo de proyecto del expediente',
             'subject.required' => 'Debe ingresar un asunto para el expediente',
             'origin' => 'Debe especificar el origen del expediente',
+            'incomeRecord' => 'Error al cargar el registro de ingreso',
             'commission_id.required' => 'Debe ingresar la comisión de destino',
             'commission_id.numeric' => 'El campo comisión de destino debe ser numérico',
-            'incomeRecord.required' => 'Debe ingresar el acta ingreso',
             'creation_date.required' => 'Debe ingresar la fecha de creación del expediente',
             'creation_date.date' => 'El valor ingresado no es una fecha válida',
             'user_id.required' => 'Falta ingresar el id del usuario que generó el expediente',
@@ -91,11 +91,11 @@ class ExpedientController extends Controller
                 'subject' => $data['subject'],
                 'cover' => $data['cover'] != null ? $data['cover'] : 'Ingrese una carátula',
                 'origin' => $data['origin'],
+                'incomeRecord' => $data['incomeRecord'],
                 'commission_id' => $data['commission_id'],
                 'state' => 'Pendiente',
                 'archived' => 0,
-                'incomeRecord' => $data['expedientNro'],
-                'treatmentRecord' => $data['treatmentRecord'],
+                'expedientDENro' => $data['expedientDENro'],
                 'creation_date' => $data['creation_date'],
                 'user_id' => $data['user_id']
             ]);
