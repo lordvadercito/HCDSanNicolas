@@ -21,9 +21,13 @@ class MovementController extends Controller
     }
 
 
-    public function show(Movement $movement)
+    public function show(Expedient $expedient)
     {
-        return view('movements.show', compact('movement'));
+        $movements = Movement::where('expedient_id', $expedient->id)
+            ->get();
+        return view('movements.show', compact('movements'));
+
+
     }
 
     private static function getExpedient(Expedient $expedient)

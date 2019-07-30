@@ -13,13 +13,33 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-
-                        <div class="alert alert-light text-center" role="alert">
-                            Tipo de usuario: <strong>{{ Auth::user()->role }}</strong>
+                        <br>
+                        <hr>
+                        <br>
+                        <div class="col alert alert-light text-center" role="alert">
+                            Bienvenido, <strong>{{ Auth::user()->name }}!</strong>
                         </div>
-
-                        <div class="alert alert-success text-center">
-                            Sesión iniciada
+                        <div class="row">
+                            <div class="col">
+                                <a role="button" class="btn btn-outline-primary col" href="{{route('notes.create')}}"><i
+                                        class="fa fa-clipboard"></i> Nueva nota o informe</a>
+                            </div>
+                            <div class="col">
+                                <a role="button" class="btn btn-outline-success col"
+                                   href="{{route('expedients.search')}}"> <i class="fa fa-search"
+                                                                             aria-hidden="true"></i> Buscar
+                                    expediente</a>
+                            </div>
+                            <div class="col">
+                                <a role="button" class="btn btn-outline-info col" href="{{route('dayOrders.create')}}">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i> Nuevo órden del día</a>
+                            </div>
+                        </div>
+                        <br>
+                        <hr>
+                        <br>
+                        <div class="alert text-center">
+                            <i class="fa fa-check-circle" aria-hidden="true" style="color: #1e7e34"></i>&nbsp;En línea
                         </div>
                     </div>
                 </div>

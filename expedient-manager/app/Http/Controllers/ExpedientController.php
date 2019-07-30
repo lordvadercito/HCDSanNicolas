@@ -246,4 +246,18 @@ class ExpedientController extends Controller
         $pdf->loadHTML($view);
         return $pdf->stream('expediente-' . $expedient->expedientNro . '.pdf');
     }
+
+    public function search()
+    {
+        return view('expedients.search');
+    }
+
+    public function results(Request $request)
+    {
+        $expedient = Expedient::where('expedientNro', $request->expedientNro)
+            ->take(100)
+            ->get();
+        return view('expedients.results', compact('expedient'));
+
+    }
 }

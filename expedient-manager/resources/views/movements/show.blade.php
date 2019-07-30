@@ -8,7 +8,8 @@
             <div class="row justify-content-center">
                 <div class="col-md-12 col-xs-12">
                     <div class="card">
-                        <div class="card-header">Movimientos de expedientes | Tabla de pases</div>
+                        <div class="card-header">Ruta del expediente {{$movements->first()->expedients->expedientNro}}
+                            / {{substr($movements->first()->expedients->creation_date, 0, 4)}}</div>
                         <div class="card-body">
                             <table class="table table-hover">
                                 <thead>
@@ -53,7 +54,7 @@
         <hr>
         <br>
         <div class="row text-center justify-content-center">
-            {{ $movements->links() }}
+{{--            {{ $movements->links() }}--}}
         </div>
         </div>
     </main>

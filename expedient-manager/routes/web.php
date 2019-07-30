@@ -18,6 +18,10 @@ Auth::routes();
 
 //Expedients routes
 
+Route::get('/expedientes/buscar', 'ExpedientController@search')->name('expedients.search');
+
+Route::get('/expedientes/resultado/{expedientNro}', 'ExpedientController@results')->name('expedients.results');
+
 Route::get('/expedientes/nuevo', 'ExpedientController@create')->name('expedients.create');
 
 Route::get('/expedientes', 'ExpedientController@index')->name('expedients.index');
@@ -39,6 +43,7 @@ Route::get('/expedientes/desvincular/{annex}/{expedient}', 'ExpedientController@
 Route::get('/expedientes/{expedient}/pdf', 'ExpedientController@viewPdf')->name('expedients.pdf');
 
 
+
 //Movements routes
 
 Route::get('/movimientos', 'MovementController@index')->name('movements.index');
@@ -47,7 +52,7 @@ Route::get('/movimientos/{expedient}/nuevo', 'MovementController@create')->name(
 
 Route::get('/movimientos/{expedient}/pase', 'MovementController@fastPass')->name('movements.fastPass');
 
-Route::get('/movimientos/{movement}', 'MovementController@show')->name('movements.show');
+Route::get('/movimientos/{expedient}', 'MovementController@show')->name('movements.show');
 
 Route::post('/movimientos/creado', 'MovementController@store');
 
