@@ -22,7 +22,7 @@
                                             <input type="text" readonly
                                                    class="form-control"
                                                    required
-                                                   value="{{$expedient->expedientNro}} / {{substr($expedient->creation_date, 0, 4)}} - {{$expedient->subject}}">
+                                                   value="{{$expedient->expedientNro}} / {{substr($expedient->creation_date, 0, 4)}}">
                                             <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('expedient_id'))
                                                     <strong>{{ $errors->first('expedient_id') }}</strong>
@@ -30,7 +30,7 @@
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col d-none">
                                         <div class="form-group">
                                             <label for="origin" class="text-md-right">Ubicación actual</label>
                                             <input type="text" readonly name="origin" id="origin"
@@ -45,10 +45,14 @@
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="destination" class="text-md-right">Destino</label>
-                                            <input type="text" name="destination" id="destination"
-                                                   class="form-control {{ $errors->has('destination') ? ' is-invalid' : '' }}"
-                                                   required readonly value="Concejo">
+                                            // FIXME: No estoy seguro de que esto esté bien
+                                            <label for="destination" class="text-md-right">Pase a</label>
+                                            <select name="destination" class="form-control" id="destination">
+                                                <option value="Concejo">Concejo</option>
+                                                @foreach(\App\Models\Commission::all() as $destination)
+                                                    <option value="{{$destination->id}}">{{$destination->name}}</option>
+                                                @endforeach
+                                            </select>
                                             <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('destination'))
                                                     <strong>{{ $errors->first('destination') }}</strong>
@@ -59,7 +63,7 @@
 
                                 </div>
                                 <div class="form-row">
-                                    <div class="col">
+                                    <div class="col d-none">
                                         <div class="form-group">
                                             <label for="movement_nro" class="text-md-right">Nro. de Pase</label>
                                             <input type="number" readonly name="movement_nro" id="movement_nro"
@@ -72,7 +76,7 @@
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col d-none">
                                         <div class="form-group">
                                             <label for="foja" class="text-md-right">Foja</label>
                                             <input type="number" name="foja" id="foja"
@@ -85,7 +89,7 @@
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col d-none">
                                         <div class="form-group">
                                             <label for="origin_user" class="text-md-right">Usuario</label>
                                             <input type="hidden" name="origin_user" id="origin_user"
@@ -105,7 +109,7 @@
                                 <div class="form-row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="state" class="text-md-right">Estado</label>
+                                            <label for="state" class="text-md-right">Tipo de pase</label>
                                             <select name="state" id="state" onchange="enableTextArea();"
                                                     class="form-control {{ $errors->has('archived') ? ' is-invalid' : '' }}"
                                                     required>
@@ -120,6 +124,12 @@
                                         </div>
                                     </div>
                                     <div class="col">
+                                        <div class="form-group">
+                                            <label for="state" class="text-md-right">Fecha del pase</label>
+                                            <input type="date" class="form-control" value="{{ \Carbon\Carbon::now()->toDateString() }}">
+                                        </div>
+                                    </div>
+                                    <div class="col d-none">
                                         <div class="form-group">
                                             <label for="in_table" class="text-md-right">En tablas</label>
                                             <select name="in_table" id="in_table"
@@ -139,7 +149,7 @@
                                 <div class="form-row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="observation" class="text-md-right">Observaciones</label>
+                                            <label for="observation" class="text-md-right">Recomendación</label>
                                             <textarea rows="6" name="observation" id="observation"
                                                       class="form-control {{ $errors->has('observation') ? ' is-invalid' : '' }}"
                                                       style="resize: none;" readonly>{{ old('observation') }}</textarea>
@@ -171,14 +181,17 @@
             </div>
         </div>
     </main>
+    // TODO: Agregar boton de "Resoluciones"
 @endsection
 <script>
     function enableTextArea() {
         // Esta función habilita el textarea de observaciones solo cuando el estado "Pase con despacho" es elegido
         if ($('#state option:selected').val() === 'Pase con despacho') {
             $('#observation').removeAttr('readonly');
+            $('#destination').attr('readonly', 'readonly');
         } else {
             $('#observation').attr('readonly', 'readonly');
+            $('#destination').removeAttr('readonly');
         }
     }
 </script>

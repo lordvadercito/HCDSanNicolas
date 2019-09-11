@@ -8,7 +8,13 @@
             <div class="row justify-content-center">
                 <div class="col-md-9 col-xs-12">
                     <div class="card">
-                        <div class="card-header">Creación de notas e informes</div>
+                        @if($type === 'N')
+                            <div class="card-header">Creación de notas</div>
+                        @elseif($type === 'I')
+                            <div class="card-header">Creación de informes</div>
+                        @else
+                            <div class="card-header">Creación de notas e informes</div>
+                        @endif
                         <div class="card-body">
                             <form method="POST" action="{{ url('notas/creado') }}">
                                 @csrf
@@ -32,17 +38,26 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="type" class="text-md-right">Tipo</label>
-                                            <select name="type" id="type"
-                                                    class="form-control {{ $errors->has('type') ? ' is-invalid' : '' }}"
-                                                    required>
-                                                <option value="N">Nota</option>
-                                                <option value="I">Informe</option>
-                                            </select>
-                                            <span role="alert" class="invalid-feedback">
+                                            @if($type === 'N')
+                                                <input type="text" readonly="readonly" class="form-control"
+                                                       placeholder="Nota" value="N"/>
+                                            @elseif($type === 'I')
+                                                <input type="text" readonly="readonly" class="form-control"
+                                                       placeholder="Informe" value="I"/>
+                                            @else
+                                                <select name="type" id="type"
+                                                        class="form-control {{ $errors->has('type') ? ' is-invalid' : '' }}"
+                                                        required>
+                                                    <option value="N">Nota</option>
+                                                    <option value="I">Informe</option>
+                                                </select>
+                                                <span role="alert" class="invalid-feedback">
                                             @if ($errors->has('type'))
-                                                    <strong>{{ $errors->first('type') }}</strong>
-                                                @endif
+                                                        <strong>{{ $errors->first('type') }}</strong>
+                                                    @endif
                                             </span>
+                                            @endif
+
 
                                         </div>
                                     </div>
@@ -102,7 +117,8 @@
                                                     class="form-control {{ $errors->has('expedient_id') ? ' is-invalid' : '' }}"
                                                     required>
                                                 @foreach(\App\Models\Expedient::all() as $expedient)
-                                                    <option value="{{$expedient->id}}">{{$expedient->expedientNro}} - {{$expedient->subject}}</option>
+                                                    <option value="{{$expedient->id}}">{{$expedient->expedientNro}}
+                                                        - {{$expedient->subject}}</option>
                                                 @endforeach
                                             </select>
                                             <span role="alert" class="invalid-feedback">

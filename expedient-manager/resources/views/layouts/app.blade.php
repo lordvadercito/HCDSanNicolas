@@ -80,7 +80,7 @@
                                 <a class="dropdown-item" href="{{ route('notes.index') }}">
                                     {{ __('Notas e informes') }}
                                 </a>
-                                <a class="dropdown-item" href="{{ route('notes.create') }}">
+                                <a class="dropdown-item" href="{{ action('NoteController@create',['type' => 'X']) }}">
                                     {{ __('Nueva nota o informe') }}
                                 </a>
                             </div>

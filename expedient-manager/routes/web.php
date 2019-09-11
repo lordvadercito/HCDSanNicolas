@@ -112,7 +112,7 @@ Route::get('/comisiones/{commission}/eliminar', 'CommissionController@delete');
 
 Route::get('/notas', 'NoteController@index')->name('notes.index');
 
-Route::get('/notas/nuevo', 'NoteController@create')->name('notes.create');
+Route::get('/notas/{type}/nuevo', 'NoteController@create')->name('notes.create');
 
 Route::get('/notas/{note}', 'NoteController@show')->name('notes.show');
 

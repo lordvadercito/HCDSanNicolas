@@ -21,9 +21,18 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <a role="button" class="btn btn-outline-primary col" href="{{route('notes.create')}}"><i
-                                        class="fa fa-clipboard"></i> Nueva nota o informe</a>
+                                <a role="button" class="btn btn-outline-primary col"
+                                   href="{{action('NoteController@create',['type' =>'N'])}}"><i
+                                            class="fa fa-clipboard"></i> Nueva nota</a>
                             </div>
+                            <div class="col">
+                                <a role="button" class="btn btn-outline-secondary col"
+                                   href="{{action('NoteController@create',['type' => 'I'])}}"><i
+                                            class="fa fa-clipboard"></i> Nuevo Informe</a>
+                            </div>
+                        </div>
+                            <br>
+                        <div class="row">
                             <div class="col">
                                 <a role="button" class="btn btn-outline-success col"
                                    href="{{route('expedients.search')}}"> <i class="fa fa-search"
@@ -31,19 +40,25 @@
                                     expediente</a>
                             </div>
                             <div class="col">
+                                <a role="button" class="btn btn-outline-dark" href="{{route('expedients.create')}}"> <i
+                                            class="fa fa-address-book"></i> Ingreso de Expedientes</a>
+                            </div>
+                            <div class="col">
                                 <a role="button" class="btn btn-outline-info col" href="{{route('dayOrders.create')}}">
                                     <i class="fa fa-calendar" aria-hidden="true"></i> Nuevo órden del día</a>
                             </div>
                         </div>
-                        <br>
-                        <hr>
-                        <br>
-                        <div class="alert text-center">
-                            <i class="fa fa-check-circle" aria-hidden="true" style="color: #1e7e34"></i>&nbsp;En línea
-                        </div>
+
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
+                    <div class="alert text-center">
+                        <i class="fa fa-check-circle" aria-hidden="true" style="color: #1e7e34"></i>&nbsp;En línea
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 @endsection

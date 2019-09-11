@@ -75,7 +75,8 @@ class MovementController extends Controller
             'origin_user' => ['required', 'numeric'],
             'state' => ['required'],
             'in_table' => ['required', 'boolean'],
-            'observation' => ['nullable', 'string']
+            'observation' => ['nullable', 'string'],
+            'date' => 'nullable'
         ], [
             'expedient_id.required' => 'Debe seleccionar un expediente',
             'expedient_id.numeric' => 'El valor del campo Expediente debe ser numerico',
@@ -102,7 +103,8 @@ class MovementController extends Controller
                 'foja' => $data['foja'],
                 'origin_user' => $data['origin_user'],
                 'in_table' => $data['in_table'],
-                'observation' => $data['observation']
+                'observation' => $data['observation'],
+                'date' => $data['data']
             ]);
         } catch (Exception $e) {
             echo $e->getMessage();

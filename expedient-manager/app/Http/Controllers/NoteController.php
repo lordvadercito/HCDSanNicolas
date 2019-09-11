@@ -27,9 +27,9 @@ class NoteController extends Controller
         return View('notes.show', compact('note'));
     }
 
-    public function create()
+    public function create(string $type)
     {
-        return View('notes.create');
+        return View('notes.create', ['type' => $type]);
     }
 
     public function edit(Note $note)

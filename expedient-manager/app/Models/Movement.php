@@ -12,7 +12,7 @@ class Movement extends Model
     protected $dates = ['deleted_at'];
 
     protected $fillable = ['expedient_id', 'origin', 'destination', 'movement_nro', 'foja', 'origin_user', 'created_at',
-        'in_table', 'observation'];
+        'in_table', 'observation', 'date'];
 
     public function expedients()
     {

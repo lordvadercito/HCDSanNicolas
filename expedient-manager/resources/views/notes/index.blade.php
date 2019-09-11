@@ -12,7 +12,7 @@
                         <div class="card-body">
                             <nav class="navbar navbar-light bg-light">
                                 <a role="button" class="btn btn-primary"
-                                   href="{{ action('NoteController@create') }}">Nueva nota o informe</a>
+                                   href="{{ action('NoteController@create', ['type'=>'X']) }}">Nueva nota o informe</a>
                             </nav>
                             <table class="table table-hover">
                                 <thead>
