@@ -23,6 +23,6 @@
         "vue": "^2.5.17"
     },
     "dependencies": {
-        "jquery": "^3.4.1"
+        "jquery": "^3.5.0"
     }
 }
